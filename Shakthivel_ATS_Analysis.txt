@@ -1,0 +1,199 @@
+SHAKTHIVEL - RESUME UPDATE AND ATS ANALYSIS
+Generated: 21 Oct 2026
+Files: Shakthivel_Updated_Resume.docx / Shakthivel_Updated_Resume.pdf
+
+IMPORTANT NOTE ON THE SCORES
+All scores below are MANUAL ESTIMATES against a general ATS-readiness rubric that
+I defined myself (weights shown below). The resume was NOT run through any commercial
+ATS (Workday, Greenhouse, Lever, Taleo, etc.) or any scoring tool. No job description
+was supplied, so NO job-specific match score is given. Treat the numbers as a relative
+before/after comparison, not a guarantee of how any ATS will rank you.
+
+
+======================================================================
+1. ITEMS THAT NEED YOUR CONFIRMATION BEFORE YOU SEND THIS RESUME
+======================================================================
+
+No Team22 HRMS source code, README or documentation exists on this machine (searched
+C:\laragon\www, Downloads, Desktop, Documents). Every Team22 statement in the resume
+comes from the project description in your request, not from files I could check.
+
+A. Team22 HRMS - please confirm each is accurate and is YOUR work:
+   [ ] Built the Node.js backend (not only the React / React Native front ends)
+   [ ] Employee management, organization management, role-based access control, attendance
+   [ ] Face authentication ("Worked on" wording used - upgrade or downgrade as appropriate)
+   [ ] Geolocation-based attendance
+   [ ] Subscription management with organization-specific user limits
+       (your request said "where applicable" - this one is included, remove it if untrue)
+   [ ] Production deployment, Android release preparation, Google Play publishing
+       (you did these yourself, rather than a teammate doing them)
+   [ ] Play Store listing name is exactly "Team22-HRMS"
+   Not listed because unknown: the database used, hosting/cloud, payment integration,
+   and project dates. Add them only if true.
+
+B. Placement: Team22 HRMS is listed under In22 Labs (Jan 2026 - Present) on the
+   assumption it was part of that job. If it was freelance/personal, move it.
+   No separate dates were invented for it.
+
+C. React proficiency: the old resume said "React (beginner)". I removed "beginner"
+   because Team22 uses React.js and React Native. Confirm you are comfortable being
+   asked about React in interviews at the level the resume now implies.
+
+D. "seven systems" (In22 Labs summary bullet): the old resume said "six systems";
+   Team22 makes seven. Correct it if the count is wrong.
+
+E. Employment gap: Dec 2025 (between Divinfosys and In22 Labs) is not explained.
+   Recruiters sometimes ask; have a short answer ready.
+
+F. Contact details were preserved exactly (Gmail address and phone). Your current
+   account email is a different, in22labs.com address - I did not put it on the resume.
+
+G. NHM-HMIS has no tech-stack line, as in the original. Add one (e.g. Laravel, PHP,
+   MySQL) only if accurate.
+
+
+======================================================================
+2. EXPERIENCE CALCULATION
+======================================================================
+
+Software development employment (inclusive of start and end months):
+  Divinfosys      Aug 2021 - Nov 2025   = 52 months (4 yrs 4 mos)
+  In22 Labs       Jan 2026 - Oct 2026   = 10 months (to date, 21 Oct 2026)
+  Total                                  = 62 months, about 5 years 2 months
+  (Dec 2025 gap not counted.)
+
+Resume wording: "5+ years of professional software development experience".
+Previous wording was "4+ years" - this understated your experience.
+
+Excluded: Retail Snacks Distribution (May 2017 - Aug 2021). It is kept in a separate
+"Earlier Experience" section, labelled "non-software experience", and is NOT counted
+in the 5+ years.
+
+Note: the summary says "(Aug 2021 - Present)"; that range spans the Dec 2025 gap,
+which is why the headline figure is stated as "5+" rather than "5 years 2 months".
+
+
+======================================================================
+3. SCORE ESTIMATES (general ATS readiness, manual, not tool-tested)
+======================================================================
+
+Category            Weight   Original   Revised
+------------------  ------   --------   -------
+Formatting            20       14         19
+Skills                20       13         17
+Experience            20       15         17
+Projects              15       11         13
+Achievements          10        4          5
+Readability           15       11         13
+------------------  ------   --------   -------
+TOTAL                100       68         84
+
+Why the original scored where it did:
+  - Formatting: skills, education and certifications were HTML tables; the PDF text
+    still extracted, but tables are a known risk for some parsers.
+  - Skills: no Node.js or React Native; React shown as "beginner"; flat 5-row list.
+  - Experience: headline said "4+ years" (understated); the 8 Divinfosys client
+    projects ran together as one long bullet list.
+  - Achievements: no metrics, only two awards.
+
+Why the revised version scored higher:
+  - Formatting: single column, no tables, no text boxes or graphics, standard
+    headings, consistent dates ("Mon YYYY - Mon YYYY"), selectable text, clickable
+    links. Verified below.
+  - Skills: 8 requested categories; Node.js, React.js, React Native added.
+  - Experience: accurate tenure; Team22 shown as a flagship, clearly visible project.
+  - Projects: each bullet starts with an action verb; duplicates merged.
+
+Why Achievements is still low (5/10): there are NO verified numbers in your source
+material (users, uptime, performance, downloads, records processed, etc.), and I did
+not invent any. This is the biggest remaining improvement, see section 6.
+
+Unchanged by design: general ATS compatibility (above) is separate from job-specific
+keyword matching. Job-specific scoring needs a real job description.
+
+
+======================================================================
+4. IMPROVEMENTS MADE
+======================================================================
+ 1. Headline changed from "Laravel / PHP Developer" to "Software Developer | PHP /
+    Laravel, Node.js, React.js, React Native" to reflect your current stack.
+ 2. Summary rewritten: accurate tenure, Node.js / React.js / React Native / Play Store
+    release added, kept your RAG/LLM and FastAPI work, no inflated claims.
+ 3. Team22 HRMS added as the first project under In22 Labs, with the Google Play name.
+ 4. Skills reorganised into the 8 requested categories. Only skills evidenced by your
+    resume or your Team22 description were included (see exclusions below).
+ 5. Tables removed. Tab-aligned / flex rows are used for dates only.
+ 6. Project bullets tightened; small related items merged (e.g. PMIS and Nippon),
+    wording de-duplicated, "Architected RESTful APIs" softened to "Designed".
+ 7. Divinfosys client projects now sit under a "Client Projects" label with bold names.
+ 8. Technical defect fixed in PDF: font ligatures ("fl", "fi") would have extracted
+    as odd characters in ATS parsers; ligatures were disabled and the PDF text was
+    checked for them (none found).
+ 9. Page breaks controlled so no project heading is stranded from its bullets.
+10. Retail experience moved to its own "Earlier Experience" section and labelled
+    non-software.
+
+Deliberately NOT added (not supported by your resume or Team22 description):
+  PostgreSQL, Docker, CI/CD, AWS/cloud services, testing tools, Express.js, TypeScript,
+  Redux, Firebase. ("AWS Scraper Tool" is a project name; it does not by itself show
+  cloud-services experience, so "AWS" is not listed as a skill.)
+  MongoDB and Selenium WERE kept because the AWS Scraper Tool entry in your original
+  resume states them. Razorpay / PayPal kept for the same reason (Shopyfest).
+
+
+======================================================================
+5. VERIFICATION RESULTS
+======================================================================
+ - Both resume files exist in C:\laragon\www\profile_building\
+ - PDF: 2 pages (A4). DOCX: 2 pages (confirmed by opening in Microsoft Word).
+ - PDF text is extractable (pypdf and pdftotext); no ligature artefacts.
+ - DOCX and PDF text compared after normalisation: identical (5,960 characters each).
+ - Tables in DOCX: 0.
+ - Hyperlinks present and identical in both files:
+     https://shakthivel-spec.github.io/my-profile/
+     https://github.com/Shakthivel-spec
+     https://www.linkedin.com/in/shakthi-vel-078891142
+     mailto:shakthivel801@gmail.com
+   Link targets were read from the files. I did NOT test that the URLs load online.
+ - Dates consistent: Aug 2021 - Nov 2025, Jan 2026 - Present, May 2017 - Aug 2021;
+   no overlaps.
+ - Team22 HRMS present in both files (includes "Team22-HRMS" Play Store name).
+ - The PDF was rendered by Chrome; the DOCX was built separately with python-docx from
+   the same content. Pagination in other Word versions or LibreOffice may differ slightly.
+
+
+======================================================================
+6. MISSING OR WEAK KEYWORDS (add ONLY if you have genuinely used them)
+======================================================================
+Cross-role:
+  - Quantified results (strongest gap). Examples to look for: number of employees /
+    organizations on Team22, Play Store installs, records or users handled by NHM
+    systems, report/dashboard load improvements, delivery time saved.
+  - Agile / Scrum, code review, unit/integration testing (PHPUnit, Jest), Postman,
+    Swagger/OpenAPI, Redis/queues, JWT/OAuth authentication.
+  - Deployment detail: server/hosting (Linux, Nginx/Apache, cloud provider), CI/CD, Docker.
+  - Team22 database (MySQL / MongoDB / PostgreSQL).
+
+Laravel / PHP roles - recommended keywords:
+  Eloquent ORM, MVC, Blade, Laravel queues/jobs, Laravel migrations, Sanctum/Passport,
+  PHPUnit, Composer, MySQL query optimization, REST API, role/permission packages
+  (e.g. Spatie), Redis, Livewire. Already well covered: Laravel, PHP, MySQL, RBAC,
+  REST API, MIS reporting, approval workflows.
+
+Node.js / Full Stack roles - recommended keywords:
+  Express.js, JWT authentication, REST API design, MongoDB or PostgreSQL, TypeScript,
+  microservices, Docker, CI/CD, unit testing (Jest/Mocha), Postman, WebSockets.
+  Your Node.js evidence is currently ONE project (Team22); add detail there (framework,
+  database, auth method) if true. Already covered: Node.js, React.js, REST APIs, RBAC,
+  full-stack, deployment.
+
+React / React Native roles - recommended keywords:
+  Redux / Context API, React Hooks, state management, TypeScript, Expo or bare
+  workflow, Android build (AAB / signing / Gradle), Google Play Console, push
+  notifications (Firebase), camera/biometric/geolocation libraries, REST API integration,
+  responsive UI, performance optimisation. Already covered: React.js, React Native,
+  Android release, Google Play publishing, geolocation, face authentication.
+
+How to use this: when you apply to a specific role, paste the job description and
+tailor the summary and skills order to it. Only then is a job-specific match score
+meaningful.
