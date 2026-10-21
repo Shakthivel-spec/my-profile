@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="titanium">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shakthivel | Software Developer | Laravel, Node.js, React.js &amp; React Native</title>
 <meta name="description" content="Shakthivel — Software Developer with 5+ years of experience building enterprise, e-governance, web, mobile, and AI-integrated applications with Laravel, PHP, Node.js, React.js, React Native, Python, and FastAPI. Based in Chennai, India.">
-<meta name="theme-color" content="#0b0e14">
+<meta name="theme-color" content="#09090b">
 <link rel="canonical" href="https://shakthivel-spec.github.io/my-profile/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Shakthivel">
@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shakthivel | Software Developer | Full-Stack Web &amp; Mobile Developer">
 <meta name="twitter:description" content="Software Developer with 5+ years of experience building enterprise, e-governance, web, mobile, and AI-integrated applications — Laravel, PHP, Node.js, React.js, React Native, Python, and FastAPI.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b0e14'/%3E%3Ctext x='50' y='68' font-size='58' font-family='monospace' font-weight='700' fill='%233b7bf0' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2309090b'/%3E%3Ctext x='50' y='70' font-size='62' font-family='sans-serif' font-weight='800' fill='%23f4f4f5' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -32,6 +32,15 @@
   "knowsAbout": ["PHP", "Laravel", "Node.js", "React.js", "React Native", "Python", "FastAPI", "REST APIs", "MySQL", "MongoDB"]
 }
 </script>
+<script>
+  /* Apply the saved theme before first paint to avoid a flash. */
+  try {
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light' || savedTheme === 'gold' || savedTheme === 'titanium') {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  } catch (e) {}
+</script>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -41,25 +50,6 @@
           sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
           mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
         },
-        colors: {
-          ink: {
-            950: '#0b0e14',
-            900: '#11151d',
-            800: '#171c26',
-            700: '#232a38',
-            600: '#3a4354',
-            500: '#5b6576',
-            400: '#8892a0',
-            300: '#b3bac5',
-            200: '#dde1e6',
-            100: '#eef0f3',
-            50:  '#f7f8fa',
-          },
-          accent: {
-            600: '#2f6feb',
-            500: '#3b7bf0',
-          }
-        },
       },
     },
   };
@@ -67,308 +57,489 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" defer></script>
 <style>
+  /* ---------- Themes: Monochrome Prime (no blue anywhere) ---------- */
+  :root, :root[data-theme="titanium"] {
+    --bg: #09090b; --bg2: #121215;
+    --glass: rgba(24, 24, 27, 0.65); --glass-solid: #18181b;
+    --border: rgba(255, 255, 255, 0.12); --border-hover: rgba(255, 255, 255, 0.35);
+    --text: #f4f4f5; --muted: #a1a1aa; --dim: #8b8b94;
+    --grad: linear-gradient(135deg, #ffffff 0%, #a1a1aa 50%, #71717a 100%);
+    --accent: #f4f4f5; --accent-hover: #ffffff; --accent-ink: #09090b;
+    --chip: rgba(255, 255, 255, 0.06);
+    --overlay-a: rgba(9, 9, 11, 0.78); --overlay-b: rgba(9, 9, 11, 0.93);
+    --grid: rgba(255, 255, 255, 0.045); --img-op: 0.5;
+    --nav-bg: rgba(9, 9, 11, 0.72); --shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f4f5; --bg2: #e4e4e7;
+    --glass: rgba(255, 255, 255, 0.72); --glass-solid: #ffffff;
+    --border: rgba(9, 9, 11, 0.14); --border-hover: rgba(9, 9, 11, 0.4);
+    --text: #09090b; --muted: #52525b; --dim: #62626a;
+    --grad: linear-gradient(135deg, #09090b 0%, #3f3f46 50%, #71717a 100%);
+    --accent: #09090b; --accent-hover: #27272a; --accent-ink: #fafafa;
+    --chip: rgba(9, 9, 11, 0.05);
+    --overlay-a: rgba(244, 244, 245, 0.86); --overlay-b: rgba(244, 244, 245, 0.95);
+    --grid: rgba(9, 9, 11, 0.05); --img-op: 0.3;
+    --nav-bg: rgba(244, 244, 245, 0.78); --shadow: 0 24px 70px rgba(9, 9, 11, 0.16);
+  }
+  :root[data-theme="gold"] {
+    --bg: #0c0a08; --bg2: #14110d;
+    --glass: rgba(28, 24, 18, 0.65); --glass-solid: #1c1812;
+    --border: rgba(212, 175, 106, 0.2); --border-hover: rgba(232, 201, 138, 0.55);
+    --text: #f6efe3; --muted: #b8ab91; --dim: #9c9078;
+    --grad: linear-gradient(135deg, #fff3d4 0%, #d4af6a 50%, #8a6d3b 100%);
+    --accent: #e8c98a; --accent-hover: #f3dba6; --accent-ink: #1a1308;
+    --chip: rgba(232, 201, 138, 0.07);
+    --overlay-a: rgba(12, 10, 8, 0.8); --overlay-b: rgba(12, 10, 8, 0.94);
+    --grid: rgba(232, 201, 138, 0.045); --img-op: 0.45;
+    --nav-bg: rgba(12, 10, 8, 0.74); --shadow: 0 24px 70px rgba(0, 0, 0, 0.6);
+  }
+
   html { scroll-behavior: smooth; }
-  body { -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-  h1, h2, h3, p, li { overflow-wrap: break-word; }
-  section[id] { scroll-margin-top: 3.5rem; }
-  .fade-up {
-    opacity: 0;
-    transform: translateY(14px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+  body {
+    background: var(--bg); color: var(--text);
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
-  .fade-up.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  ::selection { background: #2f6feb; color: #fff; }
-  .skip-link:focus { clip: auto; width: auto; height: auto; }
+  h1, h2, h3, h4, p, li { overflow-wrap: break-word; }
+  section[id] { scroll-margin-top: 4.5rem; }
+  ::selection { background: var(--accent); color: var(--accent-ink); }
   a:focus-visible, button:focus-visible {
-    outline: 2px solid #3b7bf0;
-    outline-offset: 3px;
-    border-radius: 4px;
+    outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px;
   }
+  .skip-link:focus { clip: auto; width: auto; height: auto; }
+
+  /* ---------- Background scene ---------- */
+  .scene { position: fixed; inset: 0; z-index: -1; background: var(--bg); overflow: hidden; }
+  .scene::before {
+    content: ""; position: absolute; inset: 0;
+    background: url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=60") center / cover no-repeat;
+    filter: grayscale(1) contrast(1.05); opacity: var(--img-op);
+  }
+  .scene::after {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 35%, var(--overlay-a) 0%, var(--overlay-b) 75%);
+  }
+  .scene-grid {
+    position: absolute; inset: 0; z-index: 1;
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* ---------- Primitives ---------- */
+  .icon { width: 1.1em; height: 1.1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .glass {
+    background: var(--glass); border: 1px solid var(--border); border-radius: 1rem;
+    -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass { background: var(--glass-solid); }
+  }
+  .glass-hover:hover { border-color: var(--border-hover); box-shadow: 0 0 0 1px var(--border-hover), var(--shadow); }
+  .text-grad {
+    color: var(--text);
+    background: var(--grad); -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .muted { color: var(--muted); }
+  .dim { color: var(--dim); }
+  .strong { color: var(--text); font-weight: 600; }
+  .eyebrow { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); display: block; margin-bottom: 0.4rem; }
+  .sec-title { font-size: clamp(1.875rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 1.5rem; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; padding: 0.7rem 1.25rem; border-radius: 9999px; transition: background-color 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); }
+  .btn-primary:hover { background: var(--accent-hover); box-shadow: 0 8px 28px rgba(255, 255, 255, 0.12); transform: translateY(-1px); }
+  .btn-glass { background: var(--glass); border: 1px solid var(--border); color: var(--text); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); }
+  .btn-glass:hover { border-color: var(--border-hover); transform: translateY(-1px); }
   .chip {
-    display: inline-block;
-    padding: 0.15rem 0.6rem;
-    border: 1px solid #232a38;
-    background: #171c26;
-    color: #dde1e6;
-    border-radius: 0.375rem;
-    font-size: 0.75rem;
-    line-height: 1.25rem;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.2rem 0.65rem; border: 1px solid var(--border); background: var(--chip);
+    color: var(--text); border-radius: 0.5rem; font-size: 0.75rem; line-height: 1.25rem;
   }
-  .chip-accent { border-color: rgba(47, 111, 235, 0.5); color: #eef0f3; }
+  .chip-lg { padding: 0.4rem 0.85rem; font-size: 0.8125rem; border-radius: 9999px; transition: border-color 0.3s, background-color 0.3s; }
+  .chip-lg:hover { border-color: var(--border-hover); }
+  .chip-accent { border-color: var(--border-hover); }
+  .tech-icon { font-size: 1.15rem; filter: grayscale(1) brightness(1.6); transition: filter 0.3s ease; }
+  :root[data-theme="light"] .tech-icon { filter: grayscale(1) brightness(0.55); }
+  .chip-lg:hover .tech-icon, .orbit:hover .tech-icon { filter: none; }
+  .circle-btn { width: 2.75rem; height: 2.75rem; display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; background: var(--glass); border: 1px solid var(--border); color: var(--text); font-size: 1.15rem; -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); transition: border-color 0.2s, transform 0.2s; }
+  .circle-btn:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+  .link-plain { color: var(--text); text-decoration: underline; text-decoration-color: var(--border-hover); text-underline-offset: 4px; }
+  .link-plain:hover { text-decoration-color: var(--text); }
+  .bullets { list-style: disc; padding-left: 1.1rem; }
+  .bullets li::marker { color: var(--dim); }
+  .divider { border-top: 1px solid var(--border); }
+
+  /* ---------- Nav ---------- */
+  .nav { position: sticky; top: 0; z-index: 40; background: var(--nav-bg); border-bottom: 1px solid var(--border); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); }
+  .nav-link { font-size: 0.875rem; color: var(--muted); transition: color 0.2s; }
+  .nav-link:hover { color: var(--text); }
+  .brand { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.02em; }
+
+  /* ---------- Hero ---------- */
+  .status-badge { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.9rem 0.4rem 0.75rem; border-radius: 9999px; font-size: 0.8125rem; font-weight: 500; }
+  .pulse-dot { position: relative; width: 8px; height: 8px; border-radius: 9999px; background: #10b981; flex-shrink: 0; }
+  .pulse-dot::after { content: ""; position: absolute; inset: -4px; border-radius: 9999px; background: #10b981; opacity: 0.45; animation: pulse 2s ease-out infinite; }
+  @keyframes pulse { 0% { transform: scale(0.6); opacity: 0.55; } 100% { transform: scale(1.6); opacity: 0; } }
+  .typed { display: inline-block; animation: typing 1.3s steps(10, end) 0.25s both; }
+  @keyframes typing { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+
+  /* ---------- Hero showcase ---------- */
+  .showcase { position: relative; }
+  .ws { padding: 1.1rem; box-shadow: var(--shadow); }
+  .monitors { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 0.7rem; }
+  .monitors > div, .mon, .showcase, .ws { min-width: 0; }
+  .mon { background: #0a0a0c; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 0.6rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+  .mon-bar { display: flex; align-items: center; gap: 0.35rem; padding: 0.4rem 0.6rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font: 10px 'JetBrains Mono', monospace; color: #8b8b94; }
+  .mon-bar i { width: 6px; height: 6px; border-radius: 9999px; background: #3f3f46; display: inline-block; }
+  .mon-bar span { margin-left: 0.3rem; }
+  .mon pre { margin: 0; padding: 0.7rem; font: 10px/1.6 'JetBrains Mono', monospace; color: #a1a1aa; white-space: pre; overflow: hidden; }
+  .mon .k { color: #ffffff; font-weight: 600; }
+  .mon .s { color: #d4d4d8; }
+  .stand { width: 16%; height: 9px; margin: 0.15rem auto 0; background: linear-gradient(#3f3f46, #27272a); border-radius: 0 0 6px 6px; }
+  .base { width: 42%; height: 4px; margin: 0 auto; background: #27272a; border-radius: 4px; }
+  .desk { margin-top: 0.8rem; height: 30px; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.1); background: repeating-linear-gradient(90deg, rgba(255,255,255,0.07) 0 14px, transparent 14px 18px), linear-gradient(180deg, #1c1c20, #121215); background-size: 100% 6px, 100% 100%; background-repeat: repeat-x, no-repeat; background-position: 0 50%, 0 0; }
+  .float-badge { display: inline-block; margin: 0 0.5rem 0.9rem 0; padding: 0.55rem 0.9rem; font-size: 0.8125rem; font-weight: 600; z-index: 3; vertical-align: top; }
+  .wall-frame { display: inline-block; margin: 0 0 0.9rem 0; padding: 0.55rem 0.9rem; z-index: 3; text-align: center; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.22em; line-height: 1.5; border-radius: 0.5rem; vertical-align: top; }
+  .orbit-zone { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 1.25rem; }
+  .orbit { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.35rem; min-height: 5rem; padding: 0.6rem; font-size: 0.6875rem; font-weight: 600; border-radius: 1rem; }
+  .orbit .tech-icon { font-size: 1.6rem; }
+  @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @media (min-width: 768px) {
+    .showcase { padding: 2.2rem 3.6rem 3rem; }
+    .float-badge { position: absolute; top: -1.1rem; left: 1rem; margin: 0; }
+    .wall-frame { position: absolute; top: -1.5rem; right: 1rem; margin: 0; padding: 0.7rem 0.9rem; line-height: 1.7; }
+    .orbit-zone { position: absolute; inset: 0; display: block; margin: 0; pointer-events: none; }
+    .orbit { position: absolute; width: 5.25rem; height: 5.25rem; min-height: 0; z-index: 2; animation: floaty 6s ease-in-out infinite; animation-delay: var(--d, 0s); pointer-events: auto; box-shadow: var(--shadow); }
+    .o1 { left: -1rem; top: 12%; }
+    .o2 { left: -1.2rem; top: 58%; --d: -1.2s; }
+    .o3 { left: 22%; bottom: -1.2rem; --d: -2.4s; }
+    .o4 { right: 20%; bottom: -1.6rem; --d: -3.2s; }
+    .o5 { right: -1.2rem; top: 62%; --d: -4.4s; }
+    .o6 { right: -1.2rem; top: 24%; --d: -5.2s; }
+  }
+
+  /* ---------- Stats ---------- */
+  .stat { display: flex; align-items: center; gap: 0.9rem; padding: 1.25rem 1.1rem; }
+  .stat-icon { width: 2.6rem; height: 2.6rem; border-radius: 0.75rem; background: var(--chip); border: 1px solid var(--border); display: inline-flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0; }
+  .stat-num { font-size: 1.75rem; font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
+
+  /* ---------- Reveal + theme switch ---------- */
+  .fade-up { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .fade-up.is-visible { opacity: 1; transform: translateY(0); }
+  .theme-switch { position: fixed; right: 1rem; bottom: 1rem; z-index: 50; display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.8rem; border-radius: 9999px; box-shadow: var(--shadow); }
+  .theme-label { display: none; font: 600 0.625rem 'JetBrains Mono', monospace; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  @media (min-width: 640px) { .theme-label { display: inline; } }
+  .swatch { width: 1.6rem; height: 1.6rem; border-radius: 9999px; border: 2px solid transparent; box-shadow: 0 0 0 1px var(--border); transition: transform 0.2s, border-color 0.2s; }
+  .swatch:hover { transform: scale(1.1); }
+  .swatch[aria-pressed="true"] { border-color: var(--text); }
+  .swatch-titanium { background: linear-gradient(135deg, #52525b, #09090b); }
+  .swatch-light { background: linear-gradient(135deg, #ffffff, #a1a1aa); }
+  .swatch-gold { background: linear-gradient(135deg, #f3dba6, #8a6d3b); }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .fade-up { opacity: 1; transform: none; transition: none; }
+    .typed { animation: none; }
+    .orbit, .pulse-dot::after { animation: none; }
+    .btn, .circle-btn { transition: none; }
   }
 </style>
 <noscript><style>.fade-up { opacity: 1; transform: none; }</style></noscript>
 </head>
-<body class="bg-ink-950 text-ink-100 font-sans antialiased">
+<body class="font-sans antialiased">
 
-<a href="#main" class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-accent-600 focus:text-white focus:px-3 focus:py-2 focus:rounded">
+<!-- Icons: Lucide (https://lucide.dev), ISC License -->
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /> <polyline points="7 10 12 15 17 10" /> <line x1="12" x2="12" y1="15" y2="3" /></symbol><symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="m12 5 7 7-7 7" /></symbol><symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10" /> <path d="M7 17 17 7" /></symbol><symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /> <rect width="20" height="14" x="2" y="6" rx="2" /></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" /> <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" /> <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /></symbol><symbol id="i-smartphone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2" /> <path d="M12 18h.01" /></symbol><symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" /> <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" /> <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" /> <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></symbol><symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /> <path d="M9 18c-4.51 2-5-2-7-2" /></symbol><symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /> <rect width="4" height="12" x="2" y="9" /> <circle cx="4" cy="4" r="2" /></symbol><symbol id="i-menu" viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12" /> <line x1="4" x2="20" y1="6" y2="6" /> <line x1="4" x2="20" y1="18" y2="18" /></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></symbol></svg>
+
+<div class="scene" aria-hidden="true"><div class="scene-grid"></div></div>
+
+<a href="#main" class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-3 focus:py-2 focus:rounded btn-primary">
   Skip to content
 </a>
 
 <!-- Nav -->
-<header class="sticky top-0 z-40 border-b border-ink-800/80 bg-ink-950/90 backdrop-blur-sm">
-  <nav class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between gap-4 min-w-0" aria-label="Primary">
-    <a href="#top" class="font-mono text-sm font-semibold text-ink-100 hover:text-accent-500 transition-colors shrink-0">
-      shakthivel<span class="text-accent-500">.dev</span>
-    </a>
-    <div class="hidden lg:flex items-center gap-6 text-sm text-ink-300">
-      <a href="#about" class="hover:text-ink-100 transition-colors">About</a>
-      <a href="#experience" class="hover:text-ink-100 transition-colors">Experience</a>
-      <a href="#skills" class="hover:text-ink-100 transition-colors">Skills</a>
-      <a href="#projects" class="hover:text-ink-100 transition-colors">Projects</a>
-      <a href="#ai" class="hover:text-ink-100 transition-colors">AI</a>
-      <a href="#ai-tools" class="hover:text-ink-100 transition-colors">AI Tools</a>
-      <a href="#certifications" class="hover:text-ink-100 transition-colors">Certifications</a>
-      <a href="#contact" class="hover:text-ink-100 transition-colors">Contact</a>
+<header class="nav">
+  <nav class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4 min-w-0" aria-label="Primary">
+    <a href="#top" class="brand text-grad shrink-0" aria-label="Shakthivel — home">Shakthivel</a>
+    <div class="hidden xl:flex items-center gap-6">
+      <a href="#top" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#ai" class="nav-link">AI</a>
+      <a href="#ai-tools" class="nav-link">AI Tools</a>
+      <a href="#certifications" class="nav-link">Certifications</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </div>
-    <a href="Shakthivel_Updated_Resume.pdf" download class="hidden lg:inline-flex items-center text-sm font-medium text-ink-100 border border-ink-700 rounded-md px-3 py-1.5 hover:border-accent-500 hover:text-accent-500 transition-colors">
-      Download Resume
+    <a href="Shakthivel_Updated_Resume.pdf" download class="btn btn-primary hidden xl:inline-flex">
+      <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Download Resume
     </a>
-    <button id="menuBtn" type="button" class="lg:hidden p-2 -mr-2 text-ink-300 hover:text-ink-100" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle navigation menu">
-      <svg id="menuIconOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
-      <svg id="menuIconClose" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    <button id="menuBtn" type="button" class="xl:hidden p-2 -mr-2 muted hover:opacity-80" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle navigation menu">
+      <svg id="menuIconOpen" class="icon" style="width:1.4rem;height:1.4rem" aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg id="menuIconClose" class="icon hidden" style="width:1.4rem;height:1.4rem" aria-hidden="true"><use href="#i-x"/></svg>
     </button>
   </nav>
-  <div id="mobileMenu" class="hidden lg:hidden border-t border-ink-800 px-6 py-4 flex flex-col gap-3 text-sm text-ink-300 bg-ink-950">
-    <a href="#about" class="py-1">About</a>
-    <a href="#experience" class="py-1">Experience</a>
-    <a href="#skills" class="py-1">Skills</a>
-    <a href="#projects" class="py-1">Projects</a>
-    <a href="#ai" class="py-1">AI</a>
-    <a href="#ai-tools" class="py-1">AI Tools</a>
-    <a href="#certifications" class="py-1">Certifications</a>
-    <a href="#contact" class="py-1">Contact</a>
-    <a href="Shakthivel_Updated_Resume.pdf" download class="py-1 text-ink-100 font-medium">Download Resume</a>
+  <div id="mobileMenu" class="hidden xl:hidden px-6 py-4 flex flex-col gap-3 text-sm divider" style="background: var(--nav-bg)">
+    <a href="#top" class="py-1 muted">Home</a>
+    <a href="#about" class="py-1 muted">About</a>
+    <a href="#experience" class="py-1 muted">Experience</a>
+    <a href="#skills" class="py-1 muted">Skills</a>
+    <a href="#projects" class="py-1 muted">Projects</a>
+    <a href="#ai" class="py-1 muted">AI</a>
+    <a href="#ai-tools" class="py-1 muted">AI Tools</a>
+    <a href="#certifications" class="py-1 muted">Certifications</a>
+    <a href="#contact" class="py-1 muted">Contact</a>
+    <a href="Shakthivel_Updated_Resume.pdf" download class="py-1 strong">Download Resume</a>
   </div>
 </header>
 
 <main id="main">
 
   <!-- Hero -->
-  <section id="top" class="max-w-5xl mx-auto px-6 pt-20 pb-16 sm:pt-28 sm:pb-20" aria-labelledby="hero-title">
-    <p class="font-mono text-sm text-accent-500 mb-4">Chennai, India</p>
-    <h1 id="hero-title" class="text-white tracking-tight leading-[1.1] max-w-3xl">
-      <span class="block text-5xl sm:text-6xl font-extrabold">Shakthivel</span>
-      <span class="block mt-4 text-xl sm:text-2xl font-semibold text-accent-500 leading-snug">Software Developer | Full-Stack Web &amp; Mobile Developer</span>
-    </h1>
-    <p class="mt-6 text-lg text-ink-300 max-w-2xl leading-relaxed">
-      Software Developer with 5+ years of professional software development experience building enterprise,
-      e-governance, web, mobile, and AI-integrated applications.
-    </p>
-    <p class="mt-3 text-base text-ink-300 max-w-2xl leading-relaxed">
-      I work mainly with
-      <strong class="text-ink-100 font-medium">Laravel</strong>,
-      <strong class="text-ink-100 font-medium">PHP</strong>,
-      <strong class="text-ink-100 font-medium">Node.js</strong>,
-      <strong class="text-ink-100 font-medium">React.js</strong>,
-      <strong class="text-ink-100 font-medium">React Native</strong>,
-      <strong class="text-ink-100 font-medium">Python</strong>, and
-      <strong class="text-ink-100 font-medium">FastAPI</strong>.
-    </p>
-    <div class="mt-8 flex flex-wrap gap-3">
-      <a href="#projects" class="inline-flex items-center gap-2 bg-accent-600 hover:bg-accent-500 text-white text-sm font-medium px-4 py-2.5 rounded-md transition-colors">
-        View Projects
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-      </a>
-      <a href="Shakthivel_Updated_Resume.pdf" download class="inline-flex items-center gap-2 border border-ink-600 hover:border-accent-500 text-ink-100 text-sm font-medium px-4 py-2.5 rounded-md transition-colors">
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M5 20h14"/></svg>
-        Download Resume
-      </a>
-      <a href="#contact" class="inline-flex items-center gap-2 border border-ink-600 hover:border-accent-500 text-ink-100 text-sm font-medium px-4 py-2.5 rounded-md transition-colors">
-        Contact Me
-      </a>
+  <section id="top" class="max-w-7xl mx-auto px-6 pt-14 pb-10 sm:pt-20" aria-labelledby="hero-title">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-10 items-center">
+
+      <div>
+        <a href="#contact" class="status-badge glass glass-hover">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          Available for Opportunities
+          <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+        </a>
+        <p class="mt-6 inline-flex items-center gap-2 text-sm muted">
+          <svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg> Chennai, India
+        </p>
+        <h1 id="hero-title" class="mt-3 leading-[1.05] tracking-tight">
+          <span class="block text-2xl sm:text-3xl font-semibold muted">Hi, I'm</span>
+          <span class="block text-5xl min-[400px]:text-6xl sm:text-7xl xl:text-8xl font-extrabold pb-2"><span class="typed text-grad">Shakthivel</span></span>
+          <span class="block mt-3 text-xl sm:text-2xl font-semibold strong leading-snug">Software Developer | Full-Stack Web &amp; Mobile Developer</span>
+        </h1>
+        <p class="mt-6 text-lg muted max-w-xl leading-relaxed">
+          Software Developer with 5+ years of professional software development experience building enterprise,
+          e-governance, web, mobile, and AI-integrated applications.
+        </p>
+
+        <ul class="mt-6 flex flex-wrap gap-2.5" aria-label="Core technologies">
+          <li class="chip chip-lg"><i class="devicon-php-plain colored tech-icon" aria-hidden="true"></i>PHP</li>
+          <li class="chip chip-lg"><i class="devicon-laravel-plain colored tech-icon" aria-hidden="true"></i>Laravel</li>
+          <li class="chip chip-lg"><i class="devicon-nodejs-plain colored tech-icon" aria-hidden="true"></i>Node.js</li>
+          <li class="chip chip-lg"><i class="devicon-react-original colored tech-icon" aria-hidden="true"></i>React.js</li>
+          <li class="chip chip-lg"><i class="devicon-react-original colored tech-icon" aria-hidden="true"></i>React Native</li>
+          <li class="chip chip-lg"><i class="devicon-python-plain colored tech-icon" aria-hidden="true"></i>Python</li>
+          <li class="chip chip-lg"><i class="devicon-fastapi-plain colored tech-icon" aria-hidden="true"></i>FastAPI</li>
+        </ul>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#projects" class="btn btn-primary">View Projects <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          <a href="Shakthivel_Updated_Resume.pdf" download class="btn btn-glass"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Download Resume</a>
+          <a href="#contact" class="btn btn-glass">Contact Me</a>
+        </div>
+
+        <div class="mt-7 flex items-center gap-3">
+          <a href="https://github.com/Shakthivel-spec" target="_blank" rel="noopener noreferrer" class="circle-btn" aria-label="GitHub profile (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a>
+          <a href="https://linkedin.com/in/shakthi-vel-078891142" target="_blank" rel="noopener noreferrer" class="circle-btn" aria-label="LinkedIn profile (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+          <a href="mailto:shakthivel801@gmail.com" class="circle-btn" aria-label="Email Shakthivel"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Decorative 3D showcase -->
+      <div class="showcase" aria-hidden="true">
+        <div class="glass float-badge">Turning Ideas into Solutions</div>
+        <div class="glass wall-frame">BUILD<br>/ SOLVE /<br>LEARN<br>/ REPEAT</div>
+
+        <div class="tilt glass ws">
+          <div class="monitors">
+            <div>
+              <div class="mon">
+                <div class="mon-bar"><i></i><i></i><i></i><span>routes/api.php</span></div>
+<pre><span class="k">Route</span>::<span class="s">middleware</span>('auth:sanctum')
+  -&gt;<span class="s">group</span>(<span class="k">function</span> () {
+    <span class="k">Route</span>::<span class="s">get</span>('/inspections',
+      [InspectionController::<span class="k">class</span>,
+       'index']);
+  });</pre>
+              </div>
+              <div class="stand"></div><div class="base"></div>
+            </div>
+            <div>
+              <div class="mon">
+                <div class="mon-bar"><i></i><i></i><i></i><span>terminal</span></div>
+<pre><span class="k">$</span> php artisan queue:work
+<span class="k">$</span> npm run dev
+<span class="k">$</span> uvicorn app.main:app
+<span class="s">services running</span></pre>
+              </div>
+              <div class="stand"></div><div class="base"></div>
+            </div>
+          </div>
+          <div class="desk"></div>
+        </div>
+
+        <div class="orbit-zone">
+          <div class="glass orbit o1"><i class="devicon-laravel-plain colored tech-icon"></i>Laravel</div>
+          <div class="glass orbit o2"><i class="devicon-react-original colored tech-icon"></i>React.js</div>
+          <div class="glass orbit o3"><i class="devicon-nodejs-plain colored tech-icon"></i>Node.js</div>
+          <div class="glass orbit o4"><i class="devicon-react-original colored tech-icon"></i>React Native</div>
+          <div class="glass orbit o5"><i class="devicon-python-plain colored tech-icon"></i>Python</div>
+          <div class="glass orbit o6"><i class="devicon-fastapi-plain colored tech-icon"></i>FastAPI</div>
+        </div>
+      </div>
+
     </div>
-    <p class="mt-5 text-sm text-ink-400">
-      <a href="https://github.com/Shakthivel-spec" target="_blank" rel="noopener noreferrer" class="hover:text-ink-100 underline underline-offset-4 decoration-ink-600">GitHub</a>
-      <span class="mx-2" aria-hidden="true">&middot;</span>
-      <a href="https://linkedin.com/in/shakthi-vel-078891142" target="_blank" rel="noopener noreferrer" class="hover:text-ink-100 underline underline-offset-4 decoration-ink-600">LinkedIn</a>
-    </p>
+
+    <!-- Stats -->
+    <div class="mt-16 glass grid grid-cols-2 lg:grid-cols-4" role="list" aria-label="Highlights">
+      <div class="stat" role="listitem">
+        <span class="stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg></span>
+        <div><p class="stat-num text-grad">5+</p><p class="text-sm strong mt-1">Years of Experience</p><p class="text-xs dim">Software Development</p></div>
+      </div>
+      <div class="stat" role="listitem">
+        <span class="stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+        <div><p class="stat-num text-grad">7+</p><p class="text-sm strong mt-1">Major Projects</p><p class="text-xs dim">Web, Mobile &amp; AI</p></div>
+      </div>
+      <div class="stat" role="listitem">
+        <span class="stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-smartphone"/></svg></span>
+        <div><p class="stat-num text-grad">1</p><p class="text-sm strong mt-1">Mobile App on Play Store</p><p class="text-xs dim">Team22-HRMS</p></div>
+      </div>
+      <div class="stat" role="listitem">
+        <span class="stat-icon"><svg class="icon" aria-hidden="true"><use href="#i-rocket"/></svg></span>
+        <div><p class="stat-num text-grad">8</p><p class="text-sm strong mt-1">Client Projects</p><p class="text-xs dim">Delivered at Divinfosys</p></div>
+      </div>
+    </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="border-t border-ink-800" aria-labelledby="about-title">
-    <div class="max-w-5xl mx-auto px-6 py-16 sm:py-20 fade-up">
-      <h2 id="about-title" class="font-mono text-sm text-accent-500 mb-3">01 &middot; About</h2>
-      <div class="grid sm:grid-cols-3 gap-10">
-        <div class="sm:col-span-2 space-y-4 text-ink-300 leading-relaxed">
+  <section id="about" aria-labelledby="about-title">
+    <div class="max-w-7xl mx-auto px-6 py-16 sm:py-20 fade-up">
+      <h2 id="about-title" class="sec-title"><span class="eyebrow">01</span><span class="text-grad">About</span></h2>
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-4 muted leading-relaxed text-[1.02rem]">
           <p>
             I'm a Software Developer with 5+ years of professional experience building enterprise and e-governance
             applications &mdash; financial management and healthcare information systems, workflow and approval
             systems, MIS dashboards, and REST APIs. I work on both the backend and the full stack, using
-            <strong class="text-ink-100">Laravel/PHP</strong> and <strong class="text-ink-100">Node.js</strong>
-            on the server and <strong class="text-ink-100">React.js</strong> on the web, with
+            <strong class="strong">Laravel/PHP</strong> and <strong class="strong">Node.js</strong>
+            on the server and <strong class="strong">React.js</strong> on the web, with
             database-driven workflows and role-based access control at the core of each system.
           </p>
           <p>
-            Most recently I developed <strong class="text-ink-100">Team22 HRMS</strong>, a Human Resource Management
-            System with a React.js web application and a <strong class="text-ink-100">React Native</strong> Android
+            Most recently I developed <strong class="strong">Team22 HRMS</strong>, a Human Resource Management
+            System with a React.js web application and a <strong class="strong">React Native</strong> Android
             app, and handled its production deployment and Google Play release as <em>Team22-HRMS</em>. At In22 Labs
             I also deliver Laravel systems for financial management and healthcare administration.
           </p>
           <p>
-            I extend that backend foundation into <strong class="text-ink-100">Python/FastAPI</strong> services for
+            I extend that backend foundation into <strong class="strong">Python/FastAPI</strong> services for
             AI and LLM integration &mdash; Retrieval-Augmented Generation (RAG), AI chat, and natural-language
             database querying. Before In22 Labs, I spent over four years at Divinfosys building full-stack
             applications with Laravel and React and leading a development team across multiple client projects.
           </p>
         </div>
-        <div class="space-y-5 text-sm">
-          <div>
-            <p class="text-ink-400 font-mono text-xs uppercase tracking-wide mb-1">Based in</p>
-            <p class="text-ink-100">Chennai, Tamil Nadu, India</p>
-          </div>
-          <div>
-            <p class="text-ink-400 font-mono text-xs uppercase tracking-wide mb-1">Currently</p>
-            <p class="text-ink-100">Software Developer at In22 Labs</p>
-          </div>
-          <div>
-            <p class="text-ink-400 font-mono text-xs uppercase tracking-wide mb-1">Focus</p>
-            <p class="text-ink-100">Laravel &middot; Node.js &middot; React.js &middot; React Native &middot; Python/FastAPI</p>
-          </div>
-          <div>
-            <p class="text-ink-400 font-mono text-xs uppercase tracking-wide mb-1">Education</p>
-            <p class="text-ink-100">B.Tech, Information Technology<br>SCSVMV University (2013&ndash;2017)</p>
-          </div>
+        <div class="glass p-6 space-y-5 text-sm self-start">
+          <div><p class="eyebrow">Based in</p><p class="strong">Chennai, Tamil Nadu, India</p></div>
+          <div><p class="eyebrow">Currently</p><p class="strong">Software Developer at In22 Labs</p></div>
+          <div><p class="eyebrow">Focus</p><p class="strong">Laravel &middot; Node.js &middot; React.js &middot; React Native &middot; Python/FastAPI</p></div>
+          <div><p class="eyebrow">Education</p><p class="strong">B.Tech, Information Technology<br>SCSVMV University (2013&ndash;2017)</p></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Experience -->
-  <section id="experience" class="border-t border-ink-800" aria-labelledby="experience-title">
-    <div class="max-w-5xl mx-auto px-6 py-16 sm:py-20 fade-up">
-      <h2 id="experience-title" class="font-mono text-sm text-accent-500 mb-3">02 &middot; Professional Experience</h2>
+  <section id="experience" aria-labelledby="experience-title">
+    <div class="max-w-7xl mx-auto px-6 py-16 sm:py-20 fade-up">
+      <h2 id="experience-title" class="sec-title"><span class="eyebrow">02</span><span class="text-grad">Professional Experience</span></h2>
 
-      <div class="mt-8 space-y-10">
-
-        <div class="grid sm:grid-cols-4 gap-4 sm:gap-8">
-          <div class="sm:col-span-1">
-            <p class="font-mono text-xs text-ink-400">Jan 2026 &ndash; Present</p>
-          </div>
-          <div class="sm:col-span-3">
-            <h3 class="text-ink-100 font-semibold">Software Developer</h3>
-            <p class="text-ink-400 text-sm mb-3">In22 Labs (Unwind Learning Labs Pvt Ltd) &middot; Chennai, Tamil Nadu</p>
-            <ul class="space-y-2 text-sm text-ink-300 leading-relaxed list-disc pl-4 marker:text-ink-600">
+      <div class="space-y-5">
+        <article class="glass glass-hover p-6 sm:p-8 grid md:grid-cols-4 gap-4 md:gap-8">
+          <p class="font-mono text-xs dim md:pt-1">Jan 2026 &ndash; Present</p>
+          <div class="md:col-span-3">
+            <h3 class="text-lg font-semibold strong">Software Developer</h3>
+            <p class="text-sm dim mb-4">In22 Labs (Unwind Learning Labs Pvt Ltd) &middot; Chennai, Tamil Nadu</p>
+            <ul class="bullets space-y-2 text-sm muted leading-relaxed">
               <li>Deliver e-governance, enterprise, and AI-integrated applications across seven systems using Laravel/PHP/MySQL, Node.js, React.js, React Native, and Python/FastAPI.</li>
               <li>Developed Team22 HRMS, a web (React.js) and Android (React Native) human resource management system backed by Node.js REST APIs, and published it on Google Play as Team22-HRMS.</li>
               <li>Built financial and healthcare workflows &mdash; budget allocation, approval chains, MIS dashboards, inspection tracking, and institution management &mdash; with role-based access control.</li>
               <li>Built AI features &mdash; RAG document search, natural-language-to-SQL, and agent-based tender analysis &mdash; through Python/FastAPI services.</li>
             </ul>
           </div>
-        </div>
+        </article>
 
-        <div class="grid sm:grid-cols-4 gap-4 sm:gap-8">
-          <div class="sm:col-span-1">
-            <p class="font-mono text-xs text-ink-400">Aug 2021 &ndash; Nov 2025</p>
-          </div>
-          <div class="sm:col-span-3">
-            <h3 class="text-ink-100 font-semibold">Web Developer</h3>
-            <p class="text-ink-400 text-sm mb-3">Divinfosys &middot; Madurai, Tamil Nadu</p>
-            <ul class="space-y-2 text-sm text-ink-300 leading-relaxed list-disc pl-4 marker:text-ink-600">
+        <article class="glass glass-hover p-6 sm:p-8 grid md:grid-cols-4 gap-4 md:gap-8">
+          <p class="font-mono text-xs dim md:pt-1">Aug 2021 &ndash; Nov 2025</p>
+          <div class="md:col-span-3">
+            <h3 class="text-lg font-semibold strong">Web Developer</h3>
+            <p class="text-sm dim mb-4">Divinfosys &middot; Madurai, Tamil Nadu</p>
+            <ul class="bullets space-y-2 text-sm muted leading-relaxed">
               <li>Built full-stack web applications with Laravel and React across multiple concurrent client projects.</li>
               <li>Led a development team, owning task allocation and delivery timelines.</li>
               <li>Designed RESTful APIs that connected internal tools with third-party platforms.</li>
               <li>Worked with design, QA, and product teams to turn requirements into shipped features, using Git with consistent branching and code-review practices.</li>
-              <li>Client projects are listed under <a href="#more-projects" class="text-accent-500 hover:underline underline-offset-4">More Projects</a>.</li>
+              <li>Client projects are listed under <a href="#more-projects" class="link-plain">More Projects</a>.</li>
             </ul>
           </div>
-        </div>
+        </article>
 
-        <div class="grid sm:grid-cols-4 gap-4 sm:gap-8 pt-6 border-t border-ink-800/70">
-          <div class="sm:col-span-1">
-            <p class="font-mono text-xs text-ink-400">May 2017 &ndash; Aug 2021</p>
-          </div>
-          <div class="sm:col-span-3">
-            <h3 class="text-ink-300 font-semibold text-sm">Earlier career (non-software): Retail Snacks Distribution Partner</h3>
-            <p class="text-ink-400 text-sm mt-1 leading-relaxed">
-              Self-employed &middot; Founded and ran a snacks distribution business across four districts in
-              Tamil Nadu, owning vendors, inventory, and logistics, before transitioning into web development.
-            </p>
-          </div>
+        <div class="px-2 pt-2 grid md:grid-cols-4 gap-2 md:gap-8">
+          <p class="font-mono text-xs dim">May 2017 &ndash; Aug 2021</p>
+          <p class="md:col-span-3 text-sm dim leading-relaxed">
+            <span class="muted font-semibold">Earlier career (non-software): Retail Snacks Distribution Partner.</span>
+            Self-employed &middot; Founded and ran a snacks distribution business across four districts in
+            Tamil Nadu, owning vendors, inventory, and logistics, before transitioning into web development.
+          </p>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="border-t border-ink-800" aria-labelledby="skills-title">
-    <div class="max-w-5xl mx-auto px-6 py-16 sm:py-20 fade-up">
-      <h2 id="skills-title" class="font-mono text-sm text-accent-500 mb-3">03 &middot; Skills</h2>
-      <p class="text-ink-300 max-w-2xl mb-10">
-        Technologies I have used on real projects, grouped by how I apply them.
-      </p>
+  <section id="skills" aria-labelledby="skills-title">
+    <div class="max-w-7xl mx-auto px-6 py-16 sm:py-20 fade-up">
+      <h2 id="skills-title" class="sec-title"><span class="eyebrow">03</span><span class="text-grad">Skills</span></h2>
+      <p class="muted max-w-2xl mb-10">Technologies I have used on real projects, grouped by how I apply them.</p>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
-        <div class="bg-ink-900 border border-ink-800 rounded-lg p-5">
-          <h3 class="text-ink-100 font-semibold mb-3">Backend</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">PHP</span><span class="chip">Python</span><span class="chip">Laravel</span><span class="chip">Node.js</span><span class="chip">FastAPI</span><span class="chip">CodeIgniter 4</span><span class="chip">RESTful APIs</span>
-          </div>
+        <div class="tilt glass glass-hover p-5">
+          <h3 class="strong font-semibold mb-3">Backend</h3>
+          <div class="flex flex-wrap gap-2"><span class="chip">PHP</span><span class="chip">Python</span><span class="chip">Laravel</span><span class="chip">Node.js</span><span class="chip">FastAPI</span><span class="chip">CodeIgniter 4</span><span class="chip">RESTful APIs</span></div>
         </div>
-
-        <div class="bg-ink-900 border border-ink-800 rounded-lg p-5">
-          <h3 class="text-ink-100 font-semibold mb-3">Frontend</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">JavaScript</span><span class="chip">React.js</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Bootstrap</span><span class="chip">Tailwind CSS</span><span class="chip">jQuery</span><span class="chip">Alpine.js</span>
-          </div>
+        <div class="tilt glass glass-hover p-5">
+          <h3 class="strong font-semibold mb-3">Frontend</h3>
+          <div class="flex flex-wrap gap-2"><span class="chip">JavaScript</span><span class="chip">React.js</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Bootstrap</span><span class="chip">Tailwind CSS</span><span class="chip">jQuery</span><span class="chip">Alpine.js</span></div>
         </div>
-
-        <div class="bg-ink-900 border border-ink-800 rounded-lg p-5">
-          <h3 class="text-ink-100 font-semibold mb-3">Mobile</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">React Native (Android)</span><span class="chip">Google Play Console publishing</span><span class="chip">Android release management</span>
-          </div>
+        <div class="tilt glass glass-hover p-5">
+          <h3 class="strong font-semibold mb-3">Mobile</h3>
+          <div class="flex flex-wrap gap-2"><span class="chip">React Native (Android)</span><span class="chip">Google Play Console publishing</span><span class="chip">Android release management</span></div>
         </div>
-
-        <div class="bg-ink-900 border border-ink-800 rounded-lg p-5">
-          <h3 class="text-ink-100 font-semibold mb-3">Databases</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">Qdrant</span><span class="chip">SQL</span>
-          </div>
+        <div class="tilt glass glass-hover p-5">
+          <h3 class="strong font-semibold mb-3">Databases</h3>
+          <div class="flex flex-wrap gap-2"><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">Qdrant</span><span class="chip">SQL</span></div>
         </div>
-
-        <div class="bg-ink-900 border border-ink-800 rounded-lg p-5 sm:col-span-2">
-          <h3 class="text-ink-100 font-semibold mb-3">APIs and Integrations</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">REST APIs</span><span class="chip">Firebase Cloud Messaging</span><span class="chip">Tally</span><span class="chip">Amazon SP API</span><span class="chip">Google Campaign APIs</span><span class="chip">Zoho Bigin</span><span class="chip">Razorpay</span><span class="chip">PayPal</span><span class="chip">Claude API</span><span class="chip">Groq API</span>
-          </div>
+        <div class="tilt glass glass-hover p-5 sm:col-span-2">
+          <h3 class="strong font-semibold mb-3">APIs and Integrations</h3>
+          <div class="flex flex-wrap gap-2"><span class="chip">REST APIs</span><span class="chip">Firebase Cloud Messaging</span><span class="chip">Tally</span><span class="chip">Amazon SP API</span><span class="chip">Google Campaign APIs</span><span class="chip">Zoho Bigin</span><span class="chip">Razorpay</span><span class="chip">PayPal</span><span class="chip">Claude API</span><span class="chip">Groq API</span></div>
         </div>
-
-        <div class="bg-ink-900 border border-ink-800 rounded-lg p-5">
-          <h3 class="text-ink-100 font-semibold mb-3">AI and Automation <span class="text-ink-400 font-normal text-xs">(in applications)</span></h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">RAG</span><span class="chip">LLM integration</span><span class="chip">Natural-language-to-SQL</span><span class="chip">Selenium</span>
-          </div>
+        <div class="tilt glass glass-hover p-5">
+          <h3 class="strong font-semibold mb-3">AI and Automation <span class="dim font-normal text-xs">(in applications)</span></h3>
+          <div class="flex flex-wrap gap-2"><span class="chip">RAG</span><span class="chip">LLM integration</span><span class="chip">Natural-language-to-SQL</span><span class="chip">Selenium</span></div>
         </div>
-
-        <div class="bg-ink-900 border border-ink-800 rounded-lg p-5">
-          <h3 class="text-ink-100 font-semibold mb-3">Tools and Deployment</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">PHPUnit</span><span class="chip">Supervisor</span><span class="chip">Docker Compose</span><span class="chip">NPM</span><span class="chip">Webpack</span>
-          </div>
+        <div class="tilt glass glass-hover p-5">
+          <h3 class="strong font-semibold mb-3">Tools and Deployment</h3>
+          <div class="flex flex-wrap gap-2"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">PHPUnit</span><span class="chip">Supervisor</span><span class="chip">Docker Compose</span><span class="chip">NPM</span><span class="chip">Webpack</span></div>
         </div>
-
-        <div class="bg-ink-900 border border-ink-800 rounded-lg p-5 sm:col-span-2 lg:col-span-2">
-          <h3 class="text-ink-100 font-semibold mb-3">Engineering</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">Role-based access control</span><span class="chip">Authentication &amp; authorization</span><span class="chip">Workflow &amp; approval systems</span><span class="chip">MIS dashboards &amp; reporting</span><span class="chip">Data validation</span><span class="chip">Face authentication</span><span class="chip">Geolocation-based attendance</span><span class="chip">Production deployment</span>
-          </div>
+        <div class="tilt glass glass-hover p-5 sm:col-span-2">
+          <h3 class="strong font-semibold mb-3">Engineering</h3>
+          <div class="flex flex-wrap gap-2"><span class="chip">Role-based access control</span><span class="chip">Authentication &amp; authorization</span><span class="chip">Workflow &amp; approval systems</span><span class="chip">MIS dashboards &amp; reporting</span><span class="chip">Data validation</span><span class="chip">Face authentication</span><span class="chip">Geolocation-based attendance</span><span class="chip">Production deployment</span></div>
         </div>
-
-        <div class="bg-ink-900 border border-ink-800 rounded-lg p-5 sm:col-span-2 lg:col-span-2">
-          <h3 class="text-ink-100 font-semibold mb-3">AI Tools &amp; AI-Assisted Development</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">Claude</span><span class="chip">ChatGPT</span><span class="chip">Gemini</span><span class="chip">Google Antigravity</span><span class="chip">Groq</span>
-          </div>
-          <p class="mt-3 text-xs text-ink-400 leading-relaxed">Development-workflow tools, listed separately from the AI technologies I build into applications.</p>
+        <div class="tilt glass glass-hover p-5 sm:col-span-2">
+          <h3 class="strong font-semibold mb-3">AI Tools &amp; AI-Assisted Development</h3>
+          <div class="flex flex-wrap gap-2"><span class="chip">Claude</span><span class="chip">ChatGPT</span><span class="chip">Gemini</span><span class="chip">Google Antigravity</span><span class="chip">Groq</span></div>
+          <p class="mt-3 text-xs dim leading-relaxed">Development-workflow tools, listed separately from the AI technologies I build into applications.</p>
         </div>
 
       </div>
@@ -376,10 +547,10 @@
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="border-t border-ink-800" aria-labelledby="projects-title">
-    <div class="max-w-5xl mx-auto px-6 py-16 sm:py-20 fade-up">
-      <h2 id="projects-title" class="font-mono text-sm text-accent-500 mb-3">04 &middot; Featured Projects</h2>
-      <p class="text-ink-300 max-w-2xl mb-10">
+  <section id="projects" aria-labelledby="projects-title">
+    <div class="max-w-7xl mx-auto px-6 py-16 sm:py-20 fade-up">
+      <h2 id="projects-title" class="sec-title"><span class="eyebrow">04</span><span class="text-grad">Featured Projects</span></h2>
+      <p class="muted max-w-2xl mb-10">
         Systems built at In22 Labs, from a web and Android HRMS to financial workflows, healthcare administration,
         and AI-assisted platforms.
       </p>
@@ -387,16 +558,16 @@
       <div class="space-y-6">
 
         <!-- Team22 HRMS -->
-        <article class="border border-accent-600/50 bg-ink-900 rounded-lg p-6 sm:p-7">
-          <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
-            <h3 class="text-ink-100 font-semibold text-xl">Team22 HRMS &mdash; Web and Android</h3>
+        <article class="glass p-6 sm:p-8" style="border-color: var(--border-hover)">
+          <div class="flex flex-wrap items-baseline justify-between gap-3 mb-1">
+            <h3 class="text-xl sm:text-2xl font-bold strong">Team22 HRMS &mdash; Web and Android</h3>
             <span class="chip chip-accent">Google Play app: Team22-HRMS</span>
           </div>
-          <p class="text-ink-400 text-sm mb-4">Human Resource Management System</p>
-          <div class="flex flex-wrap gap-2 mb-4">
+          <p class="text-sm dim mb-4">Human Resource Management System</p>
+          <div class="flex flex-wrap gap-2 mb-5">
             <span class="chip">Node.js</span><span class="chip">React.js</span><span class="chip">React Native</span><span class="chip">REST APIs</span><span class="chip">Google Play Console</span>
           </div>
-          <ul class="grid md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-ink-300 leading-relaxed list-disc pl-4 marker:text-ink-600">
+          <ul class="bullets grid md:grid-cols-2 gap-x-10 gap-y-2 text-sm muted leading-relaxed">
             <li>React.js web application and React Native Android application backed by Node.js REST APIs.</li>
             <li>Organization and employee management with role-based access control.</li>
             <li>Attendance management with face authentication and geolocation-based attendance.</li>
@@ -408,11 +579,11 @@
 
         <div class="grid md:grid-cols-2 gap-6">
 
-          <article class="border border-ink-800 rounded-lg p-6 hover:border-ink-600 transition-colors">
-            <h3 class="text-ink-100 font-semibold text-lg">NHM Finance / SNA SPARSH</h3>
-            <p class="text-ink-400 text-sm mb-2">Fund Flow Management System</p>
-            <p class="font-mono text-xs text-ink-400 mb-4">Laravel &middot; PHP &middot; MySQL</p>
-            <ul class="space-y-2 text-sm text-ink-300 leading-relaxed list-disc pl-4 marker:text-ink-600">
+          <article class="tilt glass glass-hover p-6">
+            <h3 class="text-lg font-semibold strong">NHM Finance / SNA SPARSH</h3>
+            <p class="text-sm dim mb-2">Fund Flow Management System</p>
+            <p class="font-mono text-xs dim mb-4">Laravel &middot; PHP &middot; MySQL</p>
+            <ul class="bullets space-y-2 text-sm muted leading-relaxed">
               <li>Fund-flow workflows for budget allocation, reallocation, and withdrawal, with multi-stage approvals (ROP Approval, Mother Sanction) and beneficiary payment processing.</li>
               <li>MIS reports and real-time dashboards across Treasury, HOA, Agency, and District levels.</li>
               <li>Role-based user management, bulk upload, and data validation, with queue-based Excel/CSV imports.</li>
@@ -420,11 +591,11 @@
             </ul>
           </article>
 
-          <article class="border border-ink-800 rounded-lg p-6 hover:border-ink-600 transition-colors">
-            <h3 class="text-ink-100 font-semibold text-lg">NHM-HMIS</h3>
-            <p class="text-ink-400 text-sm mb-2">Hospital / Health Management Information System</p>
-            <p class="font-mono text-xs text-ink-400 mb-4">Laravel &middot; PHP &middot; MySQL &middot; Sanctum &middot; PHPUnit</p>
-            <ul class="space-y-2 text-sm text-ink-300 leading-relaxed list-disc pl-4 marker:text-ink-600">
+          <article class="tilt glass glass-hover p-6">
+            <h3 class="text-lg font-semibold strong">NHM-HMIS</h3>
+            <p class="text-sm dim mb-2">Hospital / Health Management Information System</p>
+            <p class="font-mono text-xs dim mb-4">Laravel &middot; PHP &middot; MySQL &middot; Sanctum &middot; PHPUnit</p>
+            <ul class="bullets space-y-2 text-sm muted leading-relaxed">
               <li>Institution management, institution-facing portal, and role-based, facility-scoped access control.</li>
               <li>Inspection and observation workflows with full history tracking and status management; responsive history view with pagination, search, and export.</li>
               <li>Token-authenticated REST APIs for mobile access, with push notifications and scheduled inspection reminders.</li>
@@ -432,22 +603,22 @@
             </ul>
           </article>
 
-          <article class="border border-ink-800 rounded-lg p-6 hover:border-ink-600 transition-colors">
-            <h3 class="text-ink-100 font-semibold text-lg">TN-FD Knowledge Intelligence Platform</h3>
-            <p class="text-ink-400 text-sm mb-2">AI chat and document search</p>
-            <p class="font-mono text-xs text-ink-400 mb-4">Laravel &middot; Python &middot; FastAPI &middot; Qdrant &middot; Docker Compose</p>
-            <ul class="space-y-2 text-sm text-ink-300 leading-relaxed list-disc pl-4 marker:text-ink-600">
+          <article class="tilt glass glass-hover p-6">
+            <h3 class="text-lg font-semibold strong">TN-FD Knowledge Intelligence Platform</h3>
+            <p class="text-sm dim mb-2">AI chat and document search</p>
+            <p class="font-mono text-xs dim mb-4">Laravel &middot; Python &middot; FastAPI &middot; Qdrant &middot; Docker Compose</p>
+            <ul class="bullets space-y-2 text-sm muted leading-relaxed">
               <li>AI chat and document search using Retrieval-Augmented Generation (RAG) and LLM integration.</li>
               <li>Multi-agent natural-language-to-SQL pipeline for querying structured data in plain language.</li>
               <li>Laravel application connected to a Python FastAPI AI service, with role-based middleware and guest search limits.</li>
             </ul>
           </article>
 
-          <article class="border border-ink-800 rounded-lg p-6 hover:border-ink-600 transition-colors">
-            <h3 class="text-ink-100 font-semibold text-lg">Tender Intelligence / Agent AI</h3>
-            <p class="text-ink-400 text-sm mb-2">Tender search and AI-assisted analysis</p>
-            <p class="font-mono text-xs text-ink-400 mb-4">Laravel &middot; Python &middot; FastAPI &middot; Claude API</p>
-            <ul class="space-y-2 text-sm text-ink-300 leading-relaxed list-disc pl-4 marker:text-ink-600">
+          <article class="tilt glass glass-hover p-6">
+            <h3 class="text-lg font-semibold strong">Tender Intelligence / Agent AI</h3>
+            <p class="text-sm dim mb-2">Tender search and AI-assisted analysis</p>
+            <p class="font-mono text-xs dim mb-4">Laravel &middot; Python &middot; FastAPI &middot; Claude API</p>
+            <ul class="bullets space-y-2 text-sm muted leading-relaxed">
               <li>Tender search over scraped data with AI-assisted analysis through Claude API integration.</li>
               <li>Automated scraping workflows with run-status tracking.</li>
               <li>Keyword-based search and notifications over database-driven tender data.</li>
@@ -458,78 +629,78 @@
       </div>
 
       <!-- More projects -->
-      <div id="more-projects" class="mt-14 scroll-mt-20">
-        <h3 class="text-ink-100 font-semibold text-lg mb-4">More Projects</h3>
+      <div id="more-projects" class="mt-14 scroll-mt-24">
+        <h3 class="text-xl font-bold strong mb-4">More Projects</h3>
         <div class="grid sm:grid-cols-2 gap-4 mb-8">
-          <div class="border border-ink-800 rounded-lg p-5">
+          <div class="glass glass-hover p-5">
             <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
-              <h4 class="text-ink-100 font-semibold">NHM-TN PMIS</h4>
-              <span class="font-mono text-xs text-ink-400">Laravel &middot; PHP &middot; MySQL</span>
+              <h4 class="strong font-semibold">NHM-TN PMIS</h4>
+              <span class="font-mono text-xs dim">Laravel &middot; PHP &middot; MySQL</span>
             </div>
-            <p class="text-sm text-ink-300 leading-relaxed">Project and program management workflow modules with role-based administration, reporting, and monitoring dashboards.</p>
+            <p class="text-sm muted leading-relaxed">Project and program management workflow modules with role-based administration, reporting, and monitoring dashboards.</p>
           </div>
-          <div class="border border-ink-800 rounded-lg p-5">
+          <div class="glass glass-hover p-5">
             <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
-              <h4 class="text-ink-100 font-semibold">NHM Nippon</h4>
-              <span class="font-mono text-xs text-ink-400">CodeIgniter 4 &middot; PHP &middot; MySQL</span>
+              <h4 class="strong font-semibold">NHM Nippon</h4>
+              <span class="font-mono text-xs dim">CodeIgniter 4 &middot; PHP &middot; MySQL</span>
             </div>
-            <p class="text-sm text-ink-300 leading-relaxed">Administrative and user-management modules with reporting, plus mobile REST API updates, including changes for a security audit.</p>
+            <p class="text-sm muted leading-relaxed">Administrative and user-management modules with reporting, plus mobile REST API updates, including changes for a security audit.</p>
           </div>
         </div>
 
-        <h4 class="text-ink-300 font-medium text-sm mb-3">Client projects at Divinfosys</h4>
-        <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-ink-300 leading-relaxed">
-          <li><span class="text-ink-100 font-medium">AWS Scraper Tool</span> &mdash; Selenium and MongoDB web scraping for structured data collection.</li>
-          <li><span class="text-ink-100 font-medium">Amazon Seller Center</span> &mdash; Amazon SP API automation for listings, prices, and inventory.</li>
-          <li><span class="text-ink-100 font-medium">Eprice Track (Sathya Stores)</span> &mdash; real-time competitor price tracking.</li>
-          <li><span class="text-ink-100 font-medium">Navilu LMS</span> &mdash; CRM-based lead management with Zoho Bigin integration for a tiles company in Trichy.</li>
-          <li><span class="text-ink-100 font-medium">Project Blue</span> &mdash; Google Campaign API integration to manage and upload leads.</li>
-          <li><span class="text-ink-100 font-medium">Protocol Hero</span> &mdash; task assignment and protocol management using user input and location data.</li>
-          <li><span class="text-ink-100 font-medium">Shopyfest</span> &mdash; led backend development and Razorpay/PayPal integration for a live e-commerce platform.</li>
-          <li><span class="text-ink-100 font-medium">Bea Site (Bharath Electronics)</span> &mdash; front-end and back-end development for a responsive e-commerce platform.</li>
+        <h4 class="muted font-semibold text-sm mb-3">Client projects at Divinfosys</h4>
+        <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2.5 text-sm muted leading-relaxed">
+          <li><span class="strong font-medium">AWS Scraper Tool</span> &mdash; Selenium and MongoDB web scraping for structured data collection.</li>
+          <li><span class="strong font-medium">Amazon Seller Center</span> &mdash; Amazon SP API automation for listings, prices, and inventory.</li>
+          <li><span class="strong font-medium">Eprice Track (Sathya Stores)</span> &mdash; real-time competitor price tracking.</li>
+          <li><span class="strong font-medium">Navilu LMS</span> &mdash; CRM-based lead management with Zoho Bigin integration for a tiles company in Trichy.</li>
+          <li><span class="strong font-medium">Project Blue</span> &mdash; Google Campaign API integration to manage and upload leads.</li>
+          <li><span class="strong font-medium">Protocol Hero</span> &mdash; task assignment and protocol management using user input and location data.</li>
+          <li><span class="strong font-medium">Shopyfest</span> &mdash; led backend development and Razorpay/PayPal integration for a live e-commerce platform.</li>
+          <li><span class="strong font-medium">Bea Site (Bharath Electronics)</span> &mdash; front-end and back-end development for a responsive e-commerce platform.</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- AI & Intelligent Applications -->
-  <section id="ai" class="border-t border-ink-800" aria-labelledby="ai-title">
-    <div class="max-w-5xl mx-auto px-6 py-16 sm:py-20 fade-up">
-      <h2 id="ai-title" class="font-mono text-sm text-accent-500 mb-3">05 &middot; AI &amp; Intelligent Applications</h2>
-      <p class="text-ink-300 max-w-2xl mb-10">
+  <section id="ai" aria-labelledby="ai-title">
+    <div class="max-w-7xl mx-auto px-6 py-16 sm:py-20 fade-up">
+      <h2 id="ai-title" class="sec-title"><span class="eyebrow">05</span><span class="text-grad">AI &amp; Intelligent Applications</span></h2>
+      <p class="muted max-w-2xl mb-10">
         My AI work extends the same Laravel backend into Python/FastAPI services for Retrieval-Augmented
         Generation, LLM integration, and agent-based processing &mdash; I build the application layer around
         these models, not the models themselves.
       </p>
 
       <div class="grid lg:grid-cols-5 gap-8">
-        <div class="lg:col-span-2 border border-ink-800 rounded-lg p-6 flex flex-col justify-center">
-          <p class="font-mono text-xs text-ink-400 uppercase tracking-wide mb-4">Typical request flow</p>
+        <div class="lg:col-span-2 glass p-6 flex flex-col justify-center">
+          <p class="eyebrow mb-4">Typical request flow</p>
           <div class="space-y-2 text-sm">
-            <div class="border border-ink-700 rounded-md px-4 py-2.5 text-ink-100 bg-ink-900">Laravel Application</div>
-            <div class="text-ink-600 pl-2" aria-hidden="true">&darr;</div>
-            <div class="border border-ink-700 rounded-md px-4 py-2.5 text-ink-100 bg-ink-900">REST API</div>
-            <div class="text-ink-600 pl-2" aria-hidden="true">&darr;</div>
-            <div class="border border-ink-700 rounded-md px-4 py-2.5 text-ink-100 bg-ink-900">Python / FastAPI</div>
-            <div class="text-ink-600 pl-2" aria-hidden="true">&darr;</div>
-            <div class="border border-accent-600/50 rounded-md px-4 py-2.5 text-ink-100 bg-ink-900">RAG / LLM</div>
-            <div class="text-ink-600 pl-2" aria-hidden="true">&darr;</div>
-            <div class="border border-ink-700 rounded-md px-4 py-2.5 text-ink-100 bg-ink-900">Knowledge / Database</div>
+            <div class="glass px-4 py-2.5 strong" style="border-radius:.6rem">Laravel Application</div>
+            <div class="dim pl-2" aria-hidden="true">&darr;</div>
+            <div class="glass px-4 py-2.5 strong" style="border-radius:.6rem">REST API</div>
+            <div class="dim pl-2" aria-hidden="true">&darr;</div>
+            <div class="glass px-4 py-2.5 strong" style="border-radius:.6rem">Python / FastAPI</div>
+            <div class="dim pl-2" aria-hidden="true">&darr;</div>
+            <div class="glass px-4 py-2.5 strong" style="border-radius:.6rem; border-color: var(--border-hover)">RAG / LLM</div>
+            <div class="dim pl-2" aria-hidden="true">&darr;</div>
+            <div class="glass px-4 py-2.5 strong" style="border-radius:.6rem">Knowledge / Database</div>
           </div>
         </div>
 
         <div class="lg:col-span-3 space-y-4">
-          <div class="border border-ink-800 rounded-lg p-5">
-            <h3 class="text-ink-100 font-semibold mb-1">RAG chat and document search</h3>
-            <p class="text-sm text-ink-300 leading-relaxed">Retrieval-Augmented Generation with a Qdrant vector database and LLM integration in the TN-FD Knowledge Intelligence Platform.</p>
+          <div class="glass glass-hover p-5">
+            <h3 class="strong font-semibold mb-1">RAG chat and document search</h3>
+            <p class="text-sm muted leading-relaxed">Retrieval-Augmented Generation with a Qdrant vector database and LLM integration in the TN-FD Knowledge Intelligence Platform.</p>
           </div>
-          <div class="border border-ink-800 rounded-lg p-5">
-            <h3 class="text-ink-100 font-semibold mb-1">Natural-language-to-SQL</h3>
-            <p class="text-sm text-ink-300 leading-relaxed">A multi-agent pipeline that lets users query structured data in plain language.</p>
+          <div class="glass glass-hover p-5">
+            <h3 class="strong font-semibold mb-1">Natural-language-to-SQL</h3>
+            <p class="text-sm muted leading-relaxed">A multi-agent pipeline that lets users query structured data in plain language.</p>
           </div>
-          <div class="border border-ink-800 rounded-lg p-5">
-            <h3 class="text-ink-100 font-semibold mb-1">LLM API and agent-based analysis</h3>
-            <p class="text-sm text-ink-300 leading-relaxed">Claude API integration and agent-based processing over scraped tender data in Tender Intelligence / Agent AI.</p>
+          <div class="glass glass-hover p-5">
+            <h3 class="strong font-semibold mb-1">LLM API and agent-based analysis</h3>
+            <p class="text-sm muted leading-relaxed">Claude API integration and agent-based processing over scraped tender data in Tender Intelligence / Agent AI.</p>
           </div>
         </div>
       </div>
@@ -537,96 +708,96 @@
   </section>
 
   <!-- AI Tools & Development Workflow -->
-  <section id="ai-tools" class="border-t border-ink-800" aria-labelledby="ai-tools-title">
-    <div class="max-w-5xl mx-auto px-6 py-16 sm:py-20 fade-up">
-      <h2 id="ai-tools-title" class="font-mono text-sm text-accent-500 mb-3">06 &middot; AI Tools &amp; Development Workflow</h2>
-      <p class="text-ink-300 max-w-2xl mb-3">
+  <section id="ai-tools" aria-labelledby="ai-tools-title">
+    <div class="max-w-7xl mx-auto px-6 py-16 sm:py-20 fade-up">
+      <h2 id="ai-tools-title" class="sec-title"><span class="eyebrow">06</span><span class="text-grad">AI Tools &amp; Development Workflow</span></h2>
+      <p class="muted max-w-2xl mb-3">
         AI-assisted development tools I use in my software development workflow &mdash; for code generation,
         debugging, refactoring, technical research and documentation, UI implementation, and agent-based
         workflows.
       </p>
-      <p class="text-ink-400 text-sm max-w-2xl mb-10">
+      <p class="dim text-sm max-w-2xl mb-10">
         These are separate from the AI technologies I build into applications (RAG, LLM integration,
         natural-language-to-SQL), covered in the section above.
       </p>
 
       <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-        <li class="border border-ink-800 rounded-lg p-5 flex flex-col hover:border-ink-600 transition-colors">
+        <li class="tilt glass glass-hover p-5 flex flex-col">
           <div class="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 class="text-ink-100 font-semibold">Claude</h3>
-            <span class="font-mono text-xs text-ink-400">Anthropic</span>
+            <h3 class="strong font-semibold">Claude</h3>
+            <span class="font-mono text-xs dim">Anthropic</span>
           </div>
-          <p class="font-mono text-xs text-ink-400 mt-1 mb-3">AI assistant</p>
-          <p class="text-sm text-ink-300 leading-relaxed flex-1">
+          <p class="font-mono text-xs dim mt-1 mb-3">AI assistant</p>
+          <p class="text-sm muted leading-relaxed flex-1">
             Code generation and implementation help, debugging and error analysis, refactoring, and
             agent-based coding workflows.
-            <span class="block mt-2 text-ink-400">Separately, Tender Intelligence integrates the Claude API as an application feature.</span>
+            <span class="block mt-2 dim">Separately, Tender Intelligence integrates the Claude API as an application feature.</span>
           </p>
-          <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" aria-label="Claude official website (opens in a new tab)" class="mt-4 inline-flex items-center gap-1 text-sm text-accent-500 hover:text-ink-100 transition-colors">
-            claude.ai <span aria-hidden="true">&nearr;</span>
+          <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" aria-label="Claude official website (opens in a new tab)" class="mt-4 inline-flex items-center gap-1 text-sm link-plain w-fit">
+            claude.ai <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
           </a>
         </li>
 
-        <li class="border border-ink-800 rounded-lg p-5 flex flex-col hover:border-ink-600 transition-colors">
+        <li class="tilt glass glass-hover p-5 flex flex-col">
           <div class="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 class="text-ink-100 font-semibold">ChatGPT</h3>
-            <span class="font-mono text-xs text-ink-400">OpenAI</span>
+            <h3 class="strong font-semibold">ChatGPT</h3>
+            <span class="font-mono text-xs dim">OpenAI</span>
           </div>
-          <p class="font-mono text-xs text-ink-400 mt-1 mb-3">AI assistant</p>
-          <p class="text-sm text-ink-300 leading-relaxed flex-1">
+          <p class="font-mono text-xs dim mt-1 mb-3">AI assistant</p>
+          <p class="text-sm muted leading-relaxed flex-1">
             Technical research, documentation drafting, and debugging and error-analysis support.
           </p>
-          <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label="ChatGPT official website (opens in a new tab)" class="mt-4 inline-flex items-center gap-1 text-sm text-accent-500 hover:text-ink-100 transition-colors">
-            chatgpt.com <span aria-hidden="true">&nearr;</span>
+          <a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer" aria-label="ChatGPT official website (opens in a new tab)" class="mt-4 inline-flex items-center gap-1 text-sm link-plain w-fit">
+            chatgpt.com <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
           </a>
         </li>
 
-        <li class="border border-ink-800 rounded-lg p-5 flex flex-col hover:border-ink-600 transition-colors">
+        <li class="tilt glass glass-hover p-5 flex flex-col">
           <div class="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 class="text-ink-100 font-semibold">Gemini</h3>
-            <span class="font-mono text-xs text-ink-400">Google</span>
+            <h3 class="strong font-semibold">Gemini</h3>
+            <span class="font-mono text-xs dim">Google</span>
           </div>
-          <p class="font-mono text-xs text-ink-400 mt-1 mb-3">AI assistant</p>
-          <p class="text-sm text-ink-300 leading-relaxed flex-1">
+          <p class="font-mono text-xs dim mt-1 mb-3">AI assistant</p>
+          <p class="text-sm muted leading-relaxed flex-1">
             Technical research, comparing implementation approaches, and UI/UX implementation ideas.
           </p>
-          <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" aria-label="Gemini official website (opens in a new tab)" class="mt-4 inline-flex items-center gap-1 text-sm text-accent-500 hover:text-ink-100 transition-colors">
-            gemini.google.com <span aria-hidden="true">&nearr;</span>
+          <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" aria-label="Gemini official website (opens in a new tab)" class="mt-4 inline-flex items-center gap-1 text-sm link-plain w-fit">
+            gemini.google.com <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
           </a>
         </li>
 
-        <li class="border border-ink-800 rounded-lg p-5 flex flex-col hover:border-ink-600 transition-colors">
+        <li class="tilt glass glass-hover p-5 flex flex-col">
           <div class="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 class="text-ink-100 font-semibold">Google Antigravity</h3>
-            <span class="font-mono text-xs text-ink-400">Google</span>
+            <h3 class="strong font-semibold">Google Antigravity</h3>
+            <span class="font-mono text-xs dim">Google</span>
           </div>
-          <p class="font-mono text-xs text-ink-400 mt-1 mb-3">Agentic development platform</p>
-          <p class="text-sm text-ink-300 leading-relaxed flex-1">
+          <p class="font-mono text-xs dim mt-1 mb-3">Agentic development platform</p>
+          <p class="text-sm muted leading-relaxed flex-1">
             Agent-based development workflows and AI-assisted coding.
           </p>
-          <a href="https://antigravity.google" target="_blank" rel="noopener noreferrer" aria-label="Google Antigravity official website (opens in a new tab)" class="mt-4 inline-flex items-center gap-1 text-sm text-accent-500 hover:text-ink-100 transition-colors">
-            antigravity.google <span aria-hidden="true">&nearr;</span>
+          <a href="https://antigravity.google" target="_blank" rel="noopener noreferrer" aria-label="Google Antigravity official website (opens in a new tab)" class="mt-4 inline-flex items-center gap-1 text-sm link-plain w-fit">
+            antigravity.google <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
           </a>
         </li>
 
-        <li class="border border-ink-800 rounded-lg p-5 flex flex-col hover:border-ink-600 transition-colors">
+        <li class="tilt glass glass-hover p-5 flex flex-col">
           <div class="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 class="text-ink-100 font-semibold">Groq</h3>
-            <span class="font-mono text-xs text-ink-400">Groq</span>
+            <h3 class="strong font-semibold">Groq</h3>
+            <span class="font-mono text-xs dim">Groq</span>
           </div>
-          <p class="font-mono text-xs text-ink-400 mt-1 mb-3">Fast AI inference platform</p>
-          <p class="text-sm text-ink-300 leading-relaxed flex-1">
+          <p class="font-mono text-xs dim mt-1 mb-3">Fast AI inference platform</p>
+          <p class="text-sm muted leading-relaxed flex-1">
             Fast-inference AI platform for quick code and text generation during development.
-            <span class="block mt-2 text-ink-400">Separately, TN-FD's FastAPI service can call Groq-hosted models through the Groq API.</span>
+            <span class="block mt-2 dim">Separately, TN-FD's FastAPI service can call Groq-hosted models through the Groq API.</span>
           </p>
-          <a href="https://groq.com" target="_blank" rel="noopener noreferrer" aria-label="Groq official website (opens in a new tab)" class="mt-4 inline-flex items-center gap-1 text-sm text-accent-500 hover:text-ink-100 transition-colors">
-            groq.com <span aria-hidden="true">&nearr;</span>
+          <a href="https://groq.com" target="_blank" rel="noopener noreferrer" aria-label="Groq official website (opens in a new tab)" class="mt-4 inline-flex items-center gap-1 text-sm link-plain w-fit">
+            groq.com <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
           </a>
         </li>
 
-        <li class="border border-dashed border-ink-700 rounded-lg p-5 flex flex-col justify-center">
-          <p class="text-sm text-ink-400 leading-relaxed">
+        <li class="rounded-2xl p-5 flex flex-col justify-center" style="border: 1px dashed var(--border-hover)">
+          <p class="text-sm dim leading-relaxed">
             Independent use only. These tools are built and owned by their respective companies and are used in
             my workflow; no partnership, certification, or endorsement is implied. Product names are trademarks
             of their owners.
@@ -638,86 +809,93 @@
   </section>
 
   <!-- Certifications -->
-  <section id="certifications" class="border-t border-ink-800" aria-labelledby="cert-title">
-    <div class="max-w-5xl mx-auto px-6 py-16 sm:py-20 fade-up">
-      <h2 id="cert-title" class="font-mono text-sm text-accent-500 mb-3">07 &middot; Certifications &amp; Education</h2>
-      <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mb-10">
-        <a href="https://academy.openai.com/public/certificate/f6vsgyu382" target="_blank" rel="noopener noreferrer" class="block border border-ink-800 rounded-lg p-5 hover:border-ink-600 transition-colors">
+  <section id="certifications" aria-labelledby="cert-title">
+    <div class="max-w-7xl mx-auto px-6 py-16 sm:py-20 fade-up">
+      <h2 id="cert-title" class="sec-title"><span class="eyebrow">07</span><span class="text-grad">Certifications &amp; Education</span></h2>
+      <div class="grid sm:grid-cols-2 gap-4 max-w-3xl mb-10">
+        <a href="https://academy.openai.com/public/certificate/f6vsgyu382" target="_blank" rel="noopener noreferrer" class="glass glass-hover block p-5">
           <div class="flex items-center justify-between gap-2">
-            <h3 class="text-ink-100 font-semibold">AI Foundations</h3>
-            <span class="font-mono text-xs text-accent-500">Verify &rarr;</span>
+            <h3 class="strong font-semibold">AI Foundations</h3>
+            <span class="font-mono text-xs strong inline-flex items-center gap-1">Verify <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
           </div>
-          <p class="text-ink-400 text-sm mt-1">OpenAI Academy &middot; August 2026</p>
+          <p class="dim text-sm mt-1">OpenAI Academy &middot; August 2026</p>
         </a>
-        <div class="border border-ink-800 rounded-lg p-5">
-          <h3 class="text-ink-100 font-semibold">Claude 101</h3>
-          <p class="text-ink-400 text-sm mt-1">Anthropic &middot; August 2026</p>
+        <div class="glass p-5">
+          <h3 class="strong font-semibold">Claude 101</h3>
+          <p class="dim text-sm mt-1">Anthropic &middot; August 2026</p>
         </div>
       </div>
 
-      <h2 class="font-mono text-sm text-accent-500 mb-3">Education</h2>
-      <div class="max-w-2xl">
-        <div class="border border-ink-800 rounded-lg p-5 mb-3">
-          <h3 class="text-ink-100 font-semibold">B.Tech in Information Technology</h3>
-          <p class="text-ink-400 text-sm mt-1">SCSVMV University, Kanchipuram &middot; 2013&ndash;2017 &middot; GPA: 7.4</p>
+      <h3 class="eyebrow">Education</h3>
+      <div class="max-w-3xl">
+        <div class="glass p-5 mb-3">
+          <h4 class="strong font-semibold">B.Tech in Information Technology</h4>
+          <p class="dim text-sm mt-1">SCSVMV University, Kanchipuram &middot; 2013&ndash;2017 &middot; GPA: 7.4</p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-2 text-xs text-ink-400">
+        <div class="flex flex-col sm:flex-row gap-2 text-xs dim">
           <p>Class 12 &mdash; State Board &mdash; 2012 &mdash; 70%</p>
           <span class="hidden sm:inline" aria-hidden="true">&middot;</span>
           <p>Class 10 &mdash; State Board &mdash; 2010 &mdash; 90.8%</p>
         </div>
       </div>
 
-      <h2 class="font-mono text-sm text-accent-500 mb-3 mt-10">Recognition</h2>
-      <div class="max-w-2xl space-y-1.5 text-sm text-ink-300">
-        <p><span class="text-ink-100 font-medium">Good Developer Recognition</span> &mdash; Technical Integration Support &middot; May 2024</p>
-        <p><span class="text-ink-100 font-medium">Good Job Award</span> &mdash; Amazon Seller Account Handling &middot; May 2023</p>
+      <h3 class="eyebrow mt-10">Recognition</h3>
+      <div class="max-w-3xl space-y-1.5 text-sm muted">
+        <p><span class="strong font-medium">Good Developer Recognition</span> &mdash; Technical Integration Support &middot; May 2024</p>
+        <p><span class="strong font-medium">Good Job Award</span> &mdash; Amazon Seller Account Handling &middot; May 2023</p>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="border-t border-ink-800" aria-labelledby="contact-title">
-    <div class="max-w-5xl mx-auto px-6 py-16 sm:py-24 fade-up">
-      <h2 id="contact-title" class="font-mono text-sm text-accent-500 mb-3">08 &middot; Contact</h2>
-      <p class="text-2xl sm:text-3xl font-bold text-white max-w-xl leading-snug">
-        Open to conversations about full-stack development, backend engineering, and mobile applications.
-      </p>
-      <div class="mt-8 flex flex-wrap gap-3">
-        <a href="mailto:shakthivel801@gmail.com" class="inline-flex items-center gap-2 bg-accent-600 hover:bg-accent-500 text-white text-sm font-medium px-4 py-2.5 rounded-md transition-colors">
-          Email Me
-        </a>
-        <a href="Shakthivel_Updated_Resume.pdf" download class="inline-flex items-center gap-2 border border-ink-600 hover:border-accent-500 text-ink-100 text-sm font-medium px-4 py-2.5 rounded-md transition-colors">
-          Download Resume
-        </a>
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="max-w-7xl mx-auto px-6 py-16 sm:py-24 fade-up">
+      <div class="glass p-8 sm:p-12">
+        <h2 id="contact-title" class="sec-title mb-4"><span class="eyebrow">08</span><span class="text-grad">Contact</span></h2>
+        <p class="text-2xl sm:text-3xl font-bold strong max-w-2xl leading-snug">
+          Open to conversations about full-stack development, backend engineering, and mobile applications.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="mailto:shakthivel801@gmail.com" class="btn btn-primary"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Email Me</a>
+          <a href="Shakthivel_Updated_Resume.pdf" download class="btn btn-glass"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Download Resume</a>
+        </div>
+        <dl class="mt-10 grid sm:grid-cols-[8rem_1fr] gap-x-6 gap-y-3 text-sm max-w-2xl">
+          <dt class="eyebrow !mb-0 pt-0.5">Email</dt>
+          <dd><a href="mailto:shakthivel801@gmail.com" class="link-plain break-all">shakthivel801@gmail.com</a></dd>
+          <dt class="eyebrow !mb-0 pt-0.5">Phone</dt>
+          <dd><a href="tel:+916381892483" class="link-plain">+91 6381892483</a></dd>
+          <dt class="eyebrow !mb-0 pt-0.5">Portfolio</dt>
+          <dd><a href="https://shakthivel-spec.github.io/my-profile/" class="link-plain break-all">shakthivel-spec.github.io/my-profile</a></dd>
+          <dt class="eyebrow !mb-0 pt-0.5">GitHub</dt>
+          <dd><a href="https://github.com/Shakthivel-spec" target="_blank" rel="noopener noreferrer" class="link-plain break-all">github.com/Shakthivel-spec</a></dd>
+          <dt class="eyebrow !mb-0 pt-0.5">LinkedIn</dt>
+          <dd><a href="https://linkedin.com/in/shakthi-vel-078891142" target="_blank" rel="noopener noreferrer" class="link-plain break-all">linkedin.com/in/shakthi-vel-078891142</a></dd>
+        </dl>
       </div>
-      <dl class="mt-10 grid sm:grid-cols-[8rem_1fr] gap-x-6 gap-y-3 text-sm max-w-2xl">
-        <dt class="text-ink-400 font-mono text-xs uppercase tracking-wide pt-0.5">Email</dt>
-        <dd><a href="mailto:shakthivel801@gmail.com" class="text-ink-100 hover:text-accent-500 break-all">shakthivel801@gmail.com</a></dd>
-        <dt class="text-ink-400 font-mono text-xs uppercase tracking-wide pt-0.5">Phone</dt>
-        <dd><a href="tel:+916381892483" class="text-ink-100 hover:text-accent-500">+91 6381892483</a></dd>
-        <dt class="text-ink-400 font-mono text-xs uppercase tracking-wide pt-0.5">Portfolio</dt>
-        <dd><a href="https://shakthivel-spec.github.io/my-profile/" class="text-ink-100 hover:text-accent-500 break-all">shakthivel-spec.github.io/my-profile</a></dd>
-        <dt class="text-ink-400 font-mono text-xs uppercase tracking-wide pt-0.5">GitHub</dt>
-        <dd><a href="https://github.com/Shakthivel-spec" target="_blank" rel="noopener noreferrer" class="text-ink-100 hover:text-accent-500 break-all">github.com/Shakthivel-spec</a></dd>
-        <dt class="text-ink-400 font-mono text-xs uppercase tracking-wide pt-0.5">LinkedIn</dt>
-        <dd><a href="https://linkedin.com/in/shakthi-vel-078891142" target="_blank" rel="noopener noreferrer" class="text-ink-100 hover:text-accent-500 break-all">linkedin.com/in/shakthi-vel-078891142</a></dd>
-      </dl>
     </div>
   </section>
 
 </main>
 
-<footer class="border-t border-ink-800">
-  <div class="max-w-5xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-ink-400">
+<footer class="divider">
+  <div class="max-w-7xl mx-auto px-6 py-8 pb-24 sm:pb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs dim">
     <p>&copy; <span id="year"></span> Shakthivel. Built with HTML, Tailwind CSS, and vanilla JavaScript.</p>
-    <a href="#top" class="hover:text-ink-300 transition-colors">Back to top &uarr;</a>
+    <a href="#top" class="hover:opacity-80">Back to top &uarr;</a>
   </div>
 </footer>
+
+<!-- Theme switcher -->
+<div class="theme-switch glass" role="group" aria-label="Color theme">
+  <span class="theme-label">Theme</span>
+  <button type="button" class="swatch swatch-titanium" data-theme-set="titanium" aria-pressed="true" aria-label="Titanium and Obsidian theme (dark)" title="Titanium &amp; Obsidian"></button>
+  <button type="button" class="swatch swatch-light" data-theme-set="light" aria-pressed="false" aria-label="Platinum and Onyx theme (light)" title="Platinum &amp; Onyx"></button>
+  <button type="button" class="swatch swatch-gold" data-theme-set="gold" aria-pressed="false" aria-label="Carbon and Champagne Gold theme" title="Carbon &amp; Champagne Gold"></button>
+</div>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  /* ----- Mobile menu ----- */
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   const iconOpen = document.getElementById('menuIconOpen');
@@ -729,7 +907,6 @@
     iconClose.classList.add('hidden');
     menuBtn.setAttribute('aria-expanded', 'false');
   }
-
   menuBtn.addEventListener('click', () => {
     const isHidden = mobileMenu.classList.contains('hidden');
     mobileMenu.classList.toggle('hidden');
@@ -737,11 +914,7 @@
     iconClose.classList.toggle('hidden');
     menuBtn.setAttribute('aria-expanded', String(isHidden));
   });
-
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
+  mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
       closeMenu();
@@ -749,6 +922,20 @@
     }
   });
 
+  /* ----- Theme switcher ----- */
+  const themeColors = { titanium: '#09090b', light: '#f4f4f5', gold: '#0c0a08' };
+  const swatches = document.querySelectorAll('[data-theme-set]');
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  function applyTheme(name, persist) {
+    document.documentElement.setAttribute('data-theme', name);
+    swatches.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.themeSet === name)));
+    if (themeMeta) themeMeta.setAttribute('content', themeColors[name]);
+    if (persist) { try { localStorage.setItem('theme', name); } catch (e) {} }
+  }
+  applyTheme(document.documentElement.getAttribute('data-theme') || 'titanium', false);
+  swatches.forEach(b => b.addEventListener('click', () => applyTheme(b.dataset.themeSet, true)));
+
+  /* ----- Scroll reveal ----- */
   const revealTargets = document.querySelectorAll('.fade-up');
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
@@ -759,11 +946,20 @@
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
     revealTargets.forEach(el => observer.observe(el));
   } else {
     revealTargets.forEach(el => el.classList.add('is-visible'));
   }
+
+  /* ----- Subtle 3D tilt (skipped on touch and with reduced motion) ----- */
+  window.addEventListener('load', () => {
+    const canTilt = window.VanillaTilt &&
+      window.matchMedia('(hover: hover)').matches &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!canTilt) return;
+    VanillaTilt.init(document.querySelectorAll('.ws'), { max: 7, speed: 500, perspective: 1200, scale: 1.01 });
+    VanillaTilt.init(document.querySelectorAll('.tilt:not(.ws)'), { max: 3, speed: 500, perspective: 1400 });
+  });
 </script>
 
 </body>
