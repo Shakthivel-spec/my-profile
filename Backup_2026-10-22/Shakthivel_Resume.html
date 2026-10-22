@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shakthivel - Resume</title>
+<style>
+  @page { size: A4; margin: 10mm 15mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+    font-size: 10.1pt;
+    line-height: 1.32;
+    color: #1a1a1a;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px 20px;
+  }
+  h1 {
+    font-size: 20pt;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0 0 2px 0;
+    font-weight: 700;
+    color: #14293d;
+  }
+  .role-line {
+    text-align: center;
+    font-size: 10.6pt;
+    font-weight: 600;
+    color: #1a5276;
+    margin-bottom: 4px;
+  }
+  .contact {
+    text-align: center;
+    font-size: 9.1pt;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  .contact a { color: #1a5276; text-decoration: none; }
+  .contact span.sep { margin: 0 8px; color: #999; }
+  h2 {
+    font-size: 10.8pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #14293d;
+    border-bottom: 1.4px solid #14293d;
+    padding-bottom: 1px;
+    margin: 9px 0 5px 0;
+  }
+  .summary { text-align: justify; margin-bottom: 1px; }
+  .entry { margin-bottom: 6px; }
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 10.6pt;
+  }
+  .entry-sub {
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+    font-size: 9.7pt;
+    color: #333;
+    margin-bottom: 3px;
+  }
+  ul { margin: 1px 0 0 0; padding-left: 17px; }
+  li { margin-bottom: 1.5px; }
+  table.skills { width: 100%; border-collapse: collapse; }
+  table.skills td { padding: 1px 6px 1px 0; vertical-align: top; font-size: 9.9pt; }
+  table.skills td.label { font-weight: 700; width: 118px; white-space: nowrap; }
+  .project { margin: 4px 0 5px 17px; }
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: 700;
+    font-size: 10.2pt;
+  }
+  .project-tech {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 9pt;
+    color: #444;
+    margin-bottom: 1px;
+  }
+  table.edu { width: 100%; border-collapse: collapse; margin-top: 1px; }
+  table.edu td { padding: 1px 0; font-size: 9.7pt; vertical-align: top; }
+  table.edu td.year { width: 90px; color: #333; }
+  table.edu td.right { text-align: right; white-space: nowrap; color: #333; }
+  table.certs { width: 100%; border-collapse: collapse; margin-top: 1px; }
+  table.certs td { padding: 1px 0; font-size: 9.7pt; vertical-align: top; }
+  table.certs td.right { text-align: right; white-space: nowrap; color: #333; }
+  .awards li { font-size: 9.7pt; }
+</style>
+</head>
+<body>
+
+<h1>SHAKTHIVEL</h1>
+<div class="role-line">Laravel / PHP Developer</div>
+<div class="contact">
+  <a href="https://shakthivel-spec.github.io/my-profile/">Portfolio: shakthivel-spec.github.io/my-profile</a>
+  <span class="sep">|</span>
+  <a href="https://github.com/Shakthivel-spec">GitHub: github.com/Shakthivel-spec</a>
+  <br>
+  <a href="https://www.linkedin.com/in/shakthi-vel-078891142">linkedin.com/in/shakthi-vel-078891142</a>
+  <span class="sep">|</span>
+  <a href="mailto:shakthivel801@gmail.com">shakthivel801@gmail.com</a>
+  <span class="sep">|</span>
+  +91 6381892483
+</div>
+
+<h2>Summary</h2>
+<div class="summary">
+Laravel / PHP Developer with 4+ years of experience delivering enterprise and e-governance web applications across financial management, healthcare information systems, and AI-integrated platforms. Architected fund-flow and hospital administration systems handling multi-level approval workflows, role-based access control, and MIS reporting. Extended recent work into Python/FastAPI services for Retrieval-Augmented Generation (RAG), LLM integration, and database-driven intelligence tools. Comfortable owning a feature from database schema through API design to production UI.
+</div>
+
+<h2>Work Experience</h2>
+
+<div class="entry">
+  <div class="entry-header">
+    <span>Software Developer &ndash; In22 Labs (Unwind Learning Labs Pvt Ltd)</span>
+    <span>Jan 2026 &ndash; Present</span>
+  </div>
+  <div class="entry-sub">
+    <span>Chennai, Tamil Nadu</span>
+  </div>
+  <ul>
+    <li>Deliver e-governance web applications spanning financial management, healthcare administration, and AI-integrated intelligence platforms across six systems.</li>
+    <li>Work across the full stack: Laravel/PHP/MySQL for core application systems, Python/FastAPI for AI-processing services.</li>
+  </ul>
+
+  <div class="project">
+    <div class="project-header"><span>NHM Finance / SNA SPARSH &ndash; Fund Flow Management System</span></div>
+    <div class="project-tech">Laravel, PHP, MySQL</div>
+    <ul>
+      <li>Architected a fund-flow management system covering three core workflow types: budget allocation, reallocation, and withdrawal.</li>
+      <li>Produced MIS reporting across four organizational levels &mdash; Treasury, HOA, Agency, and District &mdash; feeding real-time financial dashboards.</li>
+      <li>Implemented multi-stage approval chains (ROP Approval, Mother Sanction) and beneficiary payment processing.</li>
+      <li>Rolled out role-based user management, bulk upload, and data validation to support high-volume financial workflows.</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="project-header"><span>NHM-HMIS &ndash; Hospital / Health Management Information System</span></div>
+    <ul>
+      <li>Stood up institution management, an institution-facing user portal, and role-based access control from the ground up.</li>
+      <li>Engineered inspection and observation workflows, including full inspection-history tracking and status management.</li>
+      <li>Redesigned the inspection History Details view into a full-width, responsive table &mdash; improved column layout, added status badges and a sticky header, while preserving pagination, search, and export.</li>
+      <li>Resolved a duplicate-record bug in history creation and fixed 403 Forbidden errors on inspection attachment images by correcting storage and access-permission handling.</li>
+      <li>Shipped institution-wise dashboards, admin configuration, and master-data modules.</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="project-header"><span>TN-FD Knowledge Intelligence Platform</span></div>
+    <div class="project-tech">Laravel, Python, FastAPI</div>
+    <ul>
+      <li>Developed an AI chat and document-search platform combining Retrieval-Augmented Generation (RAG) with LLM integration.</li>
+      <li>Added SQL/database intelligence that lets users query structured data using natural language.</li>
+      <li>Connected a Laravel front-end/API layer to a Python FastAPI service handling AI processing.</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="project-header"><span>Tender Intelligence / Agent AI</span></div>
+    <div class="project-tech">Laravel, Python, FastAPI</div>
+    <ul>
+      <li>Created a tender search platform with AI-assisted analysis over scraped tender data.</li>
+      <li>Automated scraping workflows with status tracking for continuous tender data collection.</li>
+      <li>Layered agent-based AI processing on top of database-driven tender intelligence.</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="project-header"><span>NHM-TN PMIS</span></div>
+    <div class="project-tech">Laravel, PHP, MySQL</div>
+    <ul>
+      <li>Set up project/program management workflow modules with role-based user administration.</li>
+      <li>Included reporting and dashboards to support ongoing program monitoring.</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="project-header"><span>NHM Nippon</span></div>
+    <div class="project-tech">Laravel, PHP, MySQL</div>
+    <ul>
+      <li>Delivered administrative and user-management modules for a workflow-based application.</li>
+      <li>Added reporting features to support administrative oversight.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="entry">
+  <div class="entry-header">
+    <span>Web Developer &ndash; Divinfosys</span>
+    <span>Aug 2021 &ndash; Nov 2025</span>
+  </div>
+  <div class="entry-sub">
+    <span>Madurai, Tamil Nadu</span>
+  </div>
+  <ul>
+    <li>Engineered full-stack web applications using Laravel and React across multiple concurrent client projects.</li>
+    <li>Led a development team, owning task allocation and delivery timelines to keep projects on schedule.</li>
+    <li>Architected RESTful APIs that connected internal tools with third-party platforms.</li>
+    <li>Partnered with design, QA, and product teams to turn requirements into shipped features.</li>
+    <li>Maintained version-controlled codebases in Git with consistent branching and code-review practices.</li>
+    <li><strong>AWS Scraper Tool</strong> &ndash; web scraping tool using Selenium and MongoDB for structured data collection.</li>
+    <li><strong>Amazon Seller Center</strong> &ndash; automation tool using the Amazon SP API to manage listings, prices, and inventory.</li>
+    <li><strong>Eprice Track (Sathya Stores)</strong> &ndash; real-time price tracking tool to monitor competitors and optimize pricing.</li>
+    <li><strong>Navilu LMS</strong> &ndash; custom CRM-based lead management system (Zoho Bigin integration) for a branded tiles company in Trichy.</li>
+    <li><strong>Project Blue</strong> &ndash; integrated Google Campaign APIs to manage and upload leads for digital marketing campaigns.</li>
+    <li><strong>Protocol Hero</strong> &ndash; smart task assignment and protocol management system based on user input and location data.</li>
+    <li><strong>Shopyfest</strong> &ndash; led backend development and payment gateway integration (Razorpay, PayPal) for a live e-commerce platform.</li>
+    <li><strong>Bea Site (Bharath Electronics)</strong> &ndash; front-end and back-end development for an e-commerce platform with responsive UI.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry-header">
+    <span>Retail Snacks Distribution Partner &ndash; Self-employed</span>
+    <span>May 2017 &ndash; Aug 2021</span>
+  </div>
+  <ul>
+    <li>Founded and ran a retail snacks distribution business across four districts in Tamil Nadu.</li>
+    <li>Owned vendor relationships, inventory planning, and logistics end-to-end.</li>
+    <li>Grew the business through regional networking and customer service before transitioning into web development.</li>
+  </ul>
+</div>
+
+<h2>Skills</h2>
+<table class="skills">
+  <tr><td class="label">Languages</td><td>PHP, Python, JavaScript, HTML, CSS, SQL</td></tr>
+  <tr><td class="label">Frameworks</td><td>Laravel, FastAPI, React (beginner), Bootstrap, jQuery, Alpine.js, Tailwind CSS</td></tr>
+  <tr><td class="label">Databases</td><td>MySQL</td></tr>
+  <tr><td class="label">Tools</td><td>Git, GitHub, Webpack, NPM, Visual Studio Code</td></tr>
+  <tr><td class="label">Other</td><td>REST API Integration, RAG &amp; LLM Integration, Role-Based Access Control, Workflow &amp; Approval Systems, Reporting &amp; MIS Dashboards, Data Validation, Payment Gateway Integration (Razorpay, PayPal)</td></tr>
+</table>
+
+<h2>Certifications</h2>
+<table class="certs">
+  <tr>
+    <td><strong>AI Foundations</strong> &ndash; OpenAI Academy</td>
+    <td class="right">Aug 2026</td>
+  </tr>
+  <tr>
+    <td><strong>Claude 101</strong> &ndash; Anthropic</td>
+    <td class="right">Aug 2026</td>
+  </tr>
+</table>
+
+<h2>Education</h2>
+<table class="edu">
+  <tr>
+    <td class="year">2013 &ndash; 2017</td>
+    <td>B.Tech in Information Technology, <strong>SCSVMV University</strong>, Kanchipuram</td>
+    <td class="right">GPA: 7.4</td>
+  </tr>
+  <tr>
+    <td class="year">2012</td>
+    <td>Class 12th, <strong>State Board</strong></td>
+    <td class="right">70%</td>
+  </tr>
+  <tr>
+    <td class="year">2010</td>
+    <td>Class 10th, <strong>State Board</strong></td>
+    <td class="right">90.8%</td>
+  </tr>
+</table>
+
+<h2>Awards &amp; Recognition</h2>
+<ul class="awards">
+  <li><strong>Good Job Award</strong> &ndash; Amazon Seller Account Handling (May 2023)</li>
+  <li><strong>Good Developer Recognition</strong> &ndash; Technical Integration Support (May 2024)</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+SHAKTHIVEL - OPTIMIZED RESUME: ATS ANALYSIS AND EVIDENCE AUDIT
+Generated: 21 Oct 2026
+Files: Shakthivel_Optimized_Resume.docx / Shakthivel_Optimized_Resume.pdf
+(The earlier Shakthivel_Updated_Resume.* files are unchanged for comparison.)
+
+READ THIS FIRST - HOW TO INTERPRET THE SCORES
+All scores are MANUAL ESTIMATES against a rubric I defined (weights in section 3).
+The resume was NOT run through any commercial ATS, and no job description was
+supplied, so NO job-specific keyword match score is reported (B = not assessed).
+The 95+ target is NOT reached on overall quality (about 90). It is nearly reached on
+general ATS compatibility (about 94). Section 3 explains exactly what is holding the
+rest back. I did not raise scores to hit the target.
+
+
+======================================================================
+1. HOW THE CONTENT WAS VERIFIED (EVIDENCE BASE)
+======================================================================
+Sources used:
+  (a) Your original resume and your two prompts.
+  (b) Your own code in the local git repositories under C:\laragon\www
+      (nhm_finance, nhm_hmis_app, nhm-nippon, tn_fd, ai-agent). I counted only commits
+      by author "shakthivel" and checked line ownership with git blame, because these
+      are team repositories and a file existing in a repo does not mean you wrote it.
+  Not counted: commits by "Sridhar". They use the same mailbox (tech.sr@in22labs.com)
+  but a different name, so I could not be sure they are yours. If they ARE yours, more
+  can be claimed (see section 6).
+Not available to me (so original wording kept, nothing added):
+  Team22 HRMS source code (the Team22 section is written from your description),
+  Divinfosys client projects, NHM-TN PMIS (no local repository found).
+
+CORRECTION MADE - PLEASE CONFIRM
+  NHM Nippon: your resume listed "Laravel, PHP, MySQL". The repository
+  (composer.json: codeigniter4/framework, MySQLi driver) is CodeIgniter 4, and your
+  commits there are mobile API changes (including security-audit changes). The resume
+  now says "CodeIgniter 4, PHP, MySQL". If a Laravel version of NHM Nippon exists that
+  you worked on, tell me and I will revert this.
+
+
+======================================================================
+2. KEYWORD EVIDENCE AUDIT (what you asked me to check)
+======================================================================
+Keyword / skill            Verdict          Evidence (your authored code unless noted)
+-------------------------  ---------------  ----------------------------------------------
+Laravel queues / jobs      ADDED            NHM Finance: ProcessExcelUpload and
+                                            ImportRopApprovalCsvJob jobs, queue worker trait,
+                                            "queue:work database" worker command. Also
+                                            ai-agent job in git history.
+Supervisor                 ADDED            NHM Finance: supervisor config you wrote for a
+                                            Linux production server (46 lines, all yours).
+Middleware                 ADDED            NHM Finance: menu-access, single-session,
+                                            session-integrity, SSRF, CSP nonce, security
+                                            headers. NHM-HMIS: facility scoping. TN-FD: role
+                                            check, guest search limit.
+Eloquent ORM               ADDED            Dozens of Eloquent models authored across the
+                                            Laravel projects (e.g. 36 in NHM Finance).
+Authentication             ADDED            OTP password-reset service (NHM Finance); Laravel
+                                            Sanctum token auth for the NHM-HMIS mobile API.
+Authorization              ADDED            Menu-level access, facility scoping, role middleware.
+Laravel Sanctum            ADDED            NHM-HMIS API (auth:sanctum routes, token issuing).
+Testing (PHPUnit)          ADDED            NHM-HMIS feature tests: about 13,600 lines in 76
+                                            test files are attributed to you by git blame (a
+                                            teammate wrote more). Not claimed as sole author.
+Firebase Cloud Messaging   ADDED            NHM-HMIS: FCM pusher and notification channel,
+                                            assignment and reminder notifications.
+Tally integration          ADDED            NHM Finance: TallyIntegrationService (auth, retry
+                                            handling, validation, API request log), 400 lines.
+Claude API                 ADDED            Tender platform: ClaudeService (480 lines).
+Qdrant                     ADDED            TN-FD Python backend uses Qdrant (code + compose).
+Natural-language-to-SQL    ADDED            TN-FD: four NL2SQL agent modules (retriever,
+                                            builder, SQL generator, synthesizer).
+CodeIgniter 4              ADDED            NHM Nippon repository (see correction above).
+Docker Compose             ADDED, LIMITED   One 28-line compose file (MySQL + Qdrant) that
+                                            you wrote. No Dockerfile found. Listed as
+                                            "Docker Compose" only, not "Docker". REMOVE it
+                                            if you do not want to be asked about Docker.
+Linux                      NOT ADDED        Only the supervisor install instructions for a
+                                            Linux server. Add "Linux server deployment"
+                                            only if you personally administer or deploy to
+                                            Linux servers. (The Supervisor bullet already
+                                            says "Linux deployment" factually.)
+CI/CD                      NOT ADDED        No pipeline files (.github, GitLab CI, Jenkins)
+                                            in any checked repository.
+Cloud hosting (AWS/Azure)  NOT ADDED        No evidence. ("AWS Scraper Tool" is a project
+                                            name, not proof of cloud services.)
+Query optimization         NOT ADDED        Only master-data caching (Cache::remember) and
+                                            chunked processing were found, and I could not
+                                            confirm you wrote them. No measured performance
+                                            work, so no performance claims were made.
+Docker (full) / Redis /    NOT ADDED        Not evidenced in what I checked (Redis was not
+TypeScript / Express /                      searched specifically).
+PostgreSQL
+Jest / React testing       NOT ADDED        No evidence.
+
+Team22 HRMS: React.js, React Native, Node.js, REST APIs, face authentication,
+geolocation attendance, RBAC, subscriptions with user limits, Play Store release are
+included because YOU stated them. I could not verify them in code. The database used,
+framework (Express or other), and auth method are unknown, so none are claimed.
+
+
+======================================================================
+3. SCORE ESTIMATES
+======================================================================
+Category          Weight   Original   Previous   Optimized
+                           (v0)       (Updated)  (this file)
+----------------  ------   --------   --------   ---------
+Formatting          20        14         19          19
+Skills              20        13         17          18
+Experience          20        15         17          19
+Projects            15        11         13          14
+Achievements        10         4          5           6
+Readability         15        11         13          14
+----------------  ------   --------   --------   ---------
+TOTAL (C)          100        68         84          90
+
+A. General ATS compatibility (parsing/format only = Formatting + Readability, /35):
+   Original 25/35 = 71 | Previous 32/35 = 91 | Optimized 33/35 = 94
+B. Job-description keyword match: NOT ASSESSED (no job description supplied).
+C. Overall resume quality (total above): Original 68 | Previous 84 | Optimized 90.
+
+What justifies the increase from 84 to 90:
+  - Experience +2: the NHM bullets now describe real implementation (queued imports,
+    middleware security, Sanctum mobile API, FCM, Tally integration, NL2SQL agents),
+    and one wrong tech label (NHM Nippon) was corrected.
+  - Skills +1: Eloquent, Queues, Middleware, Sanctum, PHPUnit, FCM, CodeIgniter,
+    Qdrant, Claude API, Supervisor added with evidence.
+  - Projects +1, Readability +1: duplicate and low-value wording merged; clearer tech lines.
+
+Why it is NOT 95+ overall (honest gaps):
+  1. Achievements 6/10: there are no verified numbers (users, installs, uptime, speed,
+     records processed). I did not invent any. This single category costs about 4 points.
+  2. Team22 is described from your summary, not from code, so it has no implementation
+     detail (framework, database, auth, deployment target). Adding them would raise
+     Experience and Skills by a point or two.
+  3. Density: to keep two pages the body font is 9.7 pt and margins are 10 mm. That is
+     readable but tight, so Readability is not full marks.
+  4. Evidence gaps for common job keywords (CI/CD, cloud, Linux, full Docker, query
+     optimization). These cannot be added honestly from what I could verify.
+  5. No job description: any real job-specific score needs one.
+
+
+======================================================================
+4. WHAT CHANGED IN THE RESUME
+======================================================================
+  - Summary rewritten with MongoDB, JavaScript, queue processing, security hardening,
+    NL-to-SQL and the Team22-HRMS Play Store app. Still "5+ years" (62 months of
+    software employment: Aug 2021-Nov 2025 = 52 months, Jan-Oct 2026 = 10 months).
+  - Team22 HRMS reduced to 5 sharper bullets covering full stack, org/employee
+    workflows with RBAC, attendance (face auth + geolocation), subscriptions with user
+    limits, and production + Google Play release.
+  - NHM Finance: added queued Excel/CSV imports + Supervisor, Tally integration, and
+    security middleware / OTP password reset.
+  - NHM-HMIS: added Sanctum REST API, FCM notifications, scheduled reminders,
+    facility-scoped access, Artisan import commands, PHPUnit tests; merged the UI
+    redesign and bug-fix bullets.
+  - TN-FD: NL2SQL multi-agent pipeline, Laravel-to-FastAPI service layer, Docker Compose.
+  - Tender Intelligence: Claude API and web-research services; scraping with run tracking.
+  - NHM Nippon: tech corrected; mobile API work added.
+  - Skills: now 8 categories matching your list.
+  - Removed/merged: generic or duplicate lines (e.g. PMIS and Nippon each reduced to
+    one bullet; certifications and school marks put on fewer lines).
+  - Layout fixes: no ligature characters in the PDF (they break ATS text extraction);
+    project headings kept together with their bullets.
+
+
+======================================================================
+5. VALIDATION RESULTS
+======================================================================
+  - Files exist: Shakthivel_Optimized_Resume.docx, Shakthivel_Optimized_Resume.pdf,
+    Shakthivel_ATS_Analysis.txt (all in C:\laragon\www\profile_building).
+  - Page count: PDF 2 pages. DOCX 2 pages as measured by opening it in Microsoft Word.
+    (PDF page 2 is nearly full: about 1.5 lines of spare room. DOCX has about 9 lines.
+    Other Word versions or LibreOffice may paginate slightly differently.)
+  - PDF text is selectable and extractable; ligature characters: none.
+  - Reading order: sections appear in the intended order (Summary, Experience, Earlier
+    Experience, Skills, Certifications, Education, Awards); all 15 named projects
+    appear, in the intended order.
+  - DOCX vs PDF: text identical after normalisation (6,951 characters each).
+  - Tables in DOCX: 0. No text boxes, icons, or graphics in either file.
+  - Links (same in both files): https://shakthivel-spec.github.io/my-profile/ ,
+    https://github.com/Shakthivel-spec ,
+    https://www.linkedin.com/in/shakthi-vel-078891142 , mailto:shakthivel801@gmail.com
+    Targets were read from the files; I did not check that the URLs load online.
+  - Dates: Aug 2021-Nov 2025, Jan 2026-Present, May 2017-Aug 2021; consistent, no
+    overlap. Dec 2025 gap is unexplained on the resume.
+  - Team22 HRMS (project name) and Team22-HRMS (Google Play name) appear correctly in
+    both files (the Play name appears three times: summary, project line, last bullet).
+  - Preserved: contact details, education and marks, certifications, awards, all
+    employers and dates. A scan found none of: Kubernetes, CI/CD, PostgreSQL, Redis,
+    TypeScript, Express, Jenkins, GitHub Actions.
+
+
+======================================================================
+6. ITEMS FOR YOUR CONFIRMATION
+======================================================================
+  [ ] NHM Nippon is CodeIgniter 4 (resume corrected).
+  [ ] Tally integration, Sanctum mobile API, FCM, Supervisor/queue imports: I wrote
+      these from your code. Confirm each is live/used in production and described fairly
+      (for example, that the NHM-HMIS API serves a mobile app).
+  [ ] "OTP-based password-reset service" (NHM Finance): inferred from the OTP service
+      being used by the forgot-password controller.
+  [ ] "keyword-based search and notifications" (Tender): inferred from keyword and
+      notification models/controllers; the tender scrapers in git history are no
+      longer in the current code, so no scraper count is claimed.
+  [ ] Docker Compose: keep or remove (see section 2).
+  [ ] Team22: confirm the Node.js backend, face-auth, subscription and release work are
+      yours; add framework, database and auth method if you want more depth.
+  [ ] "seven systems" count in the In22 Labs intro line.
+  [ ] Are the "Sridhar" commits (same mailbox) yours? If yes, NHM Finance/HMIS/TN-FD
+      claims could be broadened.
+  [ ] Dec 2025 employment gap.
+  [ ] Metrics: any real numbers (Team22 organizations/employees/installs, records or
+      users handled, report timings) would be the most valuable addition.
+
+
+======================================================================
+7. ROLE-TARGETED VERSIONS (recommendations, not generated)
+======================================================================
+Relevance of the CURRENT primary full-stack resume (qualitative, no scores):
+  Laravel / PHP:          strong   (about 5 years, many systems, queues, middleware, RBAC)
+  Node.js / Full Stack:   moderate (one project - Team22; Laravel depth is greater)
+  React / React Native:   moderate to limited (Team22 plus Divinfosys React; no
+                          state-management/TypeScript/native-module detail)
+
+1) Laravel / PHP Developer version
+   - Headline: "Laravel / PHP Developer".
+   - Order skills: Backend, Databases, APIs, Tools first; shrink Mobile to one line.
+   - Lead with NHM Finance, NHM-HMIS, TN-FD, Tender; keep Team22 as a full-stack
+     example below them (or shorten to 3 bullets).
+   - Emphasise: queues/jobs, middleware, Eloquent, Sanctum, PHPUnit, RBAC, approval
+     workflows, MIS reporting, third-party integrations (Tally, FCM).
+
+2) Node.js / Full Stack Developer version
+   - Headline: "Full Stack Developer | Node.js, React.js, Laravel".
+   - Put Team22 first (as now) and add framework, database, auth, and deployment
+     details if true; this is the weakest evidenced area and recruiters will probe it.
+   - Keep Laravel projects as supporting backend/API/RBAC depth; trim Divinfosys list.
+
+3) React / React Native Developer version
+   - Headline: "React / React Native Developer".
+   - Put Mobile Development and Frontend skills first; Team22 first with Play Store
+     release detail (build/signing approach, libraries used for camera/face and
+     location, navigation, state management) once you confirm them.
+   - De-emphasise NHM Finance security/queue detail to one or two bullets.
+
+Do NOT merge all keywords into one resume; tailor summary and skill order per posting,
+and re-check against the actual job description before applying.
+
+
+======================================================================
+8. MISSING KEYWORDS AND EVIDENCE GAPS (add only if genuinely true)
+======================================================================
+  Common in job posts but unevidenced here: CI/CD, Docker (beyond Compose), AWS or
+  other cloud hosting, Linux administration, Redis, query optimization/indexing
+  (measured), Agile/Scrum, TypeScript, Express.js, Redux/Context API, Jest/React
+  Testing Library, Postman/Swagger, MongoDB beyond the scraper project, Team22 database
+  and hosting details, Android build/signing (AAB, Gradle), push notifications for
+  Team22, and any quantified outcomes.

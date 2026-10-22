@@ -1,0 +1,65 @@
+SHAKTHIVEL - ATS RESUME REPORT (22 Oct 2026)
+Files: Shakthivel_Resume_ATS_Optimized.docx / .pdf
+Backups: Backup_2026-10-22\ holds copies of every earlier resume file. Nothing was overwritten or pushed.
+Base: built from Shakthivel_Optimized_Resume.docx (evidence-checked on 21 Oct 2026). No claim was added
+that is not in your resume, your prompts, or code you authored. No score is guaranteed or implied.
+
+1. WHAT CHANGED
+- Added a stand-alone "Key Projects at In22 Labs" section. The Naukri feedback did not say which section
+  was missing, so I treated a dedicated Projects section as the gap. Tell me if it meant another section.
+- Technical Skills cut from ~60 items in 8 groups to 15: PHP, Laravel, Node.js, Python, FastAPI, REST APIs,
+  JavaScript, React.js, React Native, HTML, CSS, MySQL, MongoDB, RAG/LLM Integration, Git. Supporting tech
+  (Eloquent, Queues, Sanctum, FCM, PHPUnit, Qdrant, Claude API, CodeIgniter 4, Supervisor, Docker Compose)
+  now sits in each project's "Technologies" line.
+- Summary rewritten (5+ years since Aug 2021, full-stack web/mobile, backend and frontend, REST APIs,
+  integrations, Team22 / NHM Finance / NHM-HMIS / AI platforms). Mentions of "published on Google Play"
+  and "security hardening" come from the evidence already confirmed.
+- Section order: Summary, Skills, Experience, Projects, Education, Certifications, Awards, Earlier
+  Experience. The non-software snack business moved to the end and is labelled "Non-Software".
+- Divinfosys: 8 one-line projects regrouped into 6 bullets (Navilu LMS + Project Blue merged;
+  Eprice Track + AWS Scraper merged). All 8 project names are kept as keywords.
+- Repetition removed: "Team22-HRMS" now appears twice (was three times); the repeated "seven systems"
+  and "full stack" lines were merged; duplicate wording in several bullets was tightened.
+- Project bullets start with action verbs (Developed, Built, Architected, Integrated, Implemented, ...).
+
+2. CHECKLIST AGAINST THE NAUKRI ANALYZER ITEMS
+[x] Missing key section: Projects section added (see note above on uncertainty).
+[x] Spelling and grammar: re-read in full; consistent names (Node.js, React.js, REST APIs, Team22 HRMS),
+    dates (Mon YYYY - Mon YYYY) and bullets. No automated spell-check was run; this was a manual read.
+[x] Skills 10-15: 15 primary skills.
+[~] Quantified achievements: PARTLY. Only counts already in the resume are used (four organizational
+    levels, seven systems, three workflow types). No percentages, users or timings were invented.
+    Real metrics are needed from you (section 4).
+[x] Repetition removed (section 1).
+[x] Length: 2 pages (confirmed in Word and in the PDF), ~1,000 words total (~500 per page).
+    Body 10 pt Calibri, margins 16 mm side / 12 mm top and bottom.
+[x] Bold: 9.4% of characters, including headings. Used for name, headings, job titles, company names,
+    project titles, skill labels and Divinfosys project names.
+[x] Summary strengthened.
+[x] ATS format: single column, 0 tables, 0 text boxes, no graphics or skill bars; Unicode bullets.
+[x] Keywords: REST API/RESTful APIs, full-stack, web and mobile application development, backend and
+    frontend are in the summary and bullets; no keyword stuffing and no unevidenced skills.
+[x] Validation: PDF text is selectable (7,791 characters extracted), no ligature characters, all four
+    links (portfolio, GitHub, LinkedIn, email) present in both files, phone and education unchanged.
+    Link targets were read from the files; I did not test that they load online.
+
+3. KNOWN LIMITS
+- Page 1 ends mid-way through the NHM Finance bullets (a normal page break, not clipped text).
+- Word exported the PDF; layout in other word processors may paginate slightly differently.
+- Removed from the resume text to keep the skills list focused (they were in the earlier version):
+  jQuery, Alpine.js, Tailwind CSS, Bootstrap, Webpack, NPM, VS Code, GitHub, Google Play Console
+  and Android release terms as skills. Ask if you want any back, e.g. for a frontend-heavy job.
+- Dec 2025 gap between roles is not explained on the resume.
+- CI/CD, cloud hosting, Linux administration and full Docker are not claimed (no evidence).
+
+4. DETAILS / METRICS FOR YOU TO VERIFY
+- Team22 HRMS: number of organizations, employees, installs, or Play Store rating; database and hosting;
+  auth method; whether Node.js uses Express.
+- NHM Finance: records or Excel rows imported, number of users, number of states or districts,
+  time saved versus manual process.
+- NHM-HMIS: number of facilities, inspections, or app users; test count if you want it stated.
+- TN-FD and Tender: documents indexed, response time, or number of tenders processed.
+- Divinfosys: size of the team you led; any numbers for Shopyfest orders or the Amazon automation.
+- Confirm: "seven systems" (matches the seven projects listed), "Linux" in the Supervisor bullet,
+  NHM Nippon is CodeIgniter 4, Tally / Sanctum / FCM wording is accurate, and Docker Compose stays.
+- If you have a target job description, send it and I will tune keyword order for that posting.
