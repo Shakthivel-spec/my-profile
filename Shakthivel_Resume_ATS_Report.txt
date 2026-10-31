@@ -1,6 +1,14 @@
 SHAKTHIVEL - ATS RESUME REPORT (22 Oct 2026)
 Files: Shakthivel_Resume_ATS_Optimized.docx / .pdf
-Backups: Backup_2026-10-22\ holds copies of every earlier resume file. Nothing was overwritten or pushed.
+Earlier resume versions were deleted from this folder on request (22 Oct 2026, second pass). They remain
+in git history (commit e3ce512 and earlier) if you ever need them. Nothing was pushed.
+SECOND PASS (after the Naukri screenshot): text trimmed to ~920 words; page 1 = 502 words, page 2 = 451;
+bold = 9.9%; font 10.5 pt; verbs varied to cut repetition ("Built" 11x -> fewer); still 2 pages.
+THIRD PASS (Naukri feedback: "Skills" section, 3 grammar flags, action verbs, repetition):
+heading renamed to "Skills"; "multi-agent" reworded; "CSP nonces" -> "Content Security Policy"; "web-research"
+-> "web research"; Divinfosys client-project bullets now start with verbs; "Android app on Google Play"
+now appears once. Now 500 / 455 words per page, bold 9.4%, 2 pages.
+The numbers below in section 2 reflect the latest pass where they differ from section 1.
 Base: built from Shakthivel_Optimized_Resume.docx (evidence-checked on 21 Oct 2026). No claim was added
 that is not in your resume, your prompts, or code you authored. No score is guaranteed or implied.
 
@@ -31,9 +39,9 @@ that is not in your resume, your prompts, or code you authored. No score is guar
     levels, seven systems, three workflow types). No percentages, users or timings were invented.
     Real metrics are needed from you (section 4).
 [x] Repetition removed (section 1).
-[x] Length: 2 pages (confirmed in Word and in the PDF), ~1,000 words total (~500 per page).
-    Body 10 pt Calibri, margins 16 mm side / 12 mm top and bottom.
-[x] Bold: 9.4% of characters, including headings. Used for name, headings, job titles, company names,
+[x] Length: 2 pages (confirmed in Word and in the PDF), ~950 words (502 and 451 per page).
+    Body 10.5 pt Calibri, margins 16 mm side / 12 mm top and bottom.
+[x] Bold: 9.9% of characters, including headings. Used for name, headings, job titles, company names,
     project titles, skill labels and Divinfosys project names.
 [x] Summary strengthened.
 [x] ATS format: single column, 0 tables, 0 text boxes, no graphics or skill bars; Unicode bullets.
