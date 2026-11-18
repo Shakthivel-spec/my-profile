@@ -375,7 +375,7 @@
     color: var(--ink);
   }
 
-  /* ---------- HERO SECTION (No Watermark + Circular Framed Avatar) ---------- */
+  /* ---------- HERO SECTION (No Watermark + Luxury Box-Shadow Portrait Card) ---------- */
   .hero-sec {
     position: relative;
     padding-top: 3rem;
@@ -455,7 +455,7 @@
   }
   .hero-status-pill svg { width: 14px; height: 14px; fill: currentColor; }
 
-  /* Center Column: Circular Framed Portrait of Shakthivel with Rotating Rings */
+  /* Center Column: Luxury Rounded Portrait Card with Ambient Box-Shadow (NO Circles!) */
   .hero-center {
     position: relative;
     display: flex;
@@ -463,66 +463,54 @@
     align-items: center;
     z-index: 3;
   }
-  .avatar-stage {
+  .avatar-card-stage {
     position: relative;
-    width: clamp(280px, 32vw, 380px);
-    height: clamp(280px, 32vw, 380px);
+    width: clamp(280px, 28vw, 360px);
+    height: clamp(340px, 34vw, 430px);
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .avatar-aura {
-    position: absolute;
-    inset: -30px;
-    background: radial-gradient(circle, rgba(229, 9, 20, 0.4) 0%, rgba(37, 99, 235, 0.25) 50%, transparent 75%);
-    filter: blur(35px);
-    border-radius: 50%;
-    pointer-events: none;
-    animation: auraPulse 6s ease-in-out infinite alternate;
-  }
-  @keyframes auraPulse {
-    0% { transform: scale(0.92); opacity: 0.6; }
-    100% { transform: scale(1.08); opacity: 0.9; }
-  }
-  .avatar-ring-outer {
-    position: absolute;
-    inset: -12px;
-    border-radius: 50%;
-    border: 1.5px dashed rgba(229, 9, 20, 0.5);
-    animation: spinRing 24s linear infinite;
-    pointer-events: none;
-  }
-  @keyframes spinRing {
-    to { transform: rotate(360deg); }
-  }
-  .avatar-frame {
+  .avatar-card-frame {
     position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    border-radius: 24px;
     overflow: hidden;
-    border: 3.5px solid #23232c;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba(229, 9, 20, 0.35);
     background: #111116;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    /* Luxury Multi-Layer Glowing Box Shadow requested by user */
+    box-shadow: 
+      0 30px 70px -15px rgba(0, 0, 0, 0.95),
+      0 0 55px rgba(229, 9, 20, 0.35),
+      0 0 25px rgba(37, 99, 235, 0.25);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  }
+  .avatar-card-frame:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+      0 35px 80px -10px rgba(0, 0, 0, 0.98),
+      0 0 70px rgba(229, 9, 20, 0.45),
+      0 0 35px rgba(37, 99, 235, 0.35);
   }
   .avatar-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%;
-    transform: scale(1.03);
+    object-position: center 15%;
+    transform: scale(1.02);
     transition: transform 0.4s ease;
   }
-  .avatar-stage:hover .avatar-photo {
-    transform: scale(1.08);
+  .avatar-card-frame:hover .avatar-photo {
+    transform: scale(1.06);
   }
   .avatar-badge {
     position: absolute;
-    bottom: -6px;
+    bottom: -14px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(14, 14, 18, 0.94);
+    background: rgba(14, 14, 18, 0.96);
     border: 1px solid rgba(229, 9, 20, 0.5);
     border-radius: 999px;
     padding: 0.45rem 1.25rem;
@@ -534,9 +522,9 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #ffffff;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7), 0 0 15px rgba(229, 9, 20, 0.25);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(229, 9, 20, 0.3);
     white-space: nowrap;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px);
     z-index: 4;
   }
   .badge-pulse-dot {
@@ -621,6 +609,12 @@
     text-transform: uppercase;
     color: var(--ink);
   }
+  .sec-sub {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    font-family: var(--font-mono);
+    margin-top: 0.2rem;
+  }
   .sec-action {
     display: inline-flex;
     align-items: center;
@@ -634,39 +628,113 @@
   }
   .sec-action:hover { color: var(--red); transform: translateX(3px); }
 
-  /* ---------- SECTION 2: SELECTED PROJECTS ---------- */
+  /* ---------- SECTION 2: 3D ANIMATED GRAPHIC CAROUSEL ---------- */
   .projects-sec {
     position: relative;
     z-index: 1;
     padding: 4rem 0 6rem;
   }
-  .projects-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .carousel-nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
   }
-  @media (min-width: 768px) {
-    .projects-grid { grid-template-columns: repeat(3, 1fr); }
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #131318;
+    border: 1px solid var(--border-red);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .carousel-btn:hover {
+    background: var(--red);
+    color: #fff;
+    box-shadow: 0 0 16px var(--red-glow);
+    transform: scale(1.08);
   }
 
-  .project-card {
-    background: var(--card);
+  /* 3D Carousel Stage */
+  .carousel-stage {
+    position: relative;
+    width: 100%;
+    perspective: 1400px;
+    padding: 1rem 0;
+    overflow: visible;
+  }
+  .carousel-track {
+    position: relative;
+    width: 100%;
+    height: 490px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 640px) {
+    .carousel-track { height: 530px; }
+  }
+
+  .carousel-card {
+    position: absolute;
+    width: min(690px, 90vw);
+    height: 100%;
+    background: #111115;
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 12px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: var(--transition);
-  }
-  .project-card:hover {
-    border-color: var(--border-red);
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 20px rgba(229, 9, 20, 0.15);
+    transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.75s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    will-change: transform, opacity;
   }
 
+  /* 3D Positional States */
+  .carousel-card[data-pos="0"] {
+    transform: translateX(0%) translateZ(0px) rotateY(0deg) scale(1);
+    opacity: 1;
+    z-index: 10;
+    pointer-events: auto;
+    border-color: var(--border-red);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.95), 0 0 35px rgba(229, 9, 20, 0.22);
+  }
+  .carousel-card[data-pos="1"] {
+    transform: translateX(58%) translateZ(-160px) rotateY(-20deg) scale(0.85);
+    opacity: 0.6;
+    z-index: 5;
+    cursor: pointer;
+  }
+  .carousel-card[data-pos="-1"] {
+    transform: translateX(-58%) translateZ(-160px) rotateY(20deg) scale(0.85);
+    opacity: 0.6;
+    z-index: 5;
+    cursor: pointer;
+  }
+  .carousel-card[data-pos="hidden"] {
+    transform: translateX(0%) translateZ(-350px) scale(0.6);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .carousel-card[data-pos="1"]:hover,
+  .carousel-card[data-pos="-1"]:hover {
+    opacity: 0.85;
+    border-color: rgba(229, 9, 20, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .carousel-card[data-pos="1"] { transform: translateX(45%) translateZ(-120px) rotateY(-15deg) scale(0.86); }
+    .carousel-card[data-pos="-1"] { transform: translateX(-45%) translateZ(-120px) rotateY(15deg) scale(0.86); }
+  }
+
+  /* Card Window & Animated Graphics */
   .card-visual {
     position: relative;
-    height: 220px;
+    height: 300px;
     background: #0a0a0d;
     border-bottom: 1px solid var(--border);
     overflow: hidden;
@@ -674,74 +742,243 @@
     flex-direction: column;
   }
   .card-visual-header {
-    height: 28px;
-    background: #141418;
+    height: 32px;
+    background: #14141a;
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
-    padding: 0 0.8rem;
-    gap: 6px;
+    padding: 0 1rem;
+    gap: 7px;
   }
-  .dot-win { width: 8px; height: 8px; border-radius: 50%; background: #2b2b34; }
+  .dot-win { width: 9px; height: 9px; border-radius: 50%; background: #2b2b34; }
   .dot-win.red { background: var(--red); }
+  .win-filename {
+    margin-left: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--ink-dim);
+  }
+  .win-live-badge {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--red);
+  }
+  .win-live-badge .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+    animation: badgePulse 2s infinite;
+  }
+  .win-live-badge .badge-dot.blue { background: #38bdf8; box-shadow: 0 0 8px #38bdf8; }
+  .win-live-badge .badge-dot.green { background: #4ade80; box-shadow: 0 0 8px #4ade80; }
+
   .card-visual-body {
     flex: 1;
-    padding: 1.2rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background: radial-gradient(circle at center, #16161d 0%, #0a0a0d 100%);
+    justify-content: space-between;
+    background: radial-gradient(circle at 50% 30%, #161622 0%, #09090c 100%);
     position: relative;
   }
-  
-  .mock-tag {
-    align-self: flex-start;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--red);
-    background: rgba(229, 9, 20, 0.12);
-    border: 1px solid var(--border-red);
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    margin-bottom: 0.6rem;
-  }
-  .mock-title {
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    line-height: 1;
-    color: var(--ink);
-    margin-bottom: 0.4rem;
-    letter-spacing: 0.04em;
-  }
-  .mock-desc {
-    font-size: 0.78rem;
-    color: var(--ink-muted);
-    line-height: 1.4;
-    margin-bottom: 0.8rem;
-  }
-  .mock-pill-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-  .mock-pill {
-    font-size: 0.68rem;
-    background: #1c1c24;
-    color: #c0c0cb;
-    padding: 0.15rem 0.45rem;
-    border-radius: 3px;
-    font-family: var(--font-mono);
-  }
 
-  .card-footer {
-    padding: 1.2rem 1.4rem;
+  /* Animated Flow Diagram (Slide 1: NHM Finance) */
+  .graphic-flow {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    padding: 1.2rem 0;
+    gap: 0.8rem;
+  }
+  .flow-step {
+    background: #14141c;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.65rem 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  }
+  .flow-step.active-step {
+    border-color: var(--red);
+    box-shadow: 0 0 16px rgba(229, 9, 20, 0.25);
+  }
+  .flow-icon { font-size: 1.2rem; color: var(--red); margin-bottom: 2px; }
+  .flow-title { font-size: 0.78rem; font-weight: 800; color: #fff; }
+  .flow-detail { font-size: 0.66rem; color: var(--ink-muted); font-family: var(--font-mono); }
+  .flow-line {
+    height: 2px;
+    flex: 0.5;
+    background: #252530;
+    position: relative;
+    overflow: hidden;
+  }
+  .animated-line::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, var(--red), transparent);
+    animation: flowPulse 2s linear infinite;
+  }
+  @keyframes flowPulse {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* Animated Vector Space Radar (Slide 2: TN-FD AI) */
+  .graphic-ai-radar {
+    position: relative;
+    height: 125px;
+    border: 1px dashed rgba(229, 9, 20, 0.25);
+    border-radius: 8px;
+    background: rgba(14, 14, 20, 0.6);
+    overflow: hidden;
+  }
+  .radar-scan {
+    position: absolute;
+    inset: -50%;
+    background: conic-gradient(from 0deg at 50% 50%, rgba(229, 9, 20, 0.25) 0deg, transparent 60deg);
+    animation: radarSpin 6s linear infinite;
+  }
+  @keyframes radarSpin { to { transform: rotate(360deg); } }
+  .radar-node {
+    position: absolute;
+    padding: 0.25rem 0.65rem;
+    background: #14141e;
+    border: 1px solid var(--border-red);
+    border-radius: 4px;
+    font-size: 0.68rem;
+    font-family: var(--font-mono);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+    z-index: 2;
+  }
+
+  /* Graphic Inspection Stream (Slide 3: HMIS) */
+  .graphic-hmis {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
+  }
+  .hmis-stream-item {
+    background: #121218;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.55rem 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .stream-dot { width: 7px; height: 7px; border-radius: 50%; }
+  .stream-dot.green { background: #4ade80; box-shadow: 0 0 8px #4ade80; }
+  .stream-dot.red { background: var(--red); box-shadow: 0 0 8px var(--red); }
+  .stream-dot.blue { background: #38bdf8; box-shadow: 0 0 8px #38bdf8; }
+  .stream-text { font-size: 0.78rem; font-weight: 700; color: #fff; flex: 1; }
+  .stream-time { font-size: 0.68rem; font-family: var(--font-mono); color: var(--ink-muted); }
+
+  /* Graphic Crawler (Slide 4: Tender) */
+  .graphic-crawler {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .crawler-bar {
+    height: 4px;
+    background: #1a1a24;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .crawler-progress {
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--red), #f59e0b);
+    animation: crawlMove 2.5s ease-in-out infinite alternate;
+  }
+  @keyframes crawlMove { 0% { width: 25%; } 100% { width: 92%; } }
+  .crawler-log {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: #a3a3b2;
+  }
+
+  /* Graphic Shop (Slide 5: Shopyfest) */
+  .graphic-shop {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .shop-grid {
+    display: flex;
+    gap: 0.6rem;
+  }
+  .shop-pill {
+    flex: 1;
+    background: #15151e;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #4ade80;
+  }
+  .shop-stat-bar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    border-top: 1px solid var(--border);
+    padding-top: 0.5rem;
+  }
+  .shop-stat-bar b { color: #fff; }
+
+  /* Metrics Strip on all graphic cards */
+  .graphic-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border);
+  }
+  .g-metric {
+    display: flex;
+    flex-direction: column;
+  }
+  .g-metric span {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-dim);
+  }
+  .g-metric b {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #e5e5ed;
+  }
+
+  /* Card Meta Footer */
+  .card-footer {
+    padding: 1.2rem 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
     background: var(--card);
+    flex-wrap: wrap;
   }
   .card-meta {
     display: flex;
@@ -750,7 +987,7 @@
   }
   .card-idx {
     font-family: var(--font-display);
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--red);
     line-height: 1;
   }
@@ -759,27 +996,53 @@
     flex-direction: column;
   }
   .card-name {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--ink);
   }
   .card-type {
-    font-size: 0.72rem;
+    font-size: 0.74rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--ink-muted);
   }
-  .card-arrow {
-    width: 22px;
-    height: 22px;
-    color: var(--ink-dim);
-    transition: var(--transition);
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
   }
-  .project-card:hover .card-arrow {
-    color: var(--red);
-    transform: translateX(4px);
+  .c-tag {
+    font-size: 0.68rem;
+    background: #181822;
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    color: #c9c9d5;
+  }
+
+  /* Carousel Dots */
+  .carousel-indicators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    margin-top: 2rem;
+  }
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #2a2a36;
+    cursor: pointer;
+    transition: all 0.35s ease;
+  }
+  .carousel-dot.active {
+    width: 32px;
+    background: var(--red);
+    box-shadow: 0 0 12px var(--red);
   }
 
   /* ---------- SECTION 3: 3-COLUMN CORE BLOCK ---------- */
@@ -803,7 +1066,7 @@
   .core-col {
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 2.2rem 1.8rem;
     display: flex;
     flex-direction: column;
@@ -868,7 +1131,7 @@
     padding: 0.4rem 0.75rem;
     background: #0b0b0e;
     border: 1px solid var(--border);
-    border-radius: 3px;
+    border-radius: 4px;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -952,7 +1215,7 @@
   /* Column 3: Crimson Red Quote Banner */
   .quote-banner {
     background: var(--red-banner);
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
@@ -1003,7 +1266,7 @@
   .ai-box {
     background: linear-gradient(180deg, #101015 0%, #09090c 100%);
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 3rem 2.5rem;
   }
   @media (max-width: 600px) { .ai-box { padding: 1.8rem 1.4rem; } }
@@ -1019,7 +1282,7 @@
   .ai-card {
     background: #14141a;
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 6px;
     padding: 1.8rem;
     display: flex;
     flex-direction: column;
@@ -1308,7 +1571,7 @@
   .modal-box {
     background: #0e0e12;
     border: 1px solid var(--border-red);
-    border-radius: 6px;
+    border-radius: 8px;
     max-width: 900px;
     width: 100%;
     max-height: 85vh;
@@ -1348,7 +1611,7 @@
   .modal-item {
     background: #14141a;
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 6px;
     padding: 1.2rem 1.4rem;
     display: flex;
     flex-direction: column;
@@ -1386,7 +1649,7 @@
     padding: 0.15rem 0.45rem;
     background: #1d1d26;
     color: #b0b0be;
-    border-radius: 2px;
+    border-radius: 3px;
   }
 </style>
 </head>
@@ -1482,12 +1745,10 @@
         </div>
       </div>
 
-      <!-- Center Column: Circular Framed Avatar with Shakthivel's Real Photo -->
+      <!-- Center Column: Luxury Rounded Portrait Card with Ambient Box-Shadow (NO Circles!) -->
       <div class="hero-center">
-        <div class="avatar-stage">
-          <div class="avatar-aura" aria-hidden="true"></div>
-          <div class="avatar-ring-outer" aria-hidden="true"></div>
-          <div class="avatar-frame">
+        <div class="avatar-card-stage">
+          <div class="avatar-card-frame">
             <img 
               src="profile.jpg" 
               alt="Shakthivel - Full-Stack Developer & AI Engineer" 
@@ -1529,111 +1790,254 @@
     </div>
   </section>
 
-  <!-- ==================== SECTION 2: SELECTED PROJECTS ==================== -->
+  <!-- ==================== SECTION 2: 3D ANIMATED GRAPHIC CAROUSEL ==================== -->
   <section id="projects" class="projects-sec">
     <div class="wrap">
       
       <div class="sec-bar">
-        <h2 class="sec-title">Selected Projects</h2>
-        <button type="button" class="sec-action" id="viewAllProjectsBtn">
-          <span>View All 14 Projects</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
+        <div>
+          <h2 class="sec-title">Selected Projects</h2>
+          <p class="sec-sub">Interactive 3D Engineering Showcase &bull; 5 Featured Systems</p>
+        </div>
+        <div class="carousel-nav-controls">
+          <button type="button" class="carousel-btn" id="projPrevBtn" aria-label="Previous project slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </button>
+          <button type="button" class="carousel-btn" id="projNextBtn" aria-label="Next project slide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button type="button" class="sec-action" id="viewAllProjectsBtn">
+            <span>View All 14 Projects</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
       </div>
 
-      <div class="projects-grid">
-        
-        <!-- Project 01: NHM Finance / SNA SPARSH -->
-        <article class="project-card">
-          <div class="card-visual">
-            <div class="card-visual-header">
-              <span class="dot-win red"></span><span class="dot-win"></span><span class="dot-win"></span>
-            </div>
-            <div class="card-visual-body">
-              <span class="mock-tag">E-Governance &middot; FinTech</span>
-              <div class="mock-title">NHM FINANCE</div>
-              <p class="mock-desc">SNA SPARSH state-level fund flow tracking, budget allocation, multi-level approvals &amp; Tally integration.</p>
-              <div class="mock-pill-list">
-                <span class="mock-pill">Laravel</span>
-                <span class="mock-pill">MySQL</span>
-                <span class="mock-pill">Queues</span>
-                <span class="mock-pill">Supervisor</span>
+      <!-- 3D Animated Graphic Carousel -->
+      <div class="carousel-stage" id="carouselStage">
+        <div class="carousel-track" id="carouselTrack" role="region" aria-label="Featured Projects 3D Carousel">
+          
+          <!-- Slide 01: NHM Finance / SNA SPARSH -->
+          <article class="carousel-card" data-idx="0">
+            <div class="card-visual">
+              <div class="card-visual-header">
+                <span class="dot-win red"></span><span class="dot-win"></span><span class="dot-win"></span>
+                <span class="win-filename">system / nhm-finance / live-flow.ts</span>
+                <span class="win-live-badge"><span class="badge-dot"></span> LIVE PROD</span>
+              </div>
+              <div class="card-visual-body">
+                <!-- Graphic Animated Flow Diagram -->
+                <div class="graphic-flow">
+                  <div class="flow-step">
+                    <span class="flow-icon">&#9783;</span>
+                    <span class="flow-title">State Treasury</span>
+                    <span class="flow-detail">ROP Approvals</span>
+                  </div>
+                  <div class="flow-line animated-line"></div>
+                  <div class="flow-step">
+                    <span class="flow-icon">&infin;</span>
+                    <span class="flow-title">Queue Job</span>
+                    <span class="flow-detail">Supervisor</span>
+                  </div>
+                  <div class="flow-line animated-line"></div>
+                  <div class="flow-step active-step">
+                    <span class="flow-icon">&#9881;</span>
+                    <span class="flow-title">Beneficiaries</span>
+                    <span class="flow-detail">Tally Sync</span>
+                  </div>
+                </div>
+                <div class="graphic-metrics">
+                  <div class="g-metric"><span>Allocation</span><b>4-Tier Level</b></div>
+                  <div class="g-metric"><span>Audit Pass</span><b>100% Secured</b></div>
+                  <div class="g-metric"><span>Throughput</span><b>Bulk Excel Validated</b></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card-footer">
-            <div class="card-meta">
-              <span class="card-idx">01</span>
-              <div class="card-titles">
-                <span class="card-name">NHM Finance &amp; SPARSH</span>
-                <span class="card-type">Enterprise Fund Flow Platform</span>
+            <div class="card-footer">
+              <div class="card-meta">
+                <span class="card-idx">01</span>
+                <div class="card-titles">
+                  <span class="card-name">NHM Finance &amp; SPARSH</span>
+                  <span class="card-type">Enterprise Fund Flow Platform &bull; Laravel &amp; MySQL</span>
+                </div>
+              </div>
+              <div class="card-tags">
+                <span class="c-tag">Laravel</span><span class="c-tag">Queues</span><span class="c-tag">Supervisor</span><span class="c-tag">Tally</span>
               </div>
             </div>
-            <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </article>
+          </article>
 
-        <!-- Project 02: TN-FD Knowledge AI Platform -->
-        <article class="project-card">
-          <div class="card-visual">
-            <div class="card-visual-header">
-              <span class="dot-win red"></span><span class="dot-win"></span><span class="dot-win"></span>
-            </div>
-            <div class="card-visual-body">
-              <span class="mock-tag">Applied AI &middot; RAG</span>
-              <div class="mock-title">TN-FD INTELLIGENCE</div>
-              <p class="mock-desc">Multi-agent natural language to SQL pipeline &amp; Qdrant vector retrieval platform for structured enterprise queries.</p>
-              <div class="mock-pill-list">
-                <span class="mock-pill">FastAPI</span>
-                <span class="mock-pill">Python</span>
-                <span class="mock-pill">Qdrant</span>
-                <span class="mock-pill">Docker</span>
+          <!-- Slide 02: TN-FD Knowledge AI -->
+          <article class="carousel-card" data-idx="1">
+            <div class="card-visual">
+              <div class="card-visual-header">
+                <span class="dot-win red"></span><span class="dot-win"></span><span class="dot-win"></span>
+                <span class="win-filename">ai-core / rag / vector-pipeline.py</span>
+                <span class="win-live-badge"><span class="badge-dot blue"></span> RAG ACTIVE</span>
+              </div>
+              <div class="card-visual-body">
+                <!-- Graphic Animated Vector Space Radar -->
+                <div class="graphic-ai-radar">
+                  <div class="radar-scan"></div>
+                  <div class="radar-node" style="top:25%; left:20%;"><span>Query Embed</span></div>
+                  <div class="radar-node" style="top:55%; left:50%;"><span>Qdrant Vectors</span></div>
+                  <div class="radar-node" style="top:25%; left:75%;"><span>SQL Synthesis</span></div>
+                </div>
+                <div class="graphic-metrics">
+                  <div class="g-metric"><span>Engine</span><b>FastAPI Microservice</b></div>
+                  <div class="g-metric"><span>Vector DB</span><b>Qdrant Vectors</b></div>
+                  <div class="g-metric"><span>Latency</span><b>&lt; 35ms Retrieval</b></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card-footer">
-            <div class="card-meta">
-              <span class="card-idx">02</span>
-              <div class="card-titles">
-                <span class="card-name">TN-FD Knowledge AI</span>
-                <span class="card-type">RAG &amp; NL-to-SQL Platform</span>
+            <div class="card-footer">
+              <div class="card-meta">
+                <span class="card-idx">02</span>
+                <div class="card-titles">
+                  <span class="card-name">TN-FD Knowledge AI</span>
+                  <span class="card-type">RAG &amp; Multi-Agent NL-to-SQL Platform</span>
+                </div>
+              </div>
+              <div class="card-tags">
+                <span class="c-tag">Python</span><span class="c-tag">FastAPI</span><span class="c-tag">Qdrant</span><span class="c-tag">Agents</span>
               </div>
             </div>
-            <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </article>
+          </article>
 
-        <!-- Project 03: NHM-HMIS Healthcare System -->
-        <article class="project-card">
-          <div class="card-visual">
-            <div class="card-visual-header">
-              <span class="dot-win red"></span><span class="dot-win"></span><span class="dot-win"></span>
-            </div>
-            <div class="card-visual-body">
-              <span class="mock-tag">Healthcare &middot; Mobile API</span>
-              <div class="mock-title">NHM-HMIS PLATFORM</div>
-              <p class="mock-desc">Hospital and institution inspection workflows, facility-scoped access, REST APIs &amp; Firebase Cloud Messaging.</p>
-              <div class="mock-pill-list">
-                <span class="mock-pill">Sanctum</span>
-                <span class="mock-pill">Firebase</span>
-                <span class="mock-pill">PHPUnit</span>
-                <span class="mock-pill">REST API</span>
+          <!-- Slide 03: NHM-HMIS Healthcare System -->
+          <article class="carousel-card" data-idx="2">
+            <div class="card-visual">
+              <div class="card-visual-header">
+                <span class="dot-win red"></span><span class="dot-win"></span><span class="dot-win"></span>
+                <span class="win-filename">healthcare / hmis / inspection-api.php</span>
+                <span class="win-live-badge"><span class="badge-dot green"></span> SANCTUM OK</span>
+              </div>
+              <div class="card-visual-body">
+                <!-- Graphic Inspection Dashboard Mockup -->
+                <div class="graphic-hmis">
+                  <div class="hmis-stream-item">
+                    <span class="stream-dot green"></span>
+                    <span class="stream-text">Hospital Inspection #4892 Verified</span>
+                    <span class="stream-time">Real-Time</span>
+                  </div>
+                  <div class="hmis-stream-item">
+                    <span class="stream-dot red"></span>
+                    <span class="stream-text">Firebase Cloud Notification Broadcasted</span>
+                    <span class="stream-time">FCM Live</span>
+                  </div>
+                  <div class="hmis-stream-item">
+                    <span class="stream-dot blue"></span>
+                    <span class="stream-text">Facility Scoped Access Token Enforced</span>
+                    <span class="stream-time">Sanctum</span>
+                  </div>
+                </div>
+                <div class="graphic-metrics">
+                  <div class="g-metric"><span>Scope</span><b>Role &amp; Facility-Based</b></div>
+                  <div class="g-metric"><span>Testing</span><b>PHPUnit Automated</b></div>
+                  <div class="g-metric"><span>Push Alerts</span><b>Firebase Messaging</b></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card-footer">
-            <div class="card-meta">
-              <span class="card-idx">03</span>
-              <div class="card-titles">
-                <span class="card-name">NHM-HMIS Platform</span>
-                <span class="card-type">Healthcare Management API</span>
+            <div class="card-footer">
+              <div class="card-meta">
+                <span class="card-idx">03</span>
+                <div class="card-titles">
+                  <span class="card-name">NHM-HMIS Platform</span>
+                  <span class="card-type">Hospital &amp; Healthcare Information API</span>
+                </div>
+              </div>
+              <div class="card-tags">
+                <span class="c-tag">Laravel</span><span class="c-tag">Sanctum</span><span class="c-tag">Firebase</span><span class="c-tag">PHPUnit</span>
               </div>
             </div>
-            <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
-        </article>
+          </article>
+
+          <!-- Slide 04: Tender Intelligence / Claude AI -->
+          <article class="carousel-card" data-idx="3">
+            <div class="card-visual">
+              <div class="card-visual-header">
+                <span class="dot-win red"></span><span class="dot-win"></span><span class="dot-win"></span>
+                <span class="win-filename">intelligence / tender / claude-crawler.py</span>
+                <span class="win-live-badge"><span class="badge-dot"></span> CLAUDE 3.5</span>
+              </div>
+              <div class="card-visual-body">
+                <div class="graphic-crawler">
+                  <div class="crawler-bar"><div class="crawler-progress"></div></div>
+                  <div class="crawler-log">
+                    <span>&gt; Scraping GeM / TN Tender portals... [OK]</span>
+                    <span>&gt; Parsing 140+ PDF RFP specifications... [DONE]</span>
+                    <span>&gt; Claude API summary &amp; eligibility match... [SUCCESS]</span>
+                  </div>
+                </div>
+                <div class="graphic-metrics">
+                  <div class="g-metric"><span>AI Model</span><b>Anthropic Claude</b></div>
+                  <div class="g-metric"><span>Scraping</span><b>Automated Pipelines</b></div>
+                  <div class="g-metric"><span>Alerts</span><b>Keyword Notifications</b></div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-meta">
+                <span class="card-idx">04</span>
+                <div class="card-titles">
+                  <span class="card-name">Tender Intelligence Platform</span>
+                  <span class="card-type">AI Tender Scraping &amp; Claude Synthesis</span>
+                </div>
+              </div>
+              <div class="card-tags">
+                <span class="c-tag">Claude API</span><span class="c-tag">Python</span><span class="c-tag">Laravel</span><span class="c-tag">Scraping</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 05: Shopyfest Live E-Commerce -->
+          <article class="carousel-card" data-idx="4">
+            <div class="card-visual">
+              <div class="card-visual-header">
+                <span class="dot-win red"></span><span class="dot-win"></span><span class="dot-win"></span>
+                <span class="win-filename">ecommerce / payments / razorpay-webhook.php</span>
+                <span class="win-live-badge"><span class="badge-dot green"></span> SECURE GATEWAY</span>
+              </div>
+              <div class="card-visual-body">
+                <div class="graphic-shop">
+                  <div class="shop-grid">
+                    <div class="shop-pill">&#10003; Razorpay Verified</div>
+                    <div class="shop-pill">&#10003; PayPal Global</div>
+                    <div class="shop-pill">&#10003; Multi-Vendor Cart</div>
+                  </div>
+                  <div class="shop-stat-bar">
+                    <span>Payment Gateway Integration</span>
+                    <b>Instant Webhook Callback</b>
+                  </div>
+                </div>
+                <div class="graphic-metrics">
+                  <div class="g-metric"><span>Payments</span><b>Razorpay &amp; PayPal</b></div>
+                  <div class="g-metric"><span>Scale</span><b>Multi-Vendor</b></div>
+                  <div class="g-metric"><span>Architecture</span><b>REST API Backend</b></div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="card-meta">
+                <span class="card-idx">05</span>
+                <div class="card-titles">
+                  <span class="card-name">Shopyfest E-Commerce</span>
+                  <span class="card-type">Live Multi-Vendor Retail Platform</span>
+                </div>
+              </div>
+              <div class="card-tags">
+                <span class="c-tag">Laravel</span><span class="c-tag">Razorpay</span><span class="c-tag">PayPal</span><span class="c-tag">E-Commerce</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Carousel Indicators (Dots) -->
+        <div class="carousel-indicators" id="carouselDots"></div>
 
       </div>
+
     </div>
   </section>
 
@@ -2282,6 +2686,97 @@
       requestAnimationFrame(loop);
     }
     loop();
+  })();
+
+  // 3D Animated Graphic Carousel Controller
+  (function () {
+    const track = document.getElementById('carouselTrack');
+    const stage = document.getElementById('carouselStage');
+    if (!track) return;
+    const cards = [...track.querySelectorAll('.carousel-card')];
+    const prevBtn = document.getElementById('projPrevBtn');
+    const nextBtn = document.getElementById('projNextBtn');
+    const dotsBox = document.getElementById('carouselDots');
+    const total = cards.length;
+    let currentIdx = 0;
+    let timer = null;
+    let isHovered = false;
+
+    // Create Navigation Dots
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Go to project slide ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsBox.appendChild(dot);
+    });
+    const dots = [...dotsBox.querySelectorAll('.carousel-dot')];
+
+    function updateCards() {
+      cards.forEach((card, i) => {
+        const offset = (i - currentIdx + total) % total;
+        if (offset === 0) {
+          card.setAttribute('data-pos', '0');
+        } else if (offset === 1) {
+          card.setAttribute('data-pos', '1');
+        } else if (offset === total - 1) {
+          card.setAttribute('data-pos', '-1');
+        } else {
+          card.setAttribute('data-pos', 'hidden');
+        }
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIdx);
+      });
+    }
+
+    function goTo(idx) {
+      currentIdx = (idx + total) % total;
+      updateCards();
+      resetTimer();
+    }
+
+    function next() { goTo(currentIdx + 1); }
+    function prev() { goTo(currentIdx - 1); }
+
+    // Click Side Cards to Rotate
+    cards.forEach((card, i) => {
+      card.addEventListener('click', (e) => {
+        const pos = card.getAttribute('data-pos');
+        if (pos === '1') { next(); }
+        else if (pos === '-1') { prev(); }
+      });
+    });
+
+    if (prevBtn) prevBtn.addEventListener('click', prev);
+    if (nextBtn) nextBtn.addEventListener('click', next);
+
+    // Auto Play with Pause on Hover
+    function startTimer() {
+      if (timer) clearInterval(timer);
+      timer = setInterval(() => {
+        if (!isHovered && !document.hidden) next();
+      }, 4500);
+    }
+    function resetTimer() {
+      startTimer();
+    }
+
+    stage.addEventListener('mouseenter', () => { isHovered = true; });
+    stage.addEventListener('mouseleave', () => { isHovered = false; });
+    stage.addEventListener('focusin', () => { isHovered = true; });
+    stage.addEventListener('focusout', () => { isHovered = false; });
+
+    // Keyboard Arrow Controls
+    document.addEventListener('keydown', (e) => {
+      if (document.activeElement && document.activeElement.tagName === 'INPUT') return;
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft') prev();
+    });
+
+    updateCards();
+    startTimer();
   })();
 </script>
 
