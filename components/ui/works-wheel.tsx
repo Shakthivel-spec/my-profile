@@ -42,19 +42,19 @@ export interface WorksWheelProps extends Omit<
    swinging on a huge drum. The three that matter are tuned together: STEP
    against DRUM sets how hard the neighbours rotate away, and DRUM against LENS
    decides whether they land inside the frame or run off it. */
-const CARD_H = 0.38; // front card height, of the stage
-const CARD_MAX_W = 0.34; // ... but never wider than this much of the stage
-const CARD_RATIO = 1.45; // card width / height
-const STEP = 40; // degrees between cards on the drum
-const DRUM = 2.22; // drum radius, in card heights - and everything below likewise
-const LENS = 2.7; // perspective distance
+const CARD_H = 0.54; // front card height, of the stage
+const CARD_MAX_W = 0.52; // ... max width of the stage
+const CARD_RATIO = 1.6; // cinematic card width / height
+const STEP = 42; // degrees between cards on the drum
+const DRUM = 2.12; // drum radius, in card heights - and everything below likewise
+const LENS = 2.65; // perspective distance
 const RING_R = 1.14; // ring radius
 /* The drum alone hangs the work on a plumb line. It isn't one: the strip curves
    away round an arc whose centre sits off to the LEFT, so the piece at the front
    is at the arc's near point - dead centre - and its neighbours have already
    swung back left as well as up and down. BOW is that arc's radius; nothing else
    makes the difference between a stack of cards and a wheel seen side on. */
-const BOW = 1.82;
+const BOW = 1.85;
 const TITLE = 0.124; // ring label and front-card title
 const INDEX = 0.04; // the index down the right-hand side
 /** Items either side of the front still worth drawing. Past this a card is

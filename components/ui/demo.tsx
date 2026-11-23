@@ -55,33 +55,43 @@ const UNSPASH_WORKS: WorksWheelItem[] = [
 export const SHAKTHIVEL_PORTFOLIO_WORKS: WorksWheelItem[] = [
   {
     title: "TN-FD Knowledge AI (RAG)",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1400&q=80",
     href: "#tn-fd-ai",
   },
   {
     title: "NHM Finance / SNA SPARSH",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80",
     href: "#nhm-finance",
   },
   {
     title: "NHM-HMIS Healthcare System",
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1400&q=80",
     href: "#hmis-platform",
   },
   {
     title: "Amazon SP-API Automation",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1400&q=80",
     href: "#amazon-automation",
   },
   {
     title: "Shopyfest E-Commerce",
-    image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
     href: "#shopyfest",
   },
   {
     title: "Tender Intelligence Engine",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
     href: "#tender-ai",
+  },
+  {
+    title: "Bea Site Electronics",
+    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1400&q=80",
+    href: "#bea-site",
+  },
+  {
+    title: "Protocol Hero Task Sync",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80",
+    href: "#protocol-hero",
   },
 ];
 

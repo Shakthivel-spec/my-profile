@@ -37,7 +37,7 @@
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
     
-    --max-w: 1220px;
+    --max-w: 1380px;
     --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -216,16 +216,24 @@
 
   /* ==========================================================================
      WORKS WHEEL 3D HERO COMPONENT
-     Auto-animating 3D drum on default load without any button click
+     Auto-animating 3D drum hero across stage background with high z-index info overlay
      ========================================================================== */
   .works-wheel-hero {
-    padding: 2rem 0 3.5rem;
+    padding: 1.5rem 0 3.5rem;
     position: relative;
+    width: 100%;
+  }
+
+  .works-wheel-outer-wrapper {
+    width: 100%;
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
 
   .hero-tagline-bar {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   .hero-tagline-pill {
@@ -238,23 +246,22 @@
     color: var(--primary-light);
     background: rgba(59, 130, 246, 0.08);
     border: 1px solid rgba(59, 130, 246, 0.22);
-    padding: 0.35rem 1rem;
+    padding: 0.35rem 1.1rem;
     border-radius: 999px;
     letter-spacing: 0.06em;
   }
 
   .works-wheel-stage-wrapper {
     width: 100%;
-    max-width: 1200px;
-    height: min(680px, 82vh);
-    min-height: 480px;
-    margin: 0.5rem auto 0;
+    height: min(720px, 86vh);
+    min-height: 560px;
+    margin: 0 auto;
     position: relative;
-    border-radius: 20px;
-    background: radial-gradient(circle at 65% 50%, rgba(30, 41, 59, 0.45) 0%, rgba(9, 13, 22, 0.98) 100%);
+    border-radius: 24px;
+    background: radial-gradient(circle at 60% 50%, rgba(30, 41, 59, 0.5) 0%, rgba(9, 13, 22, 0.98) 100%);
     border: 1.5px solid var(--border-subtle);
     overflow: hidden;
-    box-shadow: 0 25px 80px -15px rgba(0, 0, 0, 0.95);
+    box-shadow: 0 30px 100px -20px rgba(0, 0, 0, 0.98), 0 0 40px rgba(59, 130, 246, 0.12);
   }
 
   .works-wheel-stage {
@@ -275,38 +282,41 @@
     outline-offset: -4px;
   }
 
-  /* Dynamic Left Info Panel */
+  /* Dynamic Left Info Panel - High z-index floating glass over 3D background */
   .works-wheel-info-panel {
     position: absolute;
     top: 50%;
-    left: 4.5%;
+    left: 3.5rem;
     transform: translateY(-50%);
-    max-width: 360px;
-    z-index: 25;
+    width: 440px;
+    max-width: 90%;
+    z-index: 60;
     pointer-events: auto;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    background: rgba(9, 13, 22, 0.75);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--border-subtle);
-    border-radius: 16px;
-    padding: 1.8rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    gap: 0.9rem;
+    background: rgba(9, 13, 22, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 20px;
+    padding: 2.2rem 2.4rem;
+    box-shadow: 0 25px 65px rgba(0, 0, 0, 0.88), 0 0 40px rgba(59, 130, 246, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 960px) {
     .works-wheel-info-panel {
       position: relative;
       top: auto;
       left: auto;
       transform: none;
+      width: auto;
       max-width: 100%;
       margin: 1rem 1rem 0;
-      padding: 1.25rem;
+      padding: 1.5rem;
     }
     .works-wheel-stage-wrapper {
-      height: 520px;
+      height: 560px;
     }
   }
 
@@ -320,7 +330,7 @@
   }
 
   .wheel-title-text {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
     font-weight: 800;
     color: var(--text-primary);
     line-height: 1.15;
@@ -328,20 +338,20 @@
   }
 
   .wheel-desc-text {
-    font-size: 0.88rem;
+    font-size: 0.92rem;
     color: var(--text-secondary);
-    line-height: 1.55;
+    line-height: 1.6;
   }
 
   .wheel-stack-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
+    gap: 0.45rem;
     margin-top: 0.2rem;
   }
 
   .wheel-stack-tag {
-    padding: 0.25rem 0.6rem;
+    padding: 0.28rem 0.65rem;
     background: rgba(59, 130, 246, 0.12);
     border: 1px solid rgba(59, 130, 246, 0.25);
     border-radius: 4px;
@@ -355,7 +365,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     font-weight: 600;
     color: var(--primary-light);
     margin-top: 0.4rem;
@@ -367,15 +377,16 @@
     transform: translateX(3px);
   }
 
-  /* 3D Drum */
+  /* 3D Drum - Midground layer running in background of info panel */
   .works-wheel-drum {
     position: absolute;
     top: 50%;
-    left: 58%;
+    left: 54%;
     transform-style: preserve-3d;
+    z-index: 10;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 960px) {
     .works-wheel-drum {
       left: 50%;
     }
@@ -394,18 +405,26 @@
     position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 12px;
+    border-radius: 18px;
     overflow: hidden;
-    background: var(--bg-card);
-    box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.85), 0 0 2px rgba(255, 255, 255, 0.15);
-    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    box-shadow: 
+      0 35px 95px -15px rgba(0, 0, 0, 0.96),
+      0 15px 45px -10px rgba(0, 0, 0, 0.85),
+      0 0 50px -10px rgba(59, 130, 246, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      inset 0 0 30px rgba(0, 0, 0, 0.6);
+    border: 1.5px solid rgba(255, 255, 255, 0.14);
     transform-origin: center center;
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
   }
 
   .works-wheel-card:hover .works-wheel-card-inner {
-    border-color: var(--primary-light);
-    box-shadow: 0 25px 60px -10px rgba(59, 130, 246, 0.45);
+    border-color: rgba(96, 165, 250, 0.85);
+    box-shadow: 
+      0 40px 105px -10px rgba(0, 0, 0, 0.98),
+      0 0 70px 0 rgba(59, 130, 246, 0.55),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4);
   }
 
   .works-wheel-card img {
@@ -414,23 +433,24 @@
     object-fit: cover;
     display: block;
     pointer-events: none;
+    background: #0f172a;
   }
 
   .works-wheel-action-pill {
     position: absolute;
-    right: 12px;
-    bottom: 12px;
+    right: 14px;
+    bottom: 14px;
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 999px;
-    background: rgba(9, 13, 22, 0.85);
-    backdrop-filter: blur(8px);
+    background: rgba(9, 13, 22, 0.88);
+    backdrop-filter: blur(10px);
     color: #ffffff;
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     opacity: 0;
     transform: translateY(4px);
     transition: opacity 0.2s ease, transform 0.2s ease;
@@ -442,18 +462,26 @@
     transform: translateY(0);
   }
 
-  /* Right Index List */
+  /* Right Index List - High z-index floating indicator */
   .works-wheel-index {
     position: absolute;
-    top: 7.5%;
-    right: 2.5%;
+    top: 50%;
+    right: 2.2rem;
+    transform: translateY(-50%);
     list-style: none;
     text-align: right;
-    line-height: 1.75;
-    z-index: 10;
+    line-height: 1.85;
+    z-index: 60;
+    background: rgba(9, 13, 22, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 960px) {
     .works-wheel-index {
       display: none;
     }
@@ -932,15 +960,14 @@
   <!-- Navigation -->
   <header class="navbar">
     <div class="container nav-inner">
-      <a href="#works-wheel" class="nav-brand">
+      <a href="#" class="nav-brand">
         <span class="nav-brand-dot"></span>
         <span>SHAKTHIVEL</span>
         <span class="nav-brand-badge">AI &bull; FULL-STACK</span>
       </a>
 
       <nav class="nav-links" id="navLinks">
-        <a href="#works-wheel" class="nav-link active">3D Showcase</a>
-        <a href="#projects" class="nav-link">Architectures</a>
+        <a href="#projects" class="nav-link active">Architectures</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#skills" class="nav-link">Stack</a>
         <a href="#credentials" class="nav-link">Certifications</a>
@@ -962,17 +989,17 @@
          HERO SECTION: 3D WORKSWHEEL AUTOMATICALLY DISPLAYED BY DEFAULT
          ========================================================================== -->
     <section class="works-wheel-hero" id="works-wheel">
-      <div class="container hero-tagline-bar">
-        <div class="hero-tagline-pill">
-          <span>ENTERPRISE FULL-STACK &bull; PRODUCTION AGENTIC AI &bull; DISTRIBUTED ARCHITECTURES</span>
+      <div class="works-wheel-outer-wrapper">
+        <div class="hero-tagline-bar">
+          <div class="hero-tagline-pill">
+            <span>ENTERPRISE FULL-STACK &bull; PRODUCTION AGENTIC AI &bull; DISTRIBUTED ARCHITECTURES</span>
+          </div>
         </div>
-      </div>
 
-      <div class="container">
         <div class="works-wheel-stage-wrapper">
           <div id="worksWheelStage" class="works-wheel-stage" tabindex="0" role="listbox" aria-label="Works Wheel">
             
-            <!-- Dynamic Left Architecture Info Panel -->
+            <!-- Dynamic Left Architecture Info Panel - Elevated z-index floating over 3D drum -->
             <div id="worksWheelInfo" class="works-wheel-info-panel">
               <span class="wheel-category-text" id="wheelCategory">AGENTIC AI &bull; RAG</span>
               <h1 class="wheel-title-text" id="wheelTitle">TN-FD Knowledge AI</h1>
@@ -1464,7 +1491,7 @@
           category: "AGENTIC AI &bull; RAG",
           desc: "Multi-agent semantic document retrieval and text-to-SQL pipeline with Qdrant vector database and FastAPI microservice.",
           stack: ["FastAPI", "Python", "Qdrant", "Docker"],
-          image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+          image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1400&q=80",
           href: "#project-tnfd"
         },
         {
@@ -1472,7 +1499,7 @@
           category: "ENTERPRISE FUND FLOW",
           desc: "State-level budget allocation, ROP approvals, Mother Sanction, and bulk payment validation with Tally ERP integration.",
           stack: ["Laravel", "PHP", "MySQL", "Supervisor"],
-          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80",
           href: "#project-nhm"
         },
         {
@@ -1480,7 +1507,7 @@
           category: "HEALTHCARE PLATFORM",
           desc: "Hospital inspection tracking portal with facility-scoped role-based access control, mobile REST APIs, and Firebase Cloud Messaging.",
           stack: ["Sanctum", "Firebase", "MySQL", "PHPUnit"],
-          image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
+          image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1400&q=80",
           href: "#project-hmis"
         },
         {
@@ -1488,7 +1515,7 @@
           category: "COMMERCE AUTOMATION",
           desc: "Automated listing synchronization, inventory tracking, and real-time pricing engine connecting Amazon seller portals.",
           stack: ["Amazon SP-API", "Node.js", "Express", "Crons"],
-          image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+          image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1400&q=80",
           href: "#project-amazon"
         },
         {
@@ -1496,7 +1523,7 @@
           category: "E-COMMERCE PLATFORM",
           desc: "Multi-vendor retail marketplace featuring dynamic merchant commission structures, cart checkouts, and dual payment gateways.",
           stack: ["Laravel", "MySQL", "Razorpay", "PayPal"],
-          image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80",
+          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
           href: "#project-shopyfest"
         },
         {
@@ -1504,7 +1531,7 @@
           category: "AI WORKFLOW &bull; SCRAPING",
           desc: "Automated public procurement scraper with keyword alert triggers and Anthropic Claude API for document summarization.",
           stack: ["Claude API", "Python", "Laravel", "Scraping"],
-          image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+          image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
           href: "#project-tender"
         },
         {
@@ -1512,7 +1539,7 @@
           category: "FULL-STACK COMMERCE",
           desc: "High-performance consumer electronics e-commerce application with responsive catalog filters and checkout workflows.",
           stack: ["React.js", "Laravel", "REST APIs"],
-          image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80",
+          image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1400&q=80",
           href: "#project-nhm"
         },
         {
@@ -1520,7 +1547,7 @@
           category: "MOBILE ARCHITECTURE",
           desc: "Enterprise field inspection and task allocation system with real-time GPS coordinate mapping and mobile synchronization.",
           stack: ["React Native", "MongoDB", "Node.js"],
-          image: "https://images.unsplash.com/photo-1517976487502-53b47c0b0a8d?auto=format&fit=crop&w=1200&q=80",
+          image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80",
           href: "#project-tnfd"
         }
       ];
@@ -1528,14 +1555,15 @@
       const count = ITEMS.length;
       const last = Math.max(count - 1, 0);
 
-      const CARD_H = 0.40;
-      const CARD_MAX_W = 0.36;
-      const CARD_RATIO = 1.45;
-      const STEP = 45;
-      const DRUM = 2.22;
-      const LENS = 2.7;
+      // Large, prominent widescreen 3D cards
+      const CARD_H = 0.54; // fills 54% of stage height (~350-390px tall)
+      const CARD_MAX_W = 0.52; // fills up to 52% of stage (~650-780px wide)
+      const CARD_RATIO = 1.6; // cinematic widescreen
+      const STEP = 42;
+      const DRUM = 2.12;
+      const LENS = 2.65;
       const RING_R = 1.14;
-      const BOW = 1.82;
+      const BOW = 1.85;
       const CULL = 1.8;
 
       const WHEEL_UNITS = 800;
@@ -1556,6 +1584,9 @@
         );
       }
 
+      // Fallback image in case of any network glitch
+      const fallbackImg = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80';
+
       // Populate cards & index buttons
       drumEl.innerHTML = '';
       indexEl.innerHTML = '';
@@ -1569,7 +1600,7 @@
         card.setAttribute('aria-label', item.title);
         card.innerHTML = `
           <div class="works-wheel-card-inner">
-            <img src="${item.image}" alt="${item.title}" draggable="false" loading="eager">
+            <img src="${item.image}" alt="${item.title}" draggable="false" loading="eager" onerror="if(this.src!=='${fallbackImg}'){this.src='${fallbackImg}';}">
             <span class="works-wheel-action-pill">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
               View
