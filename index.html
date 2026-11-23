@@ -37,7 +37,7 @@
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
     
-    --max-w: 1160px;
+    --max-w: 1180px;
     --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -80,7 +80,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(9, 13, 22, 0.85);
+    background: rgba(9, 13, 22, 0.88);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-subtle);
@@ -94,10 +94,21 @@
   }
 
   .nav-brand {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1.25rem;
     letter-spacing: -0.01em;
     color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-brand-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
   }
 
   .nav-links {
@@ -143,7 +154,7 @@
     padding: 0.5rem;
   }
 
-  @media (max-width: 820px) {
+  @media (max-width: 860px) {
     .nav-links { display: none; }
     .mobile-menu-btn { display: block; }
     .nav-links.open {
@@ -193,20 +204,25 @@
 
   /* Hero Section */
   .hero-section {
-    padding: 6.5rem 0 3.5rem;
+    padding: 4.5rem 0 2rem;
+    text-align: center;
     position: relative;
   }
 
   .hero-content {
-    max-width: 840px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.6rem;
     font-weight: 800;
     letter-spacing: -0.03em;
-    line-height: 1.15;
-    margin-bottom: 1.5rem;
+    line-height: 1.12;
+    margin-bottom: 1.25rem;
   }
 
   .hero-title .highlight {
@@ -219,13 +235,15 @@
     font-size: 1.18rem;
     color: var(--text-secondary);
     line-height: 1.7;
-    margin-bottom: 2.2rem;
+    margin-bottom: 2rem;
+    max-width: 720px;
   }
 
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
     margin-bottom: 2.5rem;
   }
@@ -270,6 +288,7 @@
   .hero-social-links {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
   }
@@ -288,76 +307,30 @@
   }
 
   @media (max-width: 768px) {
-    .hero-title { font-size: 2.5rem; }
+    .hero-title { font-size: 2.6rem; }
     .hero-bio { font-size: 1.05rem; }
-  }
-
-  /* Metric Highlights Strip */
-  .metrics-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    margin-top: 3.5rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid var(--border-subtle);
-  }
-
-  .metric-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: var(--transition);
-  }
-
-  .metric-card:hover {
-    border-color: var(--border-hover);
-    transform: translateY(-2px);
-  }
-
-  .metric-value {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--primary-light);
-    letter-spacing: -0.02em;
-    margin-bottom: 0.25rem;
-  }
-
-  .metric-label {
-    font-size: 0.88rem;
-    color: var(--text-secondary);
-    font-weight: 500;
-  }
-
-  @media (max-width: 768px) {
-    .metrics-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
   }
 
   /* ==========================================================================
      WORKS WHEEL 3D COMPONENT STYLES
-     Pixel-perfect interactive 3D drum & ring implementation
      ========================================================================== */
   .works-wheel-section {
-    padding: 5rem 0 4rem;
+    padding: 1.5rem 0 4rem;
     position: relative;
-    background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(15, 23, 42, 0.5) 50%, var(--bg-primary) 100%);
   }
 
   .works-wheel-stage-wrapper {
     width: 100%;
-    max-width: 1160px;
-    height: min(640px, 78vh);
-    min-height: 440px;
-    margin: 1rem auto 0;
+    max-width: 1180px;
+    height: min(650px, 80vh);
+    min-height: 460px;
+    margin: 1.5rem auto 0;
     position: relative;
     border-radius: 20px;
-    background: radial-gradient(circle at center, rgba(30, 41, 59, 0.45) 0%, rgba(9, 13, 22, 0.98) 100%);
+    background: radial-gradient(circle at center, rgba(30, 41, 59, 0.5) 0%, rgba(9, 13, 22, 0.98) 100%);
     border: 1.5px solid var(--border-subtle);
     overflow: hidden;
-    box-shadow: 0 25px 70px -15px rgba(0, 0, 0, 0.85);
+    box-shadow: 0 25px 80px -15px rgba(0, 0, 0, 0.9);
   }
 
   .works-wheel-stage {
@@ -534,6 +507,50 @@
     border-radius: 4px;
     font-size: 0.75rem;
     color: var(--text-secondary);
+  }
+
+  /* Metric Highlights Strip */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .metric-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: var(--transition);
+  }
+
+  .metric-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+  }
+
+  .metric-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-light);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+  }
+
+  .metric-label {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
   }
 
   /* Skills Section */
@@ -917,12 +934,14 @@
   <header class="navbar">
     <div class="container nav-inner">
       <a href="#home" class="nav-brand">
-        Shakthivel
+        <span class="nav-brand-dot"></span>
+        <span>Shakthivel</span>
       </a>
 
       <nav class="nav-links" id="navLinks">
+        <a href="#works-wheel" class="nav-link" style="color:var(--primary-light); font-weight:600;">3D Wheel</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="#works-wheel" class="nav-link">Projects (3D Wheel)</a>
+        <a href="#projects" class="nav-link">Projects</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#credentials" class="nav-link">Certifications</a>
@@ -945,19 +964,19 @@
       <div class="container">
         
         <div class="hero-content">
+          <span class="section-tag" style="margin-bottom:0.75rem;">Full-Stack &bull; AI Systems &bull; Enterprise Architecture</span>
           <h1 class="hero-title">
             Hi, I'm Shakthivel.<br>
             <span class="highlight">Full-Stack &amp; AI Engineer</span>
           </h1>
 
           <p class="hero-bio">
-            Software Developer with <strong>5+ years of experience</strong> architecting high-throughput backend systems (PHP / Laravel, Python / FastAPI, Node.js), responsive user experiences (React, React Native), and production Agentic AI &amp; RAG architectures. Currently building enterprise health and financial systems at <strong>In22 Labs</strong> in Chennai, India.
+            Software Developer with <strong>5+ years of experience</strong> architecting high-throughput backend systems (PHP / Laravel, Python / FastAPI, Node.js), responsive user experiences (React, React Native), and production Agentic AI &amp; RAG architectures at <strong>In22 Labs</strong> in Chennai, India.
           </p>
 
           <div class="hero-actions">
             <a href="#works-wheel" class="btn-primary">
-              Explore 3D Project Wheel
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+              Turn 3D Project Drum &darr;
             </a>
 
             <a href="Shakthivel_Resume_ATS_Optimized.pdf" download class="btn-secondary">
@@ -982,38 +1001,18 @@
           </div>
         </div>
 
-        <!-- Metrics Grid -->
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <div class="metric-value">5+</div>
-            <div class="metric-label">Years of Professional Experience</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">14+</div>
-            <div class="metric-label">Enterprise &amp; Client Projects</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">2+</div>
-            <div class="metric-label">Production AI &amp; RAG Systems</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">2</div>
-            <div class="metric-label">Certifications (OpenAI, Claude)</div>
-          </div>
-        </div>
-
       </div>
     </section>
 
     <!-- ==========================================================================
-         WORKS WHEEL 3D SHOWCASE SECTION
+         WORKS WHEEL 3D SHOWCASE SECTION (PROMINENT AT TOP)
          ========================================================================== -->
     <section class="works-wheel-section" id="works-wheel">
-      <div class="container">
-        <span class="section-tag">Interactive Portfolio Drum</span>
-        <h2 class="section-title">Works '26 // 3D Interactive Wheel</h2>
-        <p class="section-desc">
-          Scroll your mouse wheel, drag with touch/mouse, or use arrow keys to rotate through selected enterprise applications and AI platforms.
+      <div class="container" style="text-align: center;">
+        <span class="section-tag">Interactive 3D Experience</span>
+        <h2 class="section-title">Works '26 // Project Drum</h2>
+        <p class="section-desc" style="margin: 0 auto 1.5rem;">
+          Scroll mouse wheel, drag, or use arrow keys to rotate through selected enterprise applications.
         </p>
       </div>
 
@@ -1046,6 +1045,26 @@
             Click Project Title on Right to Jump Directly
           </span>
         </div>
+
+        <!-- Metrics Grid -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-value">5+</div>
+            <div class="metric-label">Years of Professional Experience</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">14+</div>
+            <div class="metric-label">Enterprise &amp; Client Projects</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">2+</div>
+            <div class="metric-label">Production AI &amp; RAG Systems</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">2</div>
+            <div class="metric-label">Certifications (OpenAI, Claude)</div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1068,6 +1087,125 @@
           <p>
             I hold a <strong>B.Tech in Information Technology</strong> from SCSVMV University (CGPA 7.4) and hold certifications from <strong>OpenAI Academy</strong> (AI Foundations) and <strong>Anthropic</strong> (Claude 101).
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Detailed Grid Section -->
+    <section id="projects">
+      <div class="container">
+        <span class="section-tag">Featured Architectures</span>
+        <h2 class="section-title">Selected Projects Breakdown</h2>
+        <p class="section-desc">
+          Detailed technical specifications of enterprise platforms and AI microservices.
+        </p>
+
+        <div class="projects-grid">
+          
+          <!-- Project 1 -->
+          <div class="project-card" id="project-nhm">
+            <div>
+              <span class="project-category">ENTERPRISE FINANCE</span>
+              <h3 class="project-title">NHM Finance / SNA SPARSH</h3>
+              <p class="project-desc">
+                Government fund-flow and allocation platform managing state healthcare budgets, ROP approvals, Mother Sanction, bulk Excel validations, and direct Tally accounting integration with Supervisor queue workers.
+              </p>
+            </div>
+            <div class="project-tech-tags">
+              <span class="p-tag">Laravel</span>
+              <span class="p-tag">PHP</span>
+              <span class="p-tag">MySQL</span>
+              <span class="p-tag">Queues</span>
+              <span class="p-tag">Tally ERP</span>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card" id="project-tnfd">
+            <div>
+              <span class="project-category">AGENTIC AI &bull; RAG</span>
+              <h3 class="project-title">TN-FD Knowledge Intelligence AI</h3>
+              <p class="project-desc">
+                Multi-agent AI platform combining vector similarity search (Qdrant) and natural language text-to-SQL. Allows administrative users to query complex relational data in conversational English.
+              </p>
+            </div>
+            <div class="project-tech-tags">
+              <span class="p-tag">FastAPI</span>
+              <span class="p-tag">Python</span>
+              <span class="p-tag">Qdrant Vector</span>
+              <span class="p-tag">Text-to-SQL</span>
+              <span class="p-tag">Docker</span>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card" id="project-hmis">
+            <div>
+              <span class="project-category">HEALTHCARE SAAS</span>
+              <h3 class="project-title">NHM-HMIS (Hospital Info System)</h3>
+              <p class="project-desc">
+                Comprehensive institution and inspection tracking portal with facility-scoped role-based access control, token-authenticated mobile REST APIs, Firebase Cloud Messaging, and automated PHPUnit suites.
+              </p>
+            </div>
+            <div class="project-tech-tags">
+              <span class="p-tag">Laravel Sanctum</span>
+              <span class="p-tag">Firebase FCM</span>
+              <span class="p-tag">MySQL</span>
+              <span class="p-tag">PHPUnit</span>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card" id="project-amazon">
+            <div>
+              <span class="project-category">COMMERCE &bull; AUTOMATION</span>
+              <h3 class="project-title">Amazon Seller Center Automation</h3>
+              <p class="project-desc">
+                Automated listing synchronization, inventory tracking, and real-time pricing engine connecting multi-storefront merchant portals via Amazon SP-APIs and background Node.js services.
+              </p>
+            </div>
+            <div class="project-tech-tags">
+              <span class="p-tag">Amazon SP-API</span>
+              <span class="p-tag">Node.js</span>
+              <span class="p-tag">Express</span>
+              <span class="p-tag">Cron Workers</span>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card" id="project-shopyfest">
+            <div>
+              <span class="project-category">E-COMMERCE PLATFORM</span>
+              <h3 class="project-title">Shopyfest Multi-Vendor Marketplace</h3>
+              <p class="project-desc">
+                High-volume online marketplace featuring multi-merchant catalogs, dynamic commission structures, cart checkouts, and dual payment gateways (Razorpay &amp; PayPal).
+              </p>
+            </div>
+            <div class="project-tech-tags">
+              <span class="p-tag">Laravel</span>
+              <span class="p-tag">MySQL</span>
+              <span class="p-tag">Razorpay</span>
+              <span class="p-tag">PayPal</span>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="project-card" id="project-tender">
+            <div>
+              <span class="project-category">AI WORKFLOW &bull; SCRAPING</span>
+              <h3 class="project-title">Tender Intelligence Engine</h3>
+              <p class="project-desc">
+                Automated tender portal scraping pipeline with keyword alert dispatchers and Anthropic Claude API integration for summarizing lengthy procurement documentation.
+              </p>
+            </div>
+            <div class="project-tech-tags">
+              <span class="p-tag">Claude API</span>
+              <span class="p-tag">Python</span>
+              <span class="p-tag">Laravel</span>
+              <span class="p-tag">Scraping</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -1231,125 +1369,6 @@
                 <span class="p-tag">Selenium</span>
                 <span class="p-tag">MongoDB</span>
               </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Detailed Grid Section -->
-    <section id="projects">
-      <div class="container">
-        <span class="section-tag">Featured Architectures</span>
-        <h2 class="section-title">Selected Projects Breakdown</h2>
-        <p class="section-desc">
-          Detailed technical specifications of enterprise platforms and AI microservices.
-        </p>
-
-        <div class="projects-grid">
-          
-          <!-- Project 1 -->
-          <div class="project-card" id="project-nhm">
-            <div>
-              <span class="project-category">ENTERPRISE FINANCE</span>
-              <h3 class="project-title">NHM Finance / SNA SPARSH</h3>
-              <p class="project-desc">
-                Government fund-flow and allocation platform managing state healthcare budgets, ROP approvals, Mother Sanction, bulk Excel validations, and direct Tally accounting integration with Supervisor queue workers.
-              </p>
-            </div>
-            <div class="project-tech-tags">
-              <span class="p-tag">Laravel</span>
-              <span class="p-tag">PHP</span>
-              <span class="p-tag">MySQL</span>
-              <span class="p-tag">Queues</span>
-              <span class="p-tag">Tally ERP</span>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="project-card" id="project-tnfd">
-            <div>
-              <span class="project-category">AGENTIC AI &bull; RAG</span>
-              <h3 class="project-title">TN-FD Knowledge Intelligence AI</h3>
-              <p class="project-desc">
-                Multi-agent AI platform combining vector similarity search (Qdrant) and natural language text-to-SQL. Allows administrative users to query complex relational data in conversational English.
-              </p>
-            </div>
-            <div class="project-tech-tags">
-              <span class="p-tag">FastAPI</span>
-              <span class="p-tag">Python</span>
-              <span class="p-tag">Qdrant Vector</span>
-              <span class="p-tag">Text-to-SQL</span>
-              <span class="p-tag">Docker</span>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="project-card" id="project-hmis">
-            <div>
-              <span class="project-category">HEALTHCARE SAAS</span>
-              <h3 class="project-title">NHM-HMIS (Hospital Info System)</h3>
-              <p class="project-desc">
-                Comprehensive institution and inspection tracking portal with facility-scoped role-based access control, token-authenticated mobile REST APIs, Firebase Cloud Messaging, and automated PHPUnit suites.
-              </p>
-            </div>
-            <div class="project-tech-tags">
-              <span class="p-tag">Laravel Sanctum</span>
-              <span class="p-tag">Firebase FCM</span>
-              <span class="p-tag">MySQL</span>
-              <span class="p-tag">PHPUnit</span>
-            </div>
-          </div>
-
-          <!-- Project 4 -->
-          <div class="project-card" id="project-amazon">
-            <div>
-              <span class="project-category">COMMERCE &bull; AUTOMATION</span>
-              <h3 class="project-title">Amazon Seller Center Automation</h3>
-              <p class="project-desc">
-                Automated listing synchronization, inventory tracking, and real-time pricing engine connecting multi-storefront merchant portals via Amazon SP-APIs and background Node.js services.
-              </p>
-            </div>
-            <div class="project-tech-tags">
-              <span class="p-tag">Amazon SP-API</span>
-              <span class="p-tag">Node.js</span>
-              <span class="p-tag">Express</span>
-              <span class="p-tag">Cron Workers</span>
-            </div>
-          </div>
-
-          <!-- Project 5 -->
-          <div class="project-card" id="project-shopyfest">
-            <div>
-              <span class="project-category">E-COMMERCE PLATFORM</span>
-              <h3 class="project-title">Shopyfest Multi-Vendor Marketplace</h3>
-              <p class="project-desc">
-                High-volume online marketplace featuring multi-merchant catalogs, dynamic commission structures, cart checkouts, and dual payment gateways (Razorpay &amp; PayPal).
-              </p>
-            </div>
-            <div class="project-tech-tags">
-              <span class="p-tag">Laravel</span>
-              <span class="p-tag">MySQL</span>
-              <span class="p-tag">Razorpay</span>
-              <span class="p-tag">PayPal</span>
-            </div>
-          </div>
-
-          <!-- Project 6 -->
-          <div class="project-card" id="project-tender">
-            <div>
-              <span class="project-category">AI WORKFLOW &bull; SCRAPING</span>
-              <h3 class="project-title">Tender Intelligence Engine</h3>
-              <p class="project-desc">
-                Automated tender portal scraping pipeline with keyword alert dispatchers and Anthropic Claude API integration for summarizing lengthy procurement documentation.
-              </p>
-            </div>
-            <div class="project-tech-tags">
-              <span class="p-tag">Claude API</span>
-              <span class="p-tag">Python</span>
-              <span class="p-tag">Laravel</span>
-              <span class="p-tag">Scraping</span>
             </div>
           </div>
 
@@ -1588,7 +1607,7 @@
         card.setAttribute('aria-label', item.title);
         card.innerHTML = `
           <div class="works-wheel-card-inner">
-            <img src="${item.image}" alt="${item.title}" draggable="false" loading="lazy">
+            <img src="${item.image}" alt="${item.title}" draggable="false" loading="eager">
             <span class="works-wheel-action-pill">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
               View
@@ -1615,12 +1634,14 @@
       let turn = 0;
       let target = 0;
       let active = 0;
-      let stageW = stageEl.clientWidth || 1000;
-      let stageH = stageEl.clientHeight || 600;
+      let stageW = stageEl.clientWidth || 1160;
+      let stageH = stageEl.clientHeight || 560;
       let reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       function getMetrics() {
-        const cardW = Math.min(stageH * CARD_H * CARD_RATIO, stageW * CARD_MAX_W);
+        const sw = stageW || 1160;
+        const sh = stageH || 560;
+        const cardW = Math.min(sh * CARD_H * CARD_RATIO, sw * CARD_MAX_W);
         const cardH = cardW / CARD_RATIO;
         const drumR = cardH * DRUM;
         const ringR = cardH * RING_R;
@@ -1639,8 +1660,8 @@
       }
 
       function measure() {
-        stageW = stageEl.clientWidth;
-        stageH = stageEl.clientHeight;
+        stageW = stageEl.clientWidth || 1160;
+        stageH = stageEl.clientHeight || 560;
         const m = getMetrics();
         stageEl.style.perspective = `${m.depth}px`;
         labelEl.style.fontSize = `${m.title}px`;
@@ -1649,8 +1670,14 @@
       }
 
       measure();
+      window.addEventListener('resize', measure);
       const ro = new ResizeObserver(measure);
       ro.observe(stageEl);
+
+      // Auto-bloom the 3D drum shortly after page load
+      setTimeout(() => {
+        if (target === 0) target = 1;
+      }, 700);
 
       function draw() {
         requestAnimationFrame(draw);
