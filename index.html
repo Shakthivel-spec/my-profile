@@ -8,7 +8,7 @@
 <meta http-equiv="Expires" content="0">
 <title>Shakthivel &bull; Full-Stack &amp; AI Systems Engineer</title>
 <meta name="description" content="Portfolio of Shakthivel — Full-Stack Developer & AI Systems Engineer with 5+ years experience building enterprise Laravel, Node.js, Python FastAPI, and RAG architectures in Chennai, India.">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#090d16">
 <link rel="canonical" href="https://shakthivel-spec.github.io/my-profile/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%232563eb'/%3E%3Ctext x='50' y='64' font-size='42' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 
@@ -29,7 +29,7 @@
     --primary: #2563eb;
     --primary-light: #3b82f6;
     --primary-dark: #1d4ed8;
-    --primary-glow: rgba(37, 99, 235, 0.2);
+    --primary-glow: rgba(37, 99, 235, 0.25);
     
     --text-primary: #0f172a;
     --text-secondary: #475569;
@@ -81,11 +81,11 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.94);
+    background: rgba(9, 13, 22, 0.94);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border-subtle);
-    box-shadow: 0 2px 14px rgba(15, 23, 42, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   }
 
   .nav-inner {
@@ -99,7 +99,7 @@
     font-weight: 800;
     font-size: 1.25rem;
     letter-spacing: -0.01em;
-    color: var(--text-primary);
+    color: #ffffff;
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -109,8 +109,8 @@
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    background: var(--primary);
-    box-shadow: 0 0 12px var(--primary);
+    background: #3b82f6;
+    box-shadow: 0 0 12px #3b82f6;
   }
 
   .nav-brand-badge {
@@ -118,9 +118,9 @@
     font-size: 0.72rem;
     padding: 2px 8px;
     border-radius: 4px;
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-    color: var(--primary-dark);
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    color: #93c5fd;
     font-weight: 600;
     letter-spacing: 0.05em;
   }
@@ -134,11 +134,11 @@
   .nav-link {
     font-size: 0.92rem;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: #94a3b8;
   }
 
   .nav-link:hover, .nav-link.active {
-    color: var(--primary);
+    color: #ffffff;
     font-weight: 600;
   }
 
@@ -156,7 +156,7 @@
   }
 
   .nav-cta-btn:hover {
-    background: var(--primary-dark);
+    background: var(--primary-light);
     transform: translateY(-1px);
     box-shadow: 0 6px 18px var(--primary-glow);
   }
@@ -165,7 +165,7 @@
     display: none;
     background: none;
     border: none;
-    color: var(--text-primary);
+    color: #ffffff;
     cursor: pointer;
     padding: 0.5rem;
   }
@@ -180,15 +180,15 @@
       top: 70px;
       left: 0;
       right: 0;
-      background: #ffffff;
-      border-bottom: 1px solid var(--border-subtle);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+      background: #090d16;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
       padding: 1.5rem;
       gap: 1.2rem;
     }
   }
 
-  /* Section Styles - Balanced padding to eliminate empty gaps */
+  /* Section Styles */
   section {
     padding: 3.5rem 0;
   }
@@ -246,24 +246,72 @@
   }
 
   /* ==========================================================================
-     WORKS WHEEL 3D HERO COMPONENT (WHITE / LIGHT THEME)
+     FULL-SCREEN HERO COVER (FROM NAVBAR DOWNWARDS)
+     No 3 disconnected boxes; full screen image cover with 3D drum & typography
      ========================================================================== */
-  .works-wheel-hero {
-    padding: 0.85rem 0 2.5rem;
+  .hero-fullscreen {
     position: relative;
     width: 100%;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    background: #090d16;
+    margin: 0;
+    padding: 0;
   }
 
-  .works-wheel-outer-wrapper {
+  .hero-fullscreen-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: scale(1.03);
+    filter: brightness(0.65) contrast(1.18) saturate(1.1);
+    z-index: 1;
+  }
+
+  .hero-fullscreen-overlay {
+    position: absolute;
+    inset: 0;
+    background: 
+      linear-gradient(90deg, rgba(9, 13, 22, 0.96) 0%, rgba(9, 13, 22, 0.84) 42%, rgba(9, 13, 22, 0.42) 75%, rgba(9, 13, 22, 0.88) 100%),
+      linear-gradient(180deg, rgba(9, 13, 22, 0.3) 0%, transparent 25%, rgba(9, 13, 22, 0.8) 100%),
+      radial-gradient(circle at 75% 50%, rgba(37, 99, 235, 0.18) 0%, transparent 60%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .hero-fullscreen-content {
+    position: relative;
+    z-index: 10;
     width: 100%;
     max-width: 1560px;
     margin: 0 auto;
-    padding: 0 1.25rem;
+    padding: 3rem 2rem 1.5rem;
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    gap: 3.5rem;
+    align-items: center;
+    flex: 1;
   }
 
-  .hero-tagline-bar {
-    text-align: center;
-    margin-bottom: 0.75rem;
+  @media (max-width: 1060px) {
+    .hero-fullscreen-content {
+      grid-template-columns: 1fr;
+      padding: 2rem 1.5rem 1rem;
+      gap: 2rem;
+    }
+  }
+
+  .hero-fullscreen-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    z-index: 20;
   }
 
   .hero-tagline-pill {
@@ -272,156 +320,151 @@
     gap: 0.6rem;
     font-family: var(--font-mono);
     font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--primary-dark);
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-    padding: 0.35rem 1.15rem;
+    font-weight: 700;
+    color: #60a5fa;
+    background: rgba(37, 99, 235, 0.15);
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    padding: 0.4rem 1.15rem;
     border-radius: 999px;
     letter-spacing: 0.06em;
+    width: fit-content;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
   }
 
-  .works-wheel-stage-wrapper {
-    width: 100%;
-    height: min(720px, 86vh);
-    min-height: 560px;
-    margin: 0 auto;
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3b82f6;
+    box-shadow: 0 0 10px #60a5fa;
+    animation: dotPulse 2s infinite;
+  }
+
+  @keyframes dotPulse {
+    0% { transform: scale(0.9); opacity: 0.8; }
+    50% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.8; }
+  }
+
+  .hero-category-label {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #93c5fd;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .hero-project-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  }
+
+  @media (max-width: 768px) {
+    .hero-project-title {
+      font-size: 2.3rem;
+    }
+  }
+
+  .hero-project-desc {
+    font-size: 1.08rem;
+    color: #cbd5e1;
+    line-height: 1.65;
+    max-width: 480px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-stack-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+  }
+
+  .hero-stack-tag {
+    padding: 0.32rem 0.75rem;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #93c5fd;
+    font-weight: 600;
+  }
+
+  .hero-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.6rem;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-weight: 700;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+    transition: var(--transition);
+  }
+
+  .hero-btn-primary:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+  }
+
+  .hero-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.4rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: var(--transition);
+  }
+
+  .hero-btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+  }
+
+  /* Right Side 3D Drum Stage */
+  .hero-drum-stage {
     position: relative;
-    border-radius: 24px;
-    background: radial-gradient(circle at 50% 30%, #ffffff 0%, #f8fafc 60%, #f1f5f9 100%);
-    background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px), radial-gradient(circle at 50% 30%, #ffffff 0%, #f8fafc 60%, #f1f5f9 100%);
-    background-size: 28px 28px, 100% 100%;
-    border: 1.5px solid var(--border-subtle);
-    overflow: hidden;
-    box-shadow: 0 20px 60px -15px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(0, 0, 0, 0.04);
-  }
-
-  .works-wheel-stage {
-    position: absolute;
-    inset: 0;
+    width: 100%;
+    height: 540px;
     cursor: grab;
     touch-action: pan-x;
     outline: none;
     user-select: none;
   }
 
-  .works-wheel-stage:active {
+  .hero-drum-stage:active {
     cursor: grabbing;
   }
 
-  .works-wheel-stage:focus-visible {
-    outline: 2px solid var(--primary);
-    outline-offset: -4px;
-  }
-
-  /* Dynamic Left Info Panel - High z-index floating frosted white glass */
-  .works-wheel-info-panel {
-    position: absolute;
-    top: 50%;
-    left: 3.5rem;
-    transform: translateY(-50%);
-    width: 440px;
-    max-width: 90%;
-    z-index: 60;
-    pointer-events: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(226, 232, 240, 0.95);
-    border-radius: 20px;
-    padding: 2.2rem 2.4rem;
-    box-shadow: 0 25px 65px -10px rgba(15, 23, 42, 0.12), 0 8px 24px -5px rgba(15, 23, 42, 0.06), 0 0 1px 1px rgba(0, 0, 0, 0.03);
-  }
-
-  @media (max-width: 960px) {
-    .works-wheel-info-panel {
-      position: relative;
-      top: auto;
-      left: auto;
-      transform: none;
-      width: auto;
-      max-width: 100%;
-      margin: 1rem 1rem 0;
-      padding: 1.5rem;
-    }
-    .works-wheel-stage-wrapper {
-      height: 560px;
-    }
-  }
-
-  .wheel-category-text {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--primary);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .wheel-title-text {
-    font-size: 1.85rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-  }
-
-  .wheel-desc-text {
-    font-size: 0.92rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-
-  .wheel-stack-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem;
-    margin-top: 0.2rem;
-  }
-
-  .wheel-stack-tag {
-    padding: 0.28rem 0.65rem;
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-    border-radius: 6px;
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    color: var(--primary-dark);
-    font-weight: 600;
-  }
-
-  .wheel-details-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--primary);
-    margin-top: 0.4rem;
-    transition: var(--transition);
-  }
-
-  .wheel-details-link:hover {
-    color: var(--primary-dark);
-    transform: translateX(3px);
-  }
-
-  /* 3D Drum - Midground layer running in background of info panel */
   .works-wheel-drum {
     position: absolute;
     top: 50%;
-    left: 54%;
+    left: 50%;
     transform-style: preserve-3d;
     z-index: 10;
-  }
-
-  @media (max-width: 960px) {
-    .works-wheel-drum {
-      left: 50%;
-    }
   }
 
   .works-wheel-card {
@@ -437,23 +480,22 @@
     position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 20px;
+    border-radius: 18px;
     overflow: hidden;
     background: #0f172a;
     box-shadow: 
-      0 30px 75px -15px rgba(15, 23, 42, 0.28),
-      0 10px 30px -5px rgba(15, 23, 42, 0.15),
-      0 0 0 1px rgba(0, 0, 0, 0.06);
-    border: 1.5px solid rgba(255, 255, 255, 0.6);
+      0 30px 80px -10px rgba(0, 0, 0, 0.95),
+      0 0 45px rgba(37, 99, 235, 0.4);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
     transform-origin: center center;
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
   }
 
   .works-wheel-card:hover .works-wheel-card-inner {
-    border-color: #3b82f6;
+    border-color: #60a5fa;
     box-shadow: 
-      0 35px 90px -10px rgba(37, 99, 235, 0.35),
-      0 0 0 2px #3b82f6;
+      0 35px 95px -10px rgba(0, 0, 0, 0.98),
+      0 0 60px rgba(59, 130, 246, 0.65);
   }
 
   .works-wheel-card img {
@@ -474,7 +516,7 @@
     gap: 4px;
     padding: 5px 12px;
     border-radius: 999px;
-    background: rgba(15, 23, 42, 0.88);
+    background: rgba(9, 13, 22, 0.88);
     backdrop-filter: blur(10px);
     color: #ffffff;
     font-size: 0.75rem;
@@ -491,104 +533,100 @@
     transform: translateY(0);
   }
 
-  /* Right Index List - High z-index floating indicator */
-  .works-wheel-index {
-    position: absolute;
-    top: 50%;
-    right: 2.2rem;
-    transform: translateY(-50%);
-    list-style: none;
-    text-align: right;
-    line-height: 1.85;
-    z-index: 60;
-    background: rgba(255, 255, 255, 0.92);
+  /* Bottom Integrated Navigator Strip (Unified, No Separate Box!) */
+  .hero-bottom-navigator {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    background: rgba(9, 13, 22, 0.92);
     backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--border-subtle);
-    border-radius: 16px;
-    padding: 1rem 1.25rem;
-    box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06);
-  }
-
-  @media (max-width: 960px) {
-    .works-wheel-index {
-      display: none;
-    }
-  }
-
-  .works-wheel-index-btn {
-    background: none;
-    border: none;
-    color: var(--text-muted);
-    font-family: var(--font-sans);
-    font-size: inherit;
-    cursor: pointer;
-    padding: 3px 8px;
-    border-radius: 6px;
-    transition: all 0.15s ease;
-    outline: none;
-  }
-
-  .works-wheel-index-btn:hover {
-    color: var(--text-primary);
-    background: #f1f5f9;
-  }
-
-  .works-wheel-index-btn.active {
-    color: var(--primary);
-    background: #eff6ff;
-    font-weight: 700;
-  }
-
-  .wheel-hint-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.85rem 2rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 1.8rem;
-    margin-top: 1.2rem;
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    font-family: var(--font-mono);
+    justify-content: space-between;
+    gap: 1.5rem;
     flex-wrap: wrap;
   }
 
-  .wheel-hint-item {
+  .hero-nav-items-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+  .hero-nav-items-wrapper::-webkit-scrollbar { display: none; }
+
+  .hero-nav-tab {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    color: #94a3b8;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    outline: none;
   }
 
-  .wheel-hint-item kbd {
-    background: #ffffff;
-    border: 1px solid var(--border-subtle);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  .hero-nav-tab:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-nav-tab.active {
+    background: rgba(37, 99, 235, 0.28);
+    border-color: #3b82f6;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
+  }
+
+  .hero-nav-num {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: #60a5fa;
+  }
+
+  .hero-scroll-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
   }
 
   /* Metric Highlights Strip */
+  .metrics-section {
+    background: #ffffff;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
   .metrics-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
-    margin-top: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border-subtle);
   }
 
   .metric-card {
     background: #ffffff;
     border: 1px solid var(--border-subtle);
     border-radius: 16px;
-    padding: 1.6rem;
-    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+    padding: 1.8rem;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
     transition: var(--transition);
   }
 
   .metric-value {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     font-weight: 800;
     color: var(--primary);
     letter-spacing: -0.02em;
@@ -611,7 +649,6 @@
   /* Projects Section Styling */
   #projects {
     background: #f8fafc;
-    border-top: 1px solid var(--border-subtle);
     border-bottom: 1px solid var(--border-subtle);
   }
 
@@ -629,7 +666,7 @@
     background: #ffffff;
     border: 1px solid var(--border-subtle);
     border-radius: 18px;
-    padding: 2rem;
+    padding: 2.2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -685,6 +722,11 @@
   }
 
   /* Skills Section */
+  #skills {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -699,7 +741,7 @@
     background: #ffffff;
     border: 1px solid var(--border-subtle);
     border-radius: 18px;
-    padding: 2rem;
+    padding: 2.2rem;
     box-shadow: 0 8px 25px -4px rgba(15, 23, 42, 0.05);
     transition: var(--transition);
   }
@@ -765,7 +807,6 @@
   /* Experience Timeline */
   #experience {
     background: #f8fafc;
-    border-top: 1px solid var(--border-subtle);
     border-bottom: 1px solid var(--border-subtle);
   }
 
@@ -817,7 +858,7 @@
     background: #ffffff;
     border: 1px solid var(--border-subtle);
     border-radius: 18px;
-    padding: 2rem;
+    padding: 2.2rem;
     flex: 1;
     box-shadow: 0 8px 25px -4px rgba(15, 23, 42, 0.05);
     transition: var(--transition);
@@ -881,6 +922,11 @@
   }
 
   /* Verified Certifications */
+  #credentials {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
   .credentials-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -895,7 +941,7 @@
     background: #ffffff;
     border: 1px solid var(--border-subtle);
     border-radius: 18px;
-    padding: 2rem;
+    padding: 2.2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -956,6 +1002,10 @@
   }
 
   /* Contact Section */
+  #contact {
+    background: #f8fafc;
+  }
+
   .contact-box {
     background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
     border: 1.5px solid var(--border-subtle);
@@ -1085,60 +1135,69 @@
 
   <main>
     <!-- ==========================================================================
-         HERO SECTION: 3D WORKSWHEEL AUTOMATICALLY DISPLAYED BY DEFAULT
+         FULL-SCREEN HERO COVER: DIRECTLY FROM NAVBAR DOWNWARDS
+         No 3 disconnected boxes; full screen image cover with 3D drum & typography
          ========================================================================== -->
-    <section class="works-wheel-hero" id="works-wheel">
-      <div class="works-wheel-outer-wrapper">
-        <div class="hero-tagline-bar">
+    <section class="hero-fullscreen" id="works-wheel">
+      <!-- Full-screen Dynamic Cover Image Layer -->
+      <div class="hero-fullscreen-bg" id="heroBgCover"></div>
+      <!-- Cinematic Vignette & Ambient Glow Overlay -->
+      <div class="hero-fullscreen-overlay"></div>
+
+      <div class="hero-fullscreen-content">
+        <!-- Left Side: Integrated High-Impact Project Typography -->
+        <div class="hero-fullscreen-info">
           <div class="hero-tagline-pill">
-            <span>ENTERPRISE FULL-STACK &bull; PRODUCTION AGENTIC AI &bull; DISTRIBUTED ARCHITECTURES</span>
+            <span class="pulse-dot"></span>
+            <span>ENTERPRISE FULL-STACK &bull; PRODUCTION AGENTIC AI</span>
+          </div>
+
+          <div class="hero-category-label" id="wheelCategory">AGENTIC AI &bull; RAG</div>
+          
+          <h1 class="hero-project-title" id="wheelTitle">TN-FD Knowledge AI</h1>
+          
+          <p class="hero-project-desc" id="wheelDesc">
+            Multi-agent semantic document retrieval and text-to-SQL pipeline with Qdrant vector database and FastAPI microservice.
+          </p>
+
+          <div class="hero-stack-row" id="wheelStack">
+            <span class="hero-stack-tag">FastAPI</span>
+            <span class="hero-stack-tag">Python</span>
+            <span class="hero-stack-tag">Qdrant</span>
+            <span class="hero-stack-tag">Docker</span>
+          </div>
+
+          <div class="hero-actions-row">
+            <a href="#projects" class="hero-btn-primary" id="wheelDetailsLink">
+              View Architecture Breakdown
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#experience" class="hero-btn-ghost">
+              Career History
+            </a>
           </div>
         </div>
 
-        <div class="works-wheel-stage-wrapper reveal-3d">
-          <div id="worksWheelStage" class="works-wheel-stage" tabindex="0" role="listbox" aria-label="Works Wheel">
-            
-            <!-- Dynamic Left Architecture Info Panel - High z-index floating frosted white glass -->
-            <div id="worksWheelInfo" class="works-wheel-info-panel card-3d-tilt">
-              <span class="wheel-category-text" id="wheelCategory">AGENTIC AI &bull; RAG</span>
-              <h1 class="wheel-title-text" id="wheelTitle">TN-FD Knowledge AI</h1>
-              <p class="wheel-desc-text" id="wheelDesc">
-                Multi-agent semantic document retrieval and text-to-SQL pipeline with Qdrant vector database and FastAPI microservice.
-              </p>
-              <div class="wheel-stack-row" id="wheelStack">
-                <span class="wheel-stack-tag">FastAPI</span>
-                <span class="wheel-stack-tag">Python</span>
-                <span class="wheel-stack-tag">Qdrant</span>
-                <span class="wheel-stack-tag">Docker</span>
-              </div>
-              <a href="#projects" class="wheel-details-link" id="wheelDetailsLink">
-                View Architecture Details &rarr;
-              </a>
-            </div>
-
-            <!-- 3D Rotating Drum -->
-            <div id="worksWheelDrum" class="works-wheel-drum"></div>
-            
-            <!-- Index list down the right-hand side -->
-            <ol id="worksWheelIndex" class="works-wheel-index"></ol>
-          </div>
+        <!-- Right Side: WorksWheel 3D Drum Stage -->
+        <div class="hero-drum-stage" id="worksWheelStage" tabindex="0" role="listbox" aria-label="Works Wheel">
+          <div id="worksWheelDrum" class="works-wheel-drum"></div>
         </div>
+      </div>
 
-        <!-- User interaction hint -->
-        <div class="wheel-hint-bar">
-          <span class="wheel-hint-item">
-            <kbd>Scroll</kbd> or <kbd>Drag</kbd> to Turn Drum
-          </span>
-          <span class="wheel-hint-item">
-            <kbd>&uarr;</kbd> <kbd>&darr;</kbd> Arrow Keys
-          </span>
-          <span class="wheel-hint-item">
-            Click Project Title to Jump &bull; Auto-plays smoothly
-          </span>
+      <!-- Bottom Integrated Navigator Strip (Unified, No Right Box!) -->
+      <div class="hero-bottom-navigator">
+        <div class="hero-nav-items-wrapper" id="worksWheelIndex"></div>
+        <div class="hero-scroll-hint">
+          <span>Scroll / Drag to Turn Drum</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
         </div>
+      </div>
+    </section>
 
-        <!-- Metric Highlights Strip with 3D Tilt -->
-        <div class="metrics-grid reveal-3d">
+    <!-- Metric Highlights Strip with 3D Tilt -->
+    <section class="metrics-section reveal-3d">
+      <div class="container">
+        <div class="metrics-grid">
           <div class="metric-card card-3d-tilt">
             <div class="metric-value">5+</div>
             <div class="metric-label">Years Professional Experience</div>
@@ -1602,13 +1661,14 @@
     document.querySelectorAll('.reveal-3d').forEach(el => revealObserver.observe(el));
 
     // ========================================================================
-    // WORKS WHEEL 3D ENGINE
-    // Default 3D display & continuous auto-animation with interactive pause
+    // WORKS WHEEL 3D ENGINE & FULL-SCREEN COVER SYNC
+    // Auto-rotates, updates full-screen background cover & bottom tabs
     // ========================================================================
     (function initWorksWheel() {
       const stageEl = document.getElementById('worksWheelStage');
       const drumEl = document.getElementById('worksWheelDrum');
       const indexEl = document.getElementById('worksWheelIndex');
+      const heroBgCover = document.getElementById('heroBgCover');
       const wheelCategory = document.getElementById('wheelCategory');
       const wheelTitle = document.getElementById('wheelTitle');
       const wheelDesc = document.getElementById('wheelDesc');
@@ -1617,13 +1677,14 @@
 
       if (!stageEl || !drumEl || !indexEl) return;
 
+      // 8 authentic enterprise tech & dashboard platforms (NO RAINBOW IMAGES)
       const ITEMS = [
         {
           title: "TN-FD Knowledge AI",
           category: "AGENTIC AI &bull; RAG",
           desc: "Multi-agent semantic document retrieval and text-to-SQL pipeline with Qdrant vector database and FastAPI microservice.",
           stack: ["FastAPI", "Python", "Qdrant", "Docker"],
-          image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1400&q=80",
+          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80",
           href: "#project-tnfd"
         },
         {
@@ -1631,7 +1692,7 @@
           category: "ENTERPRISE FUND FLOW",
           desc: "State-level budget allocation, ROP approvals, Mother Sanction, and bulk payment validation with Tally ERP integration.",
           stack: ["Laravel", "PHP", "MySQL", "Supervisor"],
-          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80",
+          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80",
           href: "#project-nhm"
         },
         {
@@ -1639,7 +1700,7 @@
           category: "HEALTHCARE PLATFORM",
           desc: "Hospital inspection tracking portal with facility-scoped role-based access control, mobile REST APIs, and Firebase Cloud Messaging.",
           stack: ["Sanctum", "Firebase", "MySQL", "PHPUnit"],
-          image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1400&q=80",
+          image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1600&q=80",
           href: "#project-hmis"
         },
         {
@@ -1647,7 +1708,7 @@
           category: "COMMERCE AUTOMATION",
           desc: "Automated listing synchronization, inventory tracking, and real-time pricing engine connecting Amazon seller portals.",
           stack: ["Amazon SP-API", "Node.js", "Express", "Crons"],
-          image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1400&q=80",
+          image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=80",
           href: "#project-amazon"
         },
         {
@@ -1655,7 +1716,7 @@
           category: "E-COMMERCE PLATFORM",
           desc: "Multi-vendor retail marketplace featuring dynamic merchant commission structures, cart checkouts, and dual payment gateways.",
           stack: ["Laravel", "MySQL", "Razorpay", "PayPal"],
-          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
+          image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80",
           href: "#project-shopyfest"
         },
         {
@@ -1663,7 +1724,7 @@
           category: "AI WORKFLOW &bull; SCRAPING",
           desc: "Automated public procurement scraper with keyword alert triggers and Anthropic Claude API for document summarization.",
           stack: ["Claude API", "Python", "Laravel", "Scraping"],
-          image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
+          image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80",
           href: "#project-tender"
         },
         {
@@ -1671,7 +1732,7 @@
           category: "FULL-STACK COMMERCE",
           desc: "High-performance consumer electronics e-commerce application with responsive catalog filters and checkout workflows.",
           stack: ["React.js", "Laravel", "REST APIs"],
-          image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1400&q=80",
+          image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=80",
           href: "#project-nhm"
         },
         {
@@ -1679,7 +1740,7 @@
           category: "MOBILE ARCHITECTURE",
           desc: "Enterprise field inspection and task allocation system with real-time GPS coordinate mapping and mobile synchronization.",
           stack: ["React Native", "MongoDB", "Node.js"],
-          image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80",
+          image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80",
           href: "#project-tnfd"
         }
       ];
@@ -1687,13 +1748,13 @@
       const count = ITEMS.length;
       const last = Math.max(count - 1, 0);
 
-      // Large, prominent widescreen 3D cards
-      const CARD_H = 0.56; // fills 56% of stage height (~360-390px tall)
-      const CARD_MAX_W = 0.54; // fills up to 54% of stage (~700-800px wide)
-      const CARD_RATIO = 1.6; // cinematic widescreen
+      // 3D Drum geometry tuned for prominent full-screen stage
+      const CARD_H = 0.58;
+      const CARD_MAX_W = 0.56;
+      const CARD_RATIO = 1.6;
       const STEP = 42;
-      const DRUM = 2.10;
-      const LENS = 2.65;
+      const DRUM = 2.08;
+      const LENS = 2.62;
       const RING_R = 1.14;
       const BOW = 1.85;
       const CULL = 1.8;
@@ -1717,9 +1778,9 @@
       }
 
       // Fallback image in case of any network glitch
-      const fallbackImg = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80';
+      const fallbackImg = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80';
 
-      // Populate cards & index buttons
+      // Populate cards & bottom navigator tabs
       drumEl.innerHTML = '';
       indexEl.innerHTML = '';
       const cardEls = [];
@@ -1742,19 +1803,17 @@
         drumEl.appendChild(card);
         cardEls.push(card);
 
-        const li = document.createElement('li');
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'works-wheel-index-btn';
-        if (i === 0) btn.classList.add('active');
-        btn.textContent = item.title;
-        btn.addEventListener('click', (e) => {
+        // Sleek horizontal navigator tab
+        const tabBtn = document.createElement('button');
+        tabBtn.type = 'button';
+        tabBtn.className = 'hero-nav-tab' + (i === 0 ? ' active' : '');
+        tabBtn.innerHTML = `<span class="hero-nav-num">0${i + 1}</span> <span>${item.title}</span>`;
+        tabBtn.addEventListener('click', (e) => {
           e.preventDefault();
           userInteracted();
           target = clamp(i + 1, 1, last + 1);
         });
-        li.appendChild(btn);
-        indexEl.appendChild(li);
+        indexEl.appendChild(tabBtn);
       });
 
       // Start in 3D DRUM MODE by default!
@@ -1765,13 +1824,13 @@
       let interactionTimeout = null;
       let autoPlayInterval = null;
 
-      let stageW = stageEl.clientWidth || 1200;
-      let stageH = stageEl.clientHeight || 580;
+      let stageW = stageEl.clientWidth || 800;
+      let stageH = stageEl.clientHeight || 520;
       let reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       function getMetrics() {
-        const sw = stageW || 1200;
-        const sh = stageH || 580;
+        const sw = stageW || 800;
+        const sh = stageH || 520;
         const cardW = Math.min(sh * CARD_H * CARD_RATIO, sw * CARD_MAX_W);
         const cardH = cardW / CARD_RATIO;
         const drumR = cardH * DRUM;
@@ -1785,16 +1844,14 @@
           drumR,
           bow: cardH * BOW,
           depth: cardH * LENS,
-          index: cardH * 0.042,
         };
       }
 
       function measure() {
-        stageW = stageEl.clientWidth || 1200;
-        stageH = stageEl.clientHeight || 580;
+        stageW = stageEl.clientWidth || 800;
+        stageH = stageEl.clientHeight || 520;
         const m = getMetrics();
         stageEl.style.perspective = `${m.depth}px`;
-        indexEl.style.fontSize = `${m.index}px`;
       }
 
       measure();
@@ -1809,9 +1866,26 @@
         wheelTitle.textContent = item.title;
         wheelDesc.textContent = item.desc;
         wheelDetailsLink.href = item.href;
-        wheelStack.innerHTML = item.stack.map(s => `<span class="wheel-stack-tag">${s}</span>`).join('');
+        wheelStack.innerHTML = item.stack.map(s => `<span class="hero-stack-tag">${s}</span>`).join('');
+
+        // Full-screen background cover image update!
+        if (heroBgCover) {
+          heroBgCover.style.backgroundImage = `url('${item.image}')`;
+        }
+
+        // Update bottom tabs
+        const tabs = indexEl.querySelectorAll('.hero-nav-tab');
+        tabs.forEach((t, i) => {
+          if (i === idx) {
+            t.classList.add('active');
+            t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+          } else {
+            t.classList.remove('active');
+          }
+        });
       }
 
+      // Initialize with item 0
       updateActiveInfo(0);
 
       // Auto-animation: turns through projects continuously
@@ -1823,7 +1897,7 @@
             if (next > count) next = 1;
             target = next;
           }
-        }, 3200);
+        }, 3400);
       }
 
       function userInteracted() {
@@ -1831,7 +1905,7 @@
         clearTimeout(interactionTimeout);
         interactionTimeout = setTimeout(() => {
           isInteracting = false;
-        }, 4000);
+        }, 4500);
       }
 
       startAutoPlay();
@@ -1871,11 +1945,6 @@
         if (active !== near) {
           active = near;
           updateActiveInfo(active);
-          const btns = indexEl.querySelectorAll('.works-wheel-index-btn');
-          btns.forEach((b, idx) => {
-            if (idx === active) b.classList.add('active');
-            else b.classList.remove('active');
-          });
         }
       }
 

@@ -6,7 +6,7 @@ import { WorksWheel, type WorksWheelItem } from "@/components/ui/works-wheel";
 const UNSPASH_WORKS: WorksWheelItem[] = [
   {
     title: "Prismatic Rift",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
     href: "#prismatic-rift",
   },
   {
@@ -55,7 +55,7 @@ const UNSPASH_WORKS: WorksWheelItem[] = [
 export const SHAKTHIVEL_PORTFOLIO_WORKS: WorksWheelItem[] = [
   {
     title: "TN-FD Knowledge AI (RAG)",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1400&q=80",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80",
     href: "#tn-fd-ai",
   },
   {
