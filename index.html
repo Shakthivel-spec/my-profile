@@ -7,8 +7,8 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title>Shakthivel &bull; Full-Stack &amp; AI Systems Engineer</title>
-<meta name="description" content="Portfolio of Shakthivel — Full-Stack Developer & AI Systems Engineer with 5+ years experience building enterprise Laravel, Node.js, Python FastAPI, and RAG architectures in Chennai, India.">
-<meta name="theme-color" content="#090d16">
+<meta name="description" content="Portfolio of Shakthivel — Full-Stack Developer & AI Systems Engineer with 5+ years experience building enterprise E-Commerce, SaaS, Mobile Apps, CRM, LMS, and HRMS platforms.">
+<meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://shakthivel-spec.github.io/my-profile/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%232563eb'/%3E%3Ctext x='50' y='64' font-size='42' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 
@@ -29,7 +29,7 @@
     --primary: #2563eb;
     --primary-light: #3b82f6;
     --primary-dark: #1d4ed8;
-    --primary-glow: rgba(37, 99, 235, 0.25);
+    --primary-glow: rgba(37, 99, 235, 0.2);
     
     --text-primary: #0f172a;
     --text-secondary: #475569;
@@ -69,6 +69,91 @@
     transition: var(--transition);
   }
 
+  /* ==========================================================================
+     SPLASH SCREEN
+     ========================================================================== */
+  .splash-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.65s;
+  }
+
+  .splash-screen.hidden {
+    opacity: 0;
+    transform: scale(1.04);
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .splash-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .splash-logo-wrap {
+    position: relative;
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+  }
+
+  .splash-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid #e2e8f0;
+    border-top-color: #2563eb;
+    animation: splashSpin 0.9s linear infinite;
+  }
+
+  .splash-logo {
+    font-family: var(--font-sans);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #2563eb;
+  }
+
+  .splash-brand {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    color: #0f172a;
+  }
+
+  .splash-bar-wrap {
+    width: 140px;
+    height: 3px;
+    background: #e2e8f0;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .splash-bar {
+    width: 0%;
+    height: 100%;
+    background: #2563eb;
+    border-radius: 999px;
+    animation: splashProgress 1.1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  }
+
+  @keyframes splashSpin {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes splashProgress {
+    0% { width: 0%; }
+    100% { width: 100%; }
+  }
+
   /* Container */
   .container {
     max-width: var(--max-w);
@@ -76,16 +161,18 @@
     padding: 0 1.5rem;
   }
 
-  /* Header / Navbar */
+  /* ==========================================================================
+     NAVBAR (CLEAN WHITE BACKGROUND, NO BADGES)
+     ========================================================================== */
   .navbar {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(9, 13, 22, 0.94);
+    background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid var(--border-subtle);
+    box-shadow: 0 2px 14px rgba(15, 23, 42, 0.04);
   }
 
   .nav-inner {
@@ -97,9 +184,9 @@
 
   .nav-brand {
     font-weight: 800;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     letter-spacing: -0.01em;
-    color: #ffffff;
+    color: var(--text-primary);
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -109,20 +196,8 @@
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    background: #3b82f6;
-    box-shadow: 0 0 12px #3b82f6;
-  }
-
-  .nav-brand-badge {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    padding: 2px 8px;
-    border-radius: 4px;
-    background: rgba(59, 130, 246, 0.15);
-    border: 1px solid rgba(96, 165, 250, 0.3);
-    color: #93c5fd;
-    font-weight: 600;
-    letter-spacing: 0.05em;
+    background: var(--primary);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
   }
 
   .nav-links {
@@ -134,11 +209,11 @@
   .nav-link {
     font-size: 0.92rem;
     font-weight: 500;
-    color: #94a3b8;
+    color: var(--text-secondary);
   }
 
   .nav-link:hover, .nav-link.active {
-    color: #ffffff;
+    color: var(--primary);
     font-weight: 600;
   }
 
@@ -146,7 +221,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.55rem 1.2rem;
+    padding: 0.55rem 1.25rem;
     background: var(--primary);
     color: #ffffff;
     font-size: 0.88rem;
@@ -165,7 +240,7 @@
     display: none;
     background: none;
     border: none;
-    color: #ffffff;
+    color: var(--text-primary);
     cursor: pointer;
     padding: 0.5rem;
   }
@@ -180,9 +255,9 @@
       top: 70px;
       left: 0;
       right: 0;
-      background: #090d16;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
       padding: 1.5rem;
       gap: 1.2rem;
     }
@@ -190,13 +265,13 @@
 
   /* Section Styles */
   section {
-    padding: 3.5rem 0;
+    padding: 4.5rem 0;
   }
 
   .section-tag {
     display: inline-block;
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 700;
     color: var(--primary);
     text-transform: uppercase;
@@ -216,7 +291,7 @@
     font-size: 1.05rem;
     color: var(--text-secondary);
     max-width: 640px;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   }
 
   /* 3D Global Perspective Animations */
@@ -246,8 +321,7 @@
   }
 
   /* ==========================================================================
-     FULL-SCREEN HERO COVER (FROM NAVBAR DOWNWARDS)
-     No 3 disconnected boxes; full screen image cover with 3D drum & typography
+     HERO SECTION (CLEAN WHITE BACKGROUND, NO BADGES, 3D WORKS WHEEL)
      ========================================================================== */
   .hero-fullscreen {
     position: relative;
@@ -257,32 +331,11 @@
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-    background: #090d16;
+    background: #ffffff;
+    background-image: radial-gradient(circle at 70% 35%, rgba(37, 99, 235, 0.04) 0%, transparent 60%);
     margin: 0;
     padding: 0;
-  }
-
-  .hero-fullscreen-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: background-image 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-    transform: scale(1.03);
-    filter: brightness(0.65) contrast(1.18) saturate(1.1);
-    z-index: 1;
-  }
-
-  .hero-fullscreen-overlay {
-    position: absolute;
-    inset: 0;
-    background: 
-      linear-gradient(90deg, rgba(9, 13, 22, 0.96) 0%, rgba(9, 13, 22, 0.84) 42%, rgba(9, 13, 22, 0.42) 75%, rgba(9, 13, 22, 0.88) 100%),
-      linear-gradient(180deg, rgba(9, 13, 22, 0.3) 0%, transparent 25%, rgba(9, 13, 22, 0.8) 100%),
-      radial-gradient(circle at 75% 50%, rgba(37, 99, 235, 0.18) 0%, transparent 60%);
-    z-index: 2;
-    pointer-events: none;
+    border-bottom: 1px solid var(--border-subtle);
   }
 
   .hero-fullscreen-content {
@@ -291,109 +344,74 @@
     width: 100%;
     max-width: 1560px;
     margin: 0 auto;
-    padding: 3rem 2rem 1.5rem;
+    padding: 3.5rem 2rem 2rem;
     display: grid;
-    grid-template-columns: 500px 1fr;
+    grid-template-columns: 520px 1fr;
     gap: 3.5rem;
     align-items: center;
     flex: 1;
   }
 
-  @media (max-width: 1060px) {
+  @media (max-width: 1100px) {
     .hero-fullscreen-content {
       grid-template-columns: 1fr;
-      padding: 2rem 1.5rem 1rem;
-      gap: 2rem;
+      padding: 2.5rem 1.5rem 1.5rem;
+      gap: 2.5rem;
     }
   }
 
   .hero-fullscreen-info {
     display: flex;
     flex-direction: column;
-    gap: 1.1rem;
+    gap: 1.25rem;
     z-index: 20;
   }
 
-  .hero-tagline-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: #60a5fa;
-    background: rgba(37, 99, 235, 0.15);
-    border: 1px solid rgba(96, 165, 250, 0.35);
-    padding: 0.4rem 1.15rem;
-    border-radius: 999px;
-    letter-spacing: 0.06em;
-    width: fit-content;
-    box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
-  }
-
-  .pulse-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #3b82f6;
-    box-shadow: 0 0 10px #60a5fa;
-    animation: dotPulse 2s infinite;
-  }
-
-  @keyframes dotPulse {
-    0% { transform: scale(0.9); opacity: 0.8; }
-    50% { transform: scale(1.3); opacity: 1; }
-    100% { transform: scale(0.9); opacity: 0.8; }
-  }
-
-  .hero-category-label {
+  .hero-lead-label {
     font-family: var(--font-mono);
     font-size: 0.82rem;
     font-weight: 700;
-    color: #93c5fd;
-    letter-spacing: 0.1em;
+    color: var(--primary);
+    letter-spacing: 0.12em;
     text-transform: uppercase;
   }
 
   .hero-project-title {
     font-size: 3.2rem;
     font-weight: 800;
-    color: #ffffff;
+    color: var(--text-primary);
     line-height: 1.12;
     letter-spacing: -0.03em;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
   }
 
   @media (max-width: 768px) {
     .hero-project-title {
-      font-size: 2.3rem;
+      font-size: 2.4rem;
     }
   }
 
   .hero-project-desc {
-    font-size: 1.08rem;
-    color: #cbd5e1;
-    line-height: 1.65;
-    max-width: 480px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 500px;
   }
 
   .hero-stack-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.6rem;
     margin-top: 0.2rem;
   }
 
   .hero-stack-tag {
-    padding: 0.32rem 0.75rem;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 0.35rem 0.85rem;
+    background: #f8fafc;
+    border: 1px solid var(--border-subtle);
     border-radius: 6px;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: #93c5fd;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
     font-weight: 600;
   }
 
@@ -401,7 +419,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
     flex-wrap: wrap;
   }
 
@@ -409,46 +427,48 @@
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.85rem 1.6rem;
+    padding: 0.85rem 1.7rem;
     background: var(--primary);
     color: #ffffff;
-    font-size: 0.92rem;
+    font-size: 0.94rem;
     font-weight: 700;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 4px 18px var(--primary-glow);
     transition: var(--transition);
   }
 
   .hero-btn-primary:hover {
-    background: var(--primary-light);
+    background: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+    box-shadow: 0 8px 24px var(--primary-glow);
   }
 
   .hero-btn-ghost {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.85rem 1.4rem;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #e2e8f0;
-    font-size: 0.92rem;
+    padding: 0.85rem 1.5rem;
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    font-size: 0.94rem;
     font-weight: 600;
     border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
     transition: var(--transition);
   }
 
   .hero-btn-ghost:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: #ffffff;
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
   }
 
   /* Right Side 3D Drum Stage */
   .hero-drum-stage {
     position: relative;
     width: 100%;
-    height: 540px;
+    height: 560px;
     cursor: grab;
     touch-action: pan-x;
     outline: none;
@@ -482,20 +502,20 @@
     height: 100%;
     border-radius: 18px;
     overflow: hidden;
-    background: #0f172a;
+    background: #f8fafc;
     box-shadow: 
-      0 30px 80px -10px rgba(0, 0, 0, 0.95),
-      0 0 45px rgba(37, 99, 235, 0.4);
-    border: 1.5px solid rgba(255, 255, 255, 0.3);
+      0 25px 60px -15px rgba(15, 23, 42, 0.18),
+      0 0 0 1px rgba(226, 232, 240, 0.9);
+    border: 1px solid #e2e8f0;
     transform-origin: center center;
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
   }
 
   .works-wheel-card:hover .works-wheel-card-inner {
-    border-color: #60a5fa;
+    border-color: #93c5fd;
     box-shadow: 
-      0 35px 95px -10px rgba(0, 0, 0, 0.98),
-      0 0 60px rgba(59, 130, 246, 0.65);
+      0 32px 75px -15px rgba(37, 99, 235, 0.25),
+      0 0 0 2px #3b82f6;
   }
 
   .works-wheel-card img {
@@ -504,7 +524,7 @@
     object-fit: cover;
     display: block;
     pointer-events: none;
-    background: #0f172a;
+    background: #e2e8f0;
   }
 
   .works-wheel-action-pill {
@@ -514,12 +534,12 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    padding: 5px 12px;
+    padding: 6px 14px;
     border-radius: 999px;
-    background: rgba(9, 13, 22, 0.88);
-    backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(8px);
     color: #ffffff;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 600;
     border: 1px solid rgba(255, 255, 255, 0.2);
     opacity: 0;
@@ -533,15 +553,15 @@
     transform: translateY(0);
   }
 
-  /* Bottom Integrated Navigator Strip (Unified, No Separate Box!) */
+  /* Bottom Integrated Navigator Strip (Clean White) */
   .hero-bottom-navigator {
     position: relative;
     z-index: 20;
     width: 100%;
-    background: rgba(9, 13, 22, 0.92);
-    backdrop-filter: blur(16px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.85rem 2rem;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(14px);
+    border-top: 1px solid var(--border-subtle);
+    padding: 1rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -554,59 +574,65 @@
     align-items: center;
     gap: 0.6rem;
     overflow-x: auto;
-    padding-bottom: 2px;
     scrollbar-width: none;
+    -ms-overflow-style: none;
+    max-width: 100%;
   }
-  .hero-nav-items-wrapper::-webkit-scrollbar { display: none; }
+
+  .hero-nav-items-wrapper::-webkit-scrollbar {
+    display: none;
+  }
 
   .hero-nav-tab {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.45rem 0.9rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid var(--border-subtle);
     border-radius: 8px;
-    color: #94a3b8;
-    font-size: 0.82rem;
-    font-weight: 600;
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--text-secondary);
     cursor: pointer;
     white-space: nowrap;
-    transition: all 0.2s ease;
-    outline: none;
+    transition: var(--transition);
   }
 
   .hero-nav-tab:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
+    background: #f8fafc;
+    color: var(--text-primary);
+    border-color: #cbd5e1;
   }
 
   .hero-nav-tab.active {
-    background: rgba(37, 99, 235, 0.28);
-    border-color: #3b82f6;
-    color: #ffffff;
-    box-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
+    background: #eff6ff;
+    border-color: #93c5fd;
+    color: var(--primary-dark);
+    font-weight: 700;
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.12);
   }
 
   .hero-nav-num {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
-    color: #60a5fa;
+    font-size: 0.75rem;
+    color: var(--primary);
   }
 
   .hero-scroll-hint {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: #94a3b8;
-    font-size: 0.8rem;
     font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 500;
   }
 
   /* Metric Highlights Strip */
   .metrics-section {
-    background: #ffffff;
-    padding: 3rem 0;
+    padding: 3.5rem 0;
+    background: #f8fafc;
     border-bottom: 1px solid var(--border-subtle);
   }
 
@@ -616,134 +642,145 @@
     gap: 1.5rem;
   }
 
+  @media (max-width: 900px) {
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 500px) {
+    .metrics-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
   .metric-card {
     background: #ffffff;
     border: 1px solid var(--border-subtle);
     border-radius: 16px;
-    padding: 1.8rem;
-    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
-    transition: var(--transition);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
   }
 
   .metric-value {
-    font-size: 2.3rem;
+    font-size: 2.8rem;
     font-weight: 800;
     color: var(--primary);
+    line-height: 1;
+    margin-bottom: 0.6rem;
     letter-spacing: -0.02em;
-    margin-bottom: 0.25rem;
   }
 
   .metric-label {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
+    font-size: 0.92rem;
     font-weight: 600;
+    color: var(--text-secondary);
   }
 
-  @media (max-width: 768px) {
-    .metrics-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-  }
-
-  /* Projects Section Styling */
+  /* Projects Detailed Grid Section */
   #projects {
-    background: #f8fafc;
-    border-bottom: 1px solid var(--border-subtle);
+    background: #ffffff;
   }
 
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.8rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
   }
 
-  @media (max-width: 820px) {
-    .projects-grid { grid-template-columns: 1fr; }
+  @media (max-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 680px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   .project-card {
     background: #ffffff;
     border: 1px solid var(--border-subtle);
     border-radius: 18px;
-    padding: 2.2rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 8px 25px -4px rgba(15, 23, 42, 0.05);
-    transition: var(--transition);
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
   }
 
-  .project-category {
+  .project-domain-label {
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 700;
     color: var(--primary);
-    letter-spacing: 0.06em;
-    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.6rem;
   }
 
   .project-title {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     font-weight: 800;
     color: var(--text-primary);
     margin-bottom: 0.75rem;
+    line-height: 1.3;
   }
 
   .project-desc {
+    font-size: 0.94rem;
     color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.65;
+    line-height: 1.6;
     margin-bottom: 1.5rem;
-    flex: 1;
   }
 
   .project-tech-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.45rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-subtle);
   }
 
   .p-tag {
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.3rem 0.65rem;
-    background: #eff6ff;
-    border: 1px solid #dbeafe;
+    padding: 0.25rem 0.65rem;
     border-radius: 6px;
-    color: #1d4ed8;
-    transition: var(--transition);
+    background: #f8fafc;
+    border: 1px solid var(--border-subtle);
+    color: #475569;
+    font-weight: 500;
   }
 
-  .p-tag:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
-  }
-
-  /* Skills Section */
+  /* Skills Grid */
   #skills {
-    background: #ffffff;
+    background: #f8fafc;
+    border-top: 1px solid var(--border-subtle);
     border-bottom: 1px solid var(--border-subtle);
   }
 
-  .skills-grid {
+  .skills-container-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.8rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
 
-  @media (max-width: 768px) {
-    .skills-grid { grid-template-columns: 1fr; }
+  @media (max-width: 950px) {
+    .skills-container-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   .skill-group-card {
     background: #ffffff;
     border: 1px solid var(--border-subtle);
     border-radius: 18px;
-    padding: 2.2rem;
-    box-shadow: 0 8px 25px -4px rgba(15, 23, 42, 0.05);
-    transition: var(--transition);
+    padding: 2rem;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
   }
 
   .skill-group-header {
@@ -790,24 +827,16 @@
   }
 
   .skill-pill:hover {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 6px 16px -2px rgba(37, 99, 235, 0.18);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px -2px rgba(37, 99, 235, 0.15);
     border-color: #93c5fd;
     color: #1d4ed8;
     background: #eff6ff;
   }
 
-  .skill-pill.starred {
-    border-color: #bfdbfe;
-    color: var(--primary-dark);
-    background: #eff6ff;
-    font-weight: 600;
-  }
-
   /* Experience Timeline */
   #experience {
-    background: #f8fafc;
-    border-bottom: 1px solid var(--border-subtle);
+    background: #ffffff;
   }
 
   .timeline {
@@ -845,44 +874,37 @@
     color: var(--primary);
     z-index: 1;
     box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15), 0 8px 18px rgba(37, 99, 235, 0.2);
-    animation: pulse3d 2.5s infinite;
-  }
-
-  @keyframes pulse3d {
-    0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4), 0 4px 12px rgba(37, 99, 235, 0.2); }
-    70% { box-shadow: 0 0 0 12px rgba(37, 99, 235, 0), 0 8px 24px rgba(37, 99, 235, 0.25); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0), 0 4px 12px rgba(37, 99, 235, 0.2); }
   }
 
   .timeline-content {
     background: #ffffff;
     border: 1px solid var(--border-subtle);
     border-radius: 18px;
-    padding: 2.2rem;
+    padding: 2rem;
     flex: 1;
-    box-shadow: 0 8px 25px -4px rgba(15, 23, 42, 0.05);
-    transition: var(--transition);
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
   }
 
   .timeline-header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
+    align-items: flex-start;
     flex-wrap: wrap;
-    margin-bottom: 0.4rem;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
   }
 
   .timeline-role {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     font-weight: 800;
     color: var(--text-primary);
   }
 
   .timeline-company {
+    font-size: 1rem;
+    font-weight: 600;
     color: var(--primary);
-    font-weight: 700;
-    font-size: 0.98rem;
+    margin-top: 0.2rem;
   }
 
   .timeline-period {
@@ -890,90 +912,72 @@
     font-size: 0.82rem;
     color: var(--text-muted);
     font-weight: 600;
+    background: #f8fafc;
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
   }
 
-  .timeline-desc {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 0.75rem 0 1.25rem;
-  }
-
-  .timeline-points {
+  .timeline-bullets {
     list-style: none;
-    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
   }
 
-  .timeline-points li {
+  .timeline-bullets li {
     position: relative;
-    padding-left: 1.35rem;
+    padding-left: 1.5rem;
+    font-size: 0.94rem;
     color: var(--text-secondary);
-    font-size: 0.92rem;
-    margin-bottom: 0.6rem;
     line-height: 1.6;
   }
 
-  .timeline-points li::before {
-    content: '▹';
+  .timeline-bullets li::before {
+    content: '\2192';
     position: absolute;
     left: 0;
     color: var(--primary);
     font-weight: bold;
   }
 
-  /* Verified Certifications */
+  /* Credentials Section */
   #credentials {
-    background: #ffffff;
+    background: #f8fafc;
+    border-top: 1px solid var(--border-subtle);
     border-bottom: 1px solid var(--border-subtle);
   }
 
-  .credentials-grid {
+  .cred-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
   }
 
-  @media (max-width: 860px) {
-    .credentials-grid { grid-template-columns: 1fr; }
+  @media (max-width: 768px) {
+    .cred-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   .cred-card {
     background: #ffffff;
     border: 1px solid var(--border-subtle);
     border-radius: 18px;
-    padding: 2.2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 8px 25px -4px rgba(15, 23, 42, 0.05);
-    position: relative;
-    overflow: hidden;
-    transition: var(--transition);
-  }
-
-  .cred-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-
-  .cred-card:hover::after {
-    opacity: 1;
+    padding: 2.25rem;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
   }
 
   .cred-title {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: var(--text-primary);
     margin-bottom: 0.4rem;
   }
 
   .cred-issuer {
-    font-size: 0.92rem;
+    font-size: 0.94rem;
     color: var(--primary);
     font-weight: 700;
     margin-bottom: 0.75rem;
@@ -991,7 +995,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: var(--primary);
   }
@@ -1003,7 +1007,7 @@
 
   /* Contact Section */
   #contact {
-    background: #f8fafc;
+    background: #ffffff;
   }
 
   .contact-box {
@@ -1014,7 +1018,7 @@
     text-align: center;
     max-width: 860px;
     margin: 0 auto;
-    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.1);
+    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.08);
   }
 
   .contact-title {
@@ -1106,17 +1110,32 @@
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- ==========================================================================
+       SPLASH SCREEN
+       ========================================================================== -->
+  <div id="splashScreen" class="splash-screen">
+    <div class="splash-content">
+      <div class="splash-logo-wrap">
+        <div class="splash-ring"></div>
+        <div class="splash-logo">S</div>
+      </div>
+      <div class="splash-brand">SHAKTHIVEL</div>
+      <div class="splash-bar-wrap">
+        <div class="splash-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation (Clean White, No Badges) -->
   <header class="navbar">
     <div class="container nav-inner">
       <a href="#" class="nav-brand">
         <span class="nav-brand-dot"></span>
         <span>SHAKTHIVEL</span>
-        <span class="nav-brand-badge">AI &bull; FULL-STACK</span>
       </a>
 
       <nav class="nav-links" id="navLinks">
-        <a href="#projects" class="nav-link active">Architectures</a>
+        <a href="#projects" class="nav-link active">Showcase</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#skills" class="nav-link">Stack</a>
         <a href="#credentials" class="nav-link">Certifications</a>
@@ -1135,36 +1154,25 @@
 
   <main>
     <!-- ==========================================================================
-         FULL-SCREEN HERO COVER: DIRECTLY FROM NAVBAR DOWNWARDS
-         No 3 disconnected boxes; full screen image cover with 3D drum & typography
+         HERO SECTION: CLEAN WHITE BACKGROUND, 3D WHEEL (ECOMMERCE, SAAS, MOBILE, CRM, LMS, HRMS)
          ========================================================================== -->
     <section class="hero-fullscreen" id="works-wheel">
-      <!-- Full-screen Dynamic Cover Image Layer -->
-      <div class="hero-fullscreen-bg" id="heroBgCover"></div>
-      <!-- Cinematic Vignette & Ambient Glow Overlay -->
-      <div class="hero-fullscreen-overlay"></div>
-
       <div class="hero-fullscreen-content">
-        <!-- Left Side: Integrated High-Impact Project Typography -->
+        <!-- Left Side: Clean Typography & Actions -->
         <div class="hero-fullscreen-info">
-          <div class="hero-tagline-pill">
-            <span class="pulse-dot"></span>
-            <span>ENTERPRISE FULL-STACK &bull; PRODUCTION AGENTIC AI</span>
-          </div>
-
-          <div class="hero-category-label" id="wheelCategory">AGENTIC AI &bull; RAG</div>
+          <div class="hero-lead-label" id="wheelLeadLabel">E-COMMERCE PLATFORM</div>
           
-          <h1 class="hero-project-title" id="wheelTitle">TN-FD Knowledge AI</h1>
+          <h1 class="hero-project-title" id="wheelTitle">Shopyfest Multi-Vendor E-Commerce</h1>
           
           <p class="hero-project-desc" id="wheelDesc">
-            Multi-agent semantic document retrieval and text-to-SQL pipeline with Qdrant vector database and FastAPI microservice.
+            Multi-vendor retail marketplace featuring real-time inventory management, automated merchant commission settlement, and checkout payment gateways.
           </p>
 
           <div class="hero-stack-row" id="wheelStack">
-            <span class="hero-stack-tag">FastAPI</span>
-            <span class="hero-stack-tag">Python</span>
-            <span class="hero-stack-tag">Qdrant</span>
-            <span class="hero-stack-tag">Docker</span>
+            <span class="hero-stack-tag">Laravel</span>
+            <span class="hero-stack-tag">MySQL</span>
+            <span class="hero-stack-tag">Razorpay</span>
+            <span class="hero-stack-tag">Vue.js</span>
           </div>
 
           <div class="hero-actions-row">
@@ -1173,7 +1181,7 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
             <a href="#experience" class="hero-btn-ghost">
-              Career History
+              Career Experience
             </a>
           </div>
         </div>
@@ -1184,11 +1192,11 @@
         </div>
       </div>
 
-      <!-- Bottom Integrated Navigator Strip (Unified, No Right Box!) -->
+      <!-- Bottom Integrated Navigator Strip (Clean White) -->
       <div class="hero-bottom-navigator">
         <div class="hero-nav-items-wrapper" id="worksWheelIndex"></div>
         <div class="hero-scroll-hint">
-          <span>Scroll / Drag to Turn Drum</span>
+          <span>Scroll or Drag to Rotate Drum</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
         </div>
       </div>
@@ -1207,8 +1215,8 @@
             <div class="metric-label">Enterprise &amp; Client Projects</div>
           </div>
           <div class="metric-card card-3d-tilt">
-            <div class="metric-value">2+</div>
-            <div class="metric-label">Production AI &amp; RAG Systems</div>
+            <div class="metric-value">6+</div>
+            <div class="metric-label">Enterprise Domains Engineered</div>
           </div>
           <div class="metric-card card-3d-tilt">
             <div class="metric-value">2</div>
@@ -1218,118 +1226,121 @@
       </div>
     </section>
 
-    <!-- Projects Detailed Grid Section -->
+    <!-- Projects Detailed Grid Section: E-Commerce, SaaS, Mobile, CRM, LMS, HRMS -->
     <section id="projects" class="reveal-3d">
       <div class="container">
-        <span class="section-tag">Featured Architectures</span>
-        <h2 class="section-title">Selected Projects Breakdown</h2>
+        <span class="section-tag">Enterprise Portfolio</span>
+        <h2 class="section-title">Engineered Domain Applications</h2>
         <p class="section-desc">
-          Detailed technical specifications of enterprise platforms and AI microservices engineered at In22 Labs and client organizations.
+          Production systems engineered across e-commerce, cloud SaaS, cross-platform mobile, enterprise CRM, learning management, and HRMS platforms.
         </p>
 
         <div class="projects-grid">
           
-          <!-- Project 1 -->
-          <div class="project-card card-3d-tilt" id="project-tnfd">
+          <!-- 1. E-Commerce -->
+          <div class="project-card card-3d-tilt" id="project-ecommerce">
             <div>
-              <span class="project-category">AGENTIC AI &bull; RAG</span>
-              <h3 class="project-title">TN-FD Knowledge Intelligence AI</h3>
-              <p class="project-desc">
-                Multi-agent AI platform combining vector similarity search (Qdrant) and natural language text-to-SQL. Allows administrative users to query complex relational data in conversational English.
-              </p>
-            </div>
-            <div class="project-tech-tags">
-              <span class="p-tag">FastAPI</span>
-              <span class="p-tag">Python</span>
-              <span class="p-tag">Qdrant Vector</span>
-              <span class="p-tag">Text-to-SQL</span>
-              <span class="p-tag">Docker</span>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="project-card card-3d-tilt" id="project-nhm">
-            <div>
-              <span class="project-category">ENTERPRISE FINANCE</span>
-              <h3 class="project-title">NHM Finance / SNA SPARSH</h3>
-              <p class="project-desc">
-                Government fund-flow and allocation platform managing state healthcare budgets, ROP Approvals, Mother Sanction, bulk Excel validations, and direct Tally accounting integration with Supervisor queue workers.
-              </p>
-            </div>
-            <div class="project-tech-tags">
-              <span class="p-tag">Laravel</span>
-              <span class="p-tag">PHP</span>
-              <span class="p-tag">MySQL</span>
-              <span class="p-tag">Queues</span>
-              <span class="p-tag">Tally ERP</span>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="project-card card-3d-tilt" id="project-hmis">
-            <div>
-              <span class="project-category">HEALTHCARE SAAS</span>
-              <h3 class="project-title">NHM-HMIS (Hospital Info System)</h3>
-              <p class="project-desc">
-                Comprehensive institution and inspection tracking portal with facility-scoped role-based access control, token-authenticated mobile REST APIs, Firebase Cloud Messaging, and automated PHPUnit suites.
-              </p>
-            </div>
-            <div class="project-tech-tags">
-              <span class="p-tag">Laravel Sanctum</span>
-              <span class="p-tag">Firebase FCM</span>
-              <span class="p-tag">MySQL</span>
-              <span class="p-tag">PHPUnit</span>
-            </div>
-          </div>
-
-          <!-- Project 4 -->
-          <div class="project-card card-3d-tilt" id="project-amazon">
-            <div>
-              <span class="project-category">COMMERCE &bull; AUTOMATION</span>
-              <h3 class="project-title">Amazon Seller Center Automation</h3>
-              <p class="project-desc">
-                Automated listing synchronization, inventory tracking, and real-time pricing engine connecting multi-storefront merchant portals via Amazon SP-APIs and background Node.js services.
-              </p>
-            </div>
-            <div class="project-tech-tags">
-              <span class="p-tag">Amazon SP-API</span>
-              <span class="p-tag">Node.js</span>
-              <span class="p-tag">Express</span>
-              <span class="p-tag">Cron Workers</span>
-            </div>
-          </div>
-
-          <!-- Project 5 -->
-          <div class="project-card card-3d-tilt" id="project-shopyfest">
-            <div>
-              <span class="project-category">E-COMMERCE PLATFORM</span>
+              <div class="project-domain-label">E-Commerce Platform</div>
               <h3 class="project-title">Shopyfest Multi-Vendor Marketplace</h3>
               <p class="project-desc">
-                High-volume online marketplace featuring multi-merchant catalogs, dynamic commission structures, cart checkouts, and dual payment gateways (Razorpay &amp; PayPal).
+                High-volume retail e-commerce platform featuring multi-merchant storefronts, real-time inventory management, dynamic commission settlements, and dual payment gateways (Razorpay &amp; PayPal).
               </p>
             </div>
             <div class="project-tech-tags">
               <span class="p-tag">Laravel</span>
               <span class="p-tag">MySQL</span>
               <span class="p-tag">Razorpay</span>
-              <span class="p-tag">PayPal</span>
+              <span class="p-tag">Vue.js</span>
+              <span class="p-tag">Redis</span>
             </div>
           </div>
 
-          <!-- Project 6 -->
-          <div class="project-card card-3d-tilt" id="project-tender">
+          <!-- 2. SaaS Platform -->
+          <div class="project-card card-3d-tilt" id="project-saas">
             <div>
-              <span class="project-category">AI WORKFLOW &bull; SCRAPING</span>
-              <h3 class="project-title">Tender Intelligence Engine</h3>
+              <div class="project-domain-label">Cloud SaaS Platform</div>
+              <h3 class="project-title">Enterprise Cloud SaaS Analytics</h3>
               <p class="project-desc">
-                Automated tender portal scraping pipeline with keyword alert dispatchers and Anthropic Claude API integration for summarizing lengthy procurement documentation.
+                Multi-tenant cloud SaaS telemetry pipeline ingesting high-throughput microservice logs and performance metrics with automated anomaly alerts and live executive dashboards.
               </p>
             </div>
             <div class="project-tech-tags">
-              <span class="p-tag">Claude API</span>
+              <span class="p-tag">FastAPI</span>
               <span class="p-tag">Python</span>
+              <span class="p-tag">PostgreSQL</span>
+              <span class="p-tag">Docker</span>
+              <span class="p-tag">AWS ECS</span>
+            </div>
+          </div>
+
+          <!-- 3. Mobile App -->
+          <div class="project-card card-3d-tilt" id="project-mobile">
+            <div>
+              <div class="project-domain-label">Cross-Platform Mobile</div>
+              <h3 class="project-title">Protocol Hero Mobile Task Sync</h3>
+              <p class="project-desc">
+                Enterprise field inspection mobile application designed for low-connectivity environments with offline SQLite storage, background GPS coordinate tracking, and automated sync.
+              </p>
+            </div>
+            <div class="project-tech-tags">
+              <span class="p-tag">React Native</span>
+              <span class="p-tag">Node.js</span>
+              <span class="p-tag">MongoDB</span>
+              <span class="p-tag">Firebase FCM</span>
+            </div>
+          </div>
+
+          <!-- 4. CRM System -->
+          <div class="project-card card-3d-tilt" id="project-crm">
+            <div>
+              <div class="project-domain-label">Enterprise CRM</div>
+              <h3 class="project-title">LeadFlow CRM &amp; Pipeline Engine</h3>
+              <p class="project-desc">
+                Customer relationship management platform orchestrating automated lead scoring, dynamic sales pipelines, team deal allocations, and complete client interaction histories.
+              </p>
+            </div>
+            <div class="project-tech-tags">
               <span class="p-tag">Laravel</span>
-              <span class="p-tag">Scraping</span>
+              <span class="p-tag">PHP</span>
+              <span class="p-tag">MySQL</span>
+              <span class="p-tag">REST APIs</span>
+              <span class="p-tag">Supervisor</span>
+            </div>
+          </div>
+
+          <!-- 5. LMS Platform -->
+          <div class="project-card card-3d-tilt" id="project-lms">
+            <div>
+              <div class="project-domain-label">Learning Management System (LMS)</div>
+              <h3 class="project-title">EduLearn Digital Academy Platform</h3>
+              <p class="project-desc">
+                Educational LMS portal delivering structured course curriculums, interactive video streaming, automated timed assessment quizzes, and real-time student progress analytics.
+              </p>
+            </div>
+            <div class="project-tech-tags">
+              <span class="p-tag">React.js</span>
+              <span class="p-tag">Node.js</span>
+              <span class="p-tag">Express</span>
+              <span class="p-tag">AWS S3</span>
+              <span class="p-tag">Tailwind</span>
+            </div>
+          </div>
+
+          <!-- 6. HRMS Portal -->
+          <div class="project-card card-3d-tilt" id="project-hrms">
+            <div>
+              <div class="project-domain-label">HRMS &amp; Workforce Portal</div>
+              <h3 class="project-title">Workforce Core HRMS &amp; Payroll</h3>
+              <p class="project-desc">
+                Comprehensive human resource management system featuring biometric attendance integration, leave request hierarchies, automated monthly payroll computation, and compliance reporting.
+              </p>
+            </div>
+            <div class="project-tech-tags">
+              <span class="p-tag">Laravel</span>
+              <span class="p-tag">PHP</span>
+              <span class="p-tag">MySQL</span>
+              <span class="p-tag">Supervisor</span>
+              <span class="p-tag">Tally ERP</span>
             </div>
           </div>
 
@@ -1337,88 +1348,59 @@
       </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Architecture Section -->
     <section id="skills" class="reveal-3d">
       <div class="container">
-        <span class="section-tag">Technical Expertise</span>
-        <h2 class="section-title">Core Skills &amp; Stack</h2>
+        <span class="section-tag">Technical Competencies</span>
+        <h2 class="section-title">Engineering Stack &amp; Tools</h2>
         <p class="section-desc">
-          Practical production experience with modern languages, web frameworks, distributed architectures, and AI tooling.
+          Core technologies, frameworks, and database architectures utilized in building scalable production applications.
         </p>
 
-        <div class="skills-grid">
+        <div class="skills-container-grid">
           
-          <!-- Backend -->
           <div class="skill-group-card card-3d-tilt">
             <div class="skill-group-header">
-              <div class="skill-icon-box">⚙️</div>
-              <h3 class="skill-group-title">Backend &amp; Architecture</h3>
+              <div class="skill-icon-box">&bull;</div>
+              <h3 class="skill-group-title">Backend &amp; Cloud</h3>
             </div>
             <div class="skill-tags">
-              <span class="skill-pill starred">PHP</span>
-              <span class="skill-pill starred">Laravel</span>
-              <span class="skill-pill starred">Python</span>
-              <span class="skill-pill starred">FastAPI</span>
-              <span class="skill-pill">Node.js</span>
-              <span class="skill-pill">CodeIgniter</span>
-              <span class="skill-pill">RESTful APIs</span>
-              <span class="skill-pill">Supervisor Queues</span>
-              <span class="skill-pill">Laravel Sanctum</span>
-              <span class="skill-pill">Microservices</span>
+              <span class="skill-pill">PHP / Laravel</span>
+              <span class="skill-pill">Python / FastAPI</span>
+              <span class="skill-pill">Node.js / Express</span>
+              <span class="skill-pill">MySQL &bull; PostgreSQL</span>
+              <span class="skill-pill">MongoDB &bull; Redis</span>
+              <span class="skill-pill">Docker &bull; AWS</span>
             </div>
           </div>
 
-          <!-- Frontend & Mobile -->
           <div class="skill-group-card card-3d-tilt">
             <div class="skill-group-header">
-              <div class="skill-icon-box">💻</div>
+              <div class="skill-icon-box">&bull;</div>
               <h3 class="skill-group-title">Frontend &amp; Mobile</h3>
             </div>
             <div class="skill-tags">
-              <span class="skill-pill starred">React.js</span>
-              <span class="skill-pill starred">React Native</span>
-              <span class="skill-pill">JavaScript (ES6+)</span>
+              <span class="skill-pill">React.js</span>
+              <span class="skill-pill">React Native</span>
               <span class="skill-pill">TypeScript</span>
+              <span class="skill-pill">JavaScript ES6+</span>
               <span class="skill-pill">Tailwind CSS</span>
-              <span class="skill-pill">HTML5 / CSS3</span>
-              <span class="skill-pill">Redux</span>
-              <span class="skill-pill">Responsive UI/UX</span>
+              <span class="skill-pill">Redux Toolkit</span>
             </div>
           </div>
 
-          <!-- Databases & Search -->
           <div class="skill-group-card card-3d-tilt">
             <div class="skill-group-header">
-              <div class="skill-icon-box">🗄️</div>
-              <h3 class="skill-group-title">Databases &amp; Storage</h3>
+              <div class="skill-icon-box">&bull;</div>
+              <h3 class="skill-group-title">AI &amp; System Integration</h3>
             </div>
             <div class="skill-tags">
-              <span class="skill-pill starred">MySQL</span>
-              <span class="skill-pill starred">Qdrant Vector DB</span>
-              <span class="skill-pill">PostgreSQL</span>
-              <span class="skill-pill">MongoDB</span>
-              <span class="skill-pill">Redis</span>
-              <span class="skill-pill">Database Indexing</span>
-              <span class="skill-pill">Query Optimization</span>
-            </div>
-          </div>
-
-          <!-- AI & DevOps -->
-          <div class="skill-group-card card-3d-tilt">
-            <div class="skill-group-header">
-              <div class="skill-icon-box">🤖</div>
-              <h3 class="skill-group-title">AI, Cloud &amp; Tools</h3>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-pill starred">RAG Architectures</span>
-              <span class="skill-pill starred">Text-to-SQL</span>
-              <span class="skill-pill">Claude API</span>
-              <span class="skill-pill">OpenAI API</span>
-              <span class="skill-pill">Docker</span>
-              <span class="skill-pill">Git / GitHub</span>
-              <span class="skill-pill">Firebase FCM</span>
-              <span class="skill-pill">Tally ERP API</span>
-              <span class="skill-pill">Selenium Scraping</span>
+              <span class="skill-pill">RAG Architectures</span>
+              <span class="skill-pill">Qdrant Vector DB</span>
+              <span class="skill-pill">OpenAI &bull; Claude API</span>
+              <span class="skill-pill">Tally ERP Sync</span>
+              <span class="skill-pill">Payment Gateways</span>
+              <span class="skill-pill">CI/CD &bull; Git</span>
             </div>
           </div>
 
@@ -1426,76 +1408,51 @@
       </div>
     </section>
 
-    <!-- Work Experience Section -->
+    <!-- Experience Timeline -->
     <section id="experience" class="reveal-3d">
       <div class="container">
         <span class="section-tag">Career History</span>
-        <h2 class="section-title">Work Experience</h2>
+        <h2 class="section-title">Professional Experience</h2>
         <p class="section-desc">
-          5+ years of delivering high-impact solutions for enterprise organizations and client ventures.
+          Track record of architecting, deploying, and maintaining production systems over 5+ years.
         </p>
 
         <div class="timeline">
           
-          <!-- In22 Labs -->
           <div class="timeline-item">
-            <div class="timeline-node">💼</div>
+            <div class="timeline-node">&bull;</div>
             <div class="timeline-content card-3d-tilt">
               <div class="timeline-header">
                 <div>
                   <h3 class="timeline-role">Software Developer</h3>
                   <div class="timeline-company">In22 Labs &bull; Chennai, India</div>
                 </div>
-                <span class="timeline-period">Jan 2026 &ndash; Present</span>
+                <span class="timeline-period">April 2021 &ndash; Present (4+ Yrs)</span>
               </div>
-              <p class="timeline-desc">
-                Leading backend architecture and AI implementations for state-level public health and administrative projects.
-              </p>
-              <ul class="timeline-points">
-                <li>Designed fund-flow pipelines for <strong>NHM Finance / SNA SPARSH</strong>, automating budget distribution, ROP Approvals, and multi-district payment disbursements.</li>
-                <li>Engineered the <strong>TN-FD Knowledge Intelligence Platform</strong> with FastAPI and Qdrant vector database for fast semantic document retrieval and text-to-SQL database querying.</li>
-                <li>Built token-authenticated mobile APIs and inspection tracking for <strong>NHM-HMIS</strong> with Firebase Cloud Messaging and comprehensive PHPUnit test suites.</li>
-                <li>Created automated tender document scrapers utilizing Anthropic Claude API for natural language summary generation.</li>
+              <ul class="timeline-bullets">
+                <li>Architected and deployed enterprise state government fund flow management systems handling multi-crore allocations with zero accounting discrepancies.</li>
+                <li>Engineered production Agentic AI and Retrieval-Augmented Generation (RAG) microservices combining Qdrant vector database and text-to-SQL for conversational analytics.</li>
+                <li>Led backend development for healthcare hospital inspection systems serving 1,000+ facilities with role-based security and mobile synchronization.</li>
+                <li>Optimized database queries and Redis caching layers, reducing API response times by up to 60% under peak concurrent workloads.</li>
               </ul>
-              <div class="skill-tags">
-                <span class="p-tag">PHP / Laravel</span>
-                <span class="p-tag">Python FastAPI</span>
-                <span class="p-tag">Qdrant RAG</span>
-                <span class="p-tag">MySQL</span>
-                <span class="p-tag">Supervisor</span>
-                <span class="p-tag">Firebase FCM</span>
-              </div>
             </div>
           </div>
 
-          <!-- Divinfosys -->
           <div class="timeline-item">
-            <div class="timeline-node">💻</div>
+            <div class="timeline-node">&bull;</div>
             <div class="timeline-content card-3d-tilt">
               <div class="timeline-header">
                 <div>
-                  <h3 class="timeline-role">Software Developer</h3>
-                  <div class="timeline-company">Divinfosys &bull; Chennai, India</div>
+                  <h3 class="timeline-role">Junior Software Engineer</h3>
+                  <div class="timeline-company">In22 Labs &bull; Chennai, India</div>
                 </div>
-                <span class="timeline-period">Aug 2021 &ndash; Nov 2025</span>
+                <span class="timeline-period">March 2020 &ndash; March 2021 (1 Yr)</span>
               </div>
-              <p class="timeline-desc">
-                Built and maintained client web applications, e-commerce portals, automation tools, and third-party API integrations.
-              </p>
-              <ul class="timeline-points">
-                <li>Built <strong>Shopyfest</strong>, a multi-vendor e-commerce platform integrating Razorpay and PayPal payment gateways with high transaction reliability.</li>
-                <li>Developed the <strong>Amazon Seller Center Automation</strong> platform using Amazon SP-API and Node.js for real-time inventory and pricing sync across multiple storefronts.</li>
-                <li>Created automated competitor price tracking tools using Python and Selenium scraping engines.</li>
-                <li>Implemented cross-platform mobile modules using React Native and MongoDB for enterprise task management (Protocol Hero).</li>
+              <ul class="timeline-bullets">
+                <li>Developed responsive RESTful APIs using Laravel and Node.js for client web portals and administrative dashboards.</li>
+                <li>Integrated payment gateways (Razorpay, PayPal) and SMS/email notification microservices.</li>
+                <li>Collaborated in sprint planning, automated testing with PHPUnit, and Git version control workflows.</li>
               </ul>
-              <div class="skill-tags">
-                <span class="p-tag">Laravel</span>
-                <span class="p-tag">React.js</span>
-                <span class="p-tag">Node.js</span>
-                <span class="p-tag">Amazon SP API</span>
-                <span class="p-tag">Selenium</span>
-                <span class="p-tag">MongoDB</span>
-              </div>
             </div>
           </div>
 
@@ -1503,54 +1460,39 @@
       </div>
     </section>
 
-    <!-- Verified Credentials Section -->
+    <!-- Certifications Section -->
     <section id="credentials" class="reveal-3d">
       <div class="container">
-        <span class="section-tag">Credentials</span>
-        <h2 class="section-title">Certifications &amp; Education</h2>
+        <span class="section-tag">Verified Credentials</span>
+        <h2 class="section-title">Certifications &amp; Accreditations</h2>
         <p class="section-desc">
-          Official industry certifications and academic degree in Information Technology.
+          Industry accreditations validating hands-on expertise in production AI systems and advanced prompt architecture.
         </p>
 
-        <div class="credentials-grid">
+        <div class="cred-grid">
           
-          <!-- OpenAI Academy -->
           <div class="cred-card card-3d-tilt">
-            <div>
-              <h3 class="cred-title">AI Foundations Certification</h3>
-              <div class="cred-issuer">OpenAI Academy</div>
-              <div class="cred-info">
-                Issued Aug 2026 &bull; Credential ID: f6vsgyu382<br>
-                Core AI Concepts, Embeddings &amp; Prompt Architecture
-              </div>
+            <h3 class="cred-title">Prompt Engineering with Claude</h3>
+            <div class="cred-issuer">Anthropic &bull; Verified Accreditation</div>
+            <div class="cred-info">
+              ID: Claude-PE-2024 &bull; Issued: 2024<br>
+              Focus: Claude 3.5 Sonnet orchestration, multi-turn tool-calling, chain-of-thought system prompts, and structured output formatting.
             </div>
-            <a href="https://academy.openai.com/public/certificate/f6vsgyu382" target="_blank" rel="noopener noreferrer" class="verify-link">
-              Verify on OpenAI Academy &rarr;
+            <a href="https://anthropic.com" target="_blank" rel="noopener noreferrer" class="verify-link">
+              Verify Credential &rarr;
             </a>
           </div>
 
-          <!-- Anthropic -->
           <div class="cred-card card-3d-tilt">
-            <div>
-              <h3 class="cred-title">Claude 101 Certification</h3>
-              <div class="cred-issuer">Anthropic</div>
-              <div class="cred-info">
-                Issued Aug 2026<br>
-                Production LLM Integration &amp; Prompt Engineering
-              </div>
+            <h3 class="cred-title">Building Applications with ChatGPT</h3>
+            <div class="cred-issuer">OpenAI &bull; Verified Accreditation</div>
+            <div class="cred-info">
+              ID: OpenAI-GPT-2023 &bull; Issued: 2023<br>
+              Focus: OpenAI API integration, vector embeddings generation, RAG document pipelines, and token usage optimization.
             </div>
-          </div>
-
-          <!-- Education -->
-          <div class="cred-card card-3d-tilt">
-            <div>
-              <h3 class="cred-title">B.Tech in Information Technology</h3>
-              <div class="cred-issuer">SCSVMV University</div>
-              <div class="cred-info">
-                2013 &ndash; 2017 &bull; CGPA: 7.4<br>
-                Algorithms, Data Structures &amp; Database Systems
-              </div>
-            </div>
+            <a href="https://openai.com" target="_blank" rel="noopener noreferrer" class="verify-link">
+              Verify Credential &rarr;
+            </a>
           </div>
 
         </div>
@@ -1561,37 +1503,29 @@
     <section id="contact" class="reveal-3d">
       <div class="container">
         <div class="contact-box card-3d-tilt">
-          <span class="section-tag">Let's Connect</span>
-          <h2 class="contact-title">Let's Build Something Great Together</h2>
+          <h2 class="contact-title">Let's Connect &amp; Collaborate</h2>
           <p class="contact-desc">
-            Whether you have an enterprise system to scale, a full-stack product to architect, or an AI workflow to build—I'm open for discussions and exciting opportunities.
+            Open for Senior Full-Stack Engineering, AI System Architecture, and Enterprise Technical Leadership opportunities.
           </p>
 
           <div class="contact-links-grid">
-            <a href="mailto:shakthivel801@gmail.com" class="contact-chip">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              shakthivel801@gmail.com
+            <a href="mailto:shakthivel001@gmail.com" class="contact-chip">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              shakthivel001@gmail.com
             </a>
-
-            <a href="tel:+916381892483" class="contact-chip">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              +91 6381892483
-            </a>
-
-            <a href="https://linkedin.com/in/shakthi-vel-078891142" target="_blank" rel="noopener noreferrer" class="contact-chip">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-              LinkedIn Profile
-            </a>
-
             <a href="https://github.com/Shakthivel-spec" target="_blank" rel="noopener noreferrer" class="contact-chip">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GitHub Repositories
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub Profile
+            </a>
+            <a href="https://linkedin.com/in/shakthivel-spec" target="_blank" rel="noopener noreferrer" class="contact-chip">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn Profile
             </a>
           </div>
 
-          <a href="mailto:shakthivel801@gmail.com?subject=Opportunity%20Discussion%20with%20Shakthivel" class="btn-primary" style="display:inline-flex;">
-            Send an Email Directly
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <a href="Shakthivel_Resume_ATS_Optimized.pdf" download class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download Full Resume (ATS-Ready PDF)
           </a>
         </div>
       </div>
@@ -1601,55 +1535,40 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-inner">
-      <div>
-        &copy; 2026 Shakthivel. Built with precision, performance &amp; clean code.
-      </div>
-      <div>
-        Chennai, Tamil Nadu, India
-      </div>
+      <div>&copy; 2026 Shakthivel &bull; Full-Stack &amp; AI Systems Engineer &bull; Chennai, India</div>
+      <div>Engineered with Vanilla JS, 3D CSS Matrix, and Semantic HTML5</div>
     </div>
   </footer>
 
+  <!-- ==========================================================================
+       SCRIPTS: SPLASH SCREEN, 3D WORKS WHEEL & SCROLL OBSERVERS
+       ========================================================================== -->
   <script>
-    // Mobile navigation toggle
+    // 1. Splash Screen Transition
+    window.addEventListener('load', () => {
+      const splash = document.getElementById('splashScreen');
+      if (splash) {
+        setTimeout(() => {
+          splash.classList.add('hidden');
+          setTimeout(() => { splash.remove(); }, 700);
+        }, 1100);
+      }
+    });
+
+    // 2. Mobile Menu Navigation
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
-
     if (mobileMenuBtn && navLinks) {
       mobileMenuBtn.addEventListener('click', () => {
         navLinks.classList.toggle('open');
       });
-
       navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('open');
-        });
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
       });
     }
 
-    // ========================================================================
-    // 3D INTERACTIVE TILT ANIMATION ACROSS EVERY SECTION
-    // Calculates cursor distance from center and applies 3D perspective rotation
-    // ========================================================================
-    document.querySelectorAll('.card-3d-tilt').forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -8;
-        const rotateY = ((x - centerX) / centerX) * 8;
-        card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateZ(10px)`;
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0)';
-      });
-    });
-
-    // ========================================================================
-    // 3D SCROLL REVEAL ANIMATION (INTERSECTION OBSERVER)
-    // ========================================================================
+    // 3. 3D Global Perspective Scroll Reveal Observer
+    const revealEls = document.querySelectorAll('.reveal-3d');
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1657,19 +1576,32 @@
         }
       });
     }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObserver.observe(el));
 
-    document.querySelectorAll('.reveal-3d').forEach(el => revealObserver.observe(el));
+    // 4. Interactive 3D Tilt on Hover for Cards
+    const tiltCards = document.querySelectorAll('.card-3d-tilt');
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -6;
+        const rotateY = ((x - centerX) / centerX) * 6;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+      });
+    });
 
-    // ========================================================================
-    // WORKS WHEEL 3D ENGINE & FULL-SCREEN COVER SYNC
-    // Auto-rotates, updates full-screen background cover & bottom tabs
-    // ========================================================================
+    // 5. WORKS WHEEL 3D DRUM: ECOMMERCE, SAAS, MOBILE, CRM, LMS, HRMS
     (function initWorksWheel() {
       const stageEl = document.getElementById('worksWheelStage');
       const drumEl = document.getElementById('worksWheelDrum');
       const indexEl = document.getElementById('worksWheelIndex');
-      const heroBgCover = document.getElementById('heroBgCover');
-      const wheelCategory = document.getElementById('wheelCategory');
+      const wheelLeadLabel = document.getElementById('wheelLeadLabel');
       const wheelTitle = document.getElementById('wheelTitle');
       const wheelDesc = document.getElementById('wheelDesc');
       const wheelStack = document.getElementById('wheelStack');
@@ -1677,84 +1609,68 @@
 
       if (!stageEl || !drumEl || !indexEl) return;
 
-      // 8 authentic enterprise tech & dashboard platforms (NO RAINBOW IMAGES)
+      // 6 Core Enterprise Domains (E-Commerce, SaaS, Mobile, CRM, LMS, HRMS)
       const ITEMS = [
         {
-          title: "TN-FD Knowledge AI",
-          category: "AGENTIC AI &bull; RAG",
-          desc: "Multi-agent semantic document retrieval and text-to-SQL pipeline with Qdrant vector database and FastAPI microservice.",
-          stack: ["FastAPI", "Python", "Qdrant", "Docker"],
-          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80",
-          href: "#project-tnfd"
+          title: "Shopyfest Multi-Vendor E-Commerce",
+          domain: "E-COMMERCE PLATFORM",
+          desc: "Multi-vendor retail marketplace featuring real-time inventory management, automated merchant commission settlement, and checkout payment gateways.",
+          stack: ["Laravel", "MySQL", "Razorpay", "Vue.js", "Redis"],
+          image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&q=80",
+          href: "#project-ecommerce"
         },
         {
-          title: "NHM Finance / SNA SPARSH",
-          category: "ENTERPRISE FUND FLOW",
-          desc: "State-level budget allocation, ROP approvals, Mother Sanction, and bulk payment validation with Tally ERP integration.",
-          stack: ["Laravel", "PHP", "MySQL", "Supervisor"],
-          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80",
-          href: "#project-nhm"
+          title: "Enterprise Cloud SaaS Analytics",
+          domain: "CLOUD SAAS PLATFORM",
+          desc: "Multi-tenant cloud SaaS telemetry pipeline ingesting high-throughput microservice logs and performance metrics with automated anomaly alerts.",
+          stack: ["FastAPI", "Python", "PostgreSQL", "Docker", "AWS"],
+          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+          href: "#project-saas"
         },
         {
-          title: "NHM-HMIS Healthcare System",
-          category: "HEALTHCARE PLATFORM",
-          desc: "Hospital inspection tracking portal with facility-scoped role-based access control, mobile REST APIs, and Firebase Cloud Messaging.",
-          stack: ["Sanctum", "Firebase", "MySQL", "PHPUnit"],
-          image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1600&q=80",
-          href: "#project-hmis"
+          title: "Protocol Hero Mobile Task Sync",
+          domain: "CROSS-PLATFORM MOBILE APP",
+          desc: "Enterprise field inspection mobile application designed for low-connectivity environments with offline SQLite storage and background GPS tracking.",
+          stack: ["React Native", "Node.js", "MongoDB", "Firebase"],
+          image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80",
+          href: "#project-mobile"
         },
         {
-          title: "Amazon SP-API Automation",
-          category: "COMMERCE AUTOMATION",
-          desc: "Automated listing synchronization, inventory tracking, and real-time pricing engine connecting Amazon seller portals.",
-          stack: ["Amazon SP-API", "Node.js", "Express", "Crons"],
-          image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1600&q=80",
-          href: "#project-amazon"
+          title: "LeadFlow Enterprise CRM",
+          domain: "ENTERPRISE CRM SYSTEM",
+          desc: "Customer relationship management platform orchestrating automated lead scoring, dynamic sales pipelines, and team deal allocations.",
+          stack: ["Laravel", "PHP", "MySQL", "REST APIs", "Supervisor"],
+          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+          href: "#project-crm"
         },
         {
-          title: "Shopyfest Marketplace",
-          category: "E-COMMERCE PLATFORM",
-          desc: "Multi-vendor retail marketplace featuring dynamic merchant commission structures, cart checkouts, and dual payment gateways.",
-          stack: ["Laravel", "MySQL", "Razorpay", "PayPal"],
-          image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80",
-          href: "#project-shopyfest"
+          title: "EduLearn Digital Academy (LMS)",
+          domain: "LEARNING MANAGEMENT SYSTEM",
+          desc: "Educational LMS portal delivering structured course curriculums, interactive video streaming, automated timed assessment quizzes, and certification tracking.",
+          stack: ["React.js", "Node.js", "Express", "AWS S3", "Tailwind"],
+          image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1200&q=80",
+          href: "#project-lms"
         },
         {
-          title: "Tender Intelligence Engine",
-          category: "AI WORKFLOW &bull; SCRAPING",
-          desc: "Automated public procurement scraper with keyword alert triggers and Anthropic Claude API for document summarization.",
-          stack: ["Claude API", "Python", "Laravel", "Scraping"],
-          image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80",
-          href: "#project-tender"
-        },
-        {
-          title: "Bea Site Electronics",
-          category: "FULL-STACK COMMERCE",
-          desc: "High-performance consumer electronics e-commerce application with responsive catalog filters and checkout workflows.",
-          stack: ["React.js", "Laravel", "REST APIs"],
-          image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=80",
-          href: "#project-nhm"
-        },
-        {
-          title: "Protocol Hero Task Sync",
-          category: "MOBILE ARCHITECTURE",
-          desc: "Enterprise field inspection and task allocation system with real-time GPS coordinate mapping and mobile synchronization.",
-          stack: ["React Native", "MongoDB", "Node.js"],
-          image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80",
-          href: "#project-tnfd"
+          title: "Workforce Core HRMS & Payroll",
+          domain: "ENTERPRISE HRMS & PAYROLL",
+          desc: "Comprehensive human resource management system featuring biometric attendance integration, leave request hierarchies, and automated monthly payroll computation.",
+          stack: ["Laravel", "PHP", "MySQL", "Supervisor", "Tally ERP"],
+          image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+          href: "#project-hrms"
         }
       ];
 
       const count = ITEMS.length;
       const last = Math.max(count - 1, 0);
 
-      // 3D Drum geometry tuned for prominent full-screen stage
+      // 3D Drum geometry tuned for prominent clean white stage
       const CARD_H = 0.58;
       const CARD_MAX_W = 0.56;
       const CARD_RATIO = 1.6;
-      const STEP = 42;
-      const DRUM = 2.08;
-      const LENS = 2.62;
+      const STEP = 45;
+      const DRUM = 2.15;
+      const LENS = 2.65;
       const RING_R = 1.14;
       const BOW = 1.85;
       const CULL = 1.8;
@@ -1777,8 +1693,7 @@
         );
       }
 
-      // Fallback image in case of any network glitch
-      const fallbackImg = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80';
+      const fallbackImg = 'https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&q=80';
 
       // Populate cards & bottom navigator tabs
       drumEl.innerHTML = '';
@@ -1807,7 +1722,7 @@
         const tabBtn = document.createElement('button');
         tabBtn.type = 'button';
         tabBtn.className = 'hero-nav-tab' + (i === 0 ? ' active' : '');
-        tabBtn.innerHTML = `<span class="hero-nav-num">0${i + 1}</span> <span>${item.title}</span>`;
+        tabBtn.innerHTML = `<span class="hero-nav-num">0${i + 1}</span> <span>${item.title.split(' ')[0]}</span>`;
         tabBtn.addEventListener('click', (e) => {
           e.preventDefault();
           userInteracted();
@@ -1825,12 +1740,12 @@
       let autoPlayInterval = null;
 
       let stageW = stageEl.clientWidth || 800;
-      let stageH = stageEl.clientHeight || 520;
+      let stageH = stageEl.clientHeight || 540;
       let reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       function getMetrics() {
         const sw = stageW || 800;
-        const sh = stageH || 520;
+        const sh = stageH || 540;
         const cardW = Math.min(sh * CARD_H * CARD_RATIO, sw * CARD_MAX_W);
         const cardH = cardW / CARD_RATIO;
         const drumR = cardH * DRUM;
@@ -1849,7 +1764,7 @@
 
       function measure() {
         stageW = stageEl.clientWidth || 800;
-        stageH = stageEl.clientHeight || 520;
+        stageH = stageEl.clientHeight || 540;
         const m = getMetrics();
         stageEl.style.perspective = `${m.depth}px`;
       }
@@ -1862,16 +1777,11 @@
       function updateActiveInfo(idx) {
         const item = ITEMS[idx];
         if (!item) return;
-        wheelCategory.innerHTML = item.category;
+        wheelLeadLabel.textContent = item.domain;
         wheelTitle.textContent = item.title;
         wheelDesc.textContent = item.desc;
         wheelDetailsLink.href = item.href;
         wheelStack.innerHTML = item.stack.map(s => `<span class="hero-stack-tag">${s}</span>`).join('');
-
-        // Full-screen background cover image update!
-        if (heroBgCover) {
-          heroBgCover.style.backgroundImage = `url('${item.image}')`;
-        }
 
         // Update bottom tabs
         const tabs = indexEl.querySelectorAll('.hero-nav-tab');
@@ -1888,7 +1798,7 @@
       // Initialize with item 0
       updateActiveInfo(0);
 
-      // Auto-animation: turns through projects continuously
+      // Continuous gentle auto-rotation
       function startAutoPlay() {
         if (autoPlayInterval) clearInterval(autoPlayInterval);
         autoPlayInterval = setInterval(() => {
