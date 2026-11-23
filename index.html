@@ -6,8 +6,8 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Shakthivel &bull; Full-Stack Developer &amp; AI Engineer</title>
-<meta name="description" content="Portfolio of Shakthivel — Full-Stack Developer & AI Engineer with 5+ years experience building enterprise Laravel, Node.js, Python FastAPI, and RAG architectures in Chennai, India.">
+<title>Shakthivel &bull; Full-Stack &amp; AI Systems Engineer</title>
+<meta name="description" content="Portfolio of Shakthivel — Full-Stack Developer & AI Systems Engineer with 5+ years experience building enterprise Laravel, Node.js, Python FastAPI, and RAG architectures in Chennai, India.">
 <meta name="theme-color" content="#090d16">
 <link rel="canonical" href="https://shakthivel-spec.github.io/my-profile/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%232563eb'/%3E%3Ctext x='50' y='64' font-size='42' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
@@ -37,7 +37,7 @@
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
     
-    --max-w: 1180px;
+    --max-w: 1220px;
     --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -80,9 +80,9 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(9, 13, 22, 0.88);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(9, 13, 22, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border-subtle);
   }
 
@@ -100,7 +100,7 @@
     color: var(--text-primary);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
   }
 
   .nav-brand-dot {
@@ -109,6 +109,18 @@
     border-radius: 50%;
     background: var(--primary);
     box-shadow: 0 0 10px var(--primary);
+  }
+
+  .nav-brand-badge {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(59, 130, 246, 0.12);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    color: var(--primary-light);
+    font-weight: 600;
+    letter-spacing: 0.05em;
   }
 
   .nav-links {
@@ -123,7 +135,7 @@
     color: var(--text-secondary);
   }
 
-  .nav-link:hover {
+  .nav-link:hover, .nav-link.active {
     color: var(--text-primary);
   }
 
@@ -202,135 +214,47 @@
     margin-bottom: 2rem;
   }
 
-  /* Hero Section */
-  .hero-section {
-    padding: 4.5rem 0 2rem;
-    text-align: center;
-    position: relative;
-  }
-
-  .hero-content {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-title {
-    font-size: 3.6rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.12;
-    margin-bottom: 1.25rem;
-  }
-
-  .hero-title .highlight {
-    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #93c5fd 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .hero-bio {
-    font-size: 1.18rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    max-width: 720px;
-  }
-
-  .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.75rem 1.5rem;
-    background: var(--primary);
-    color: #ffffff;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border-radius: 8px;
-    box-shadow: 0 4px 18px var(--primary-glow);
-  }
-
-  .btn-primary:hover {
-    background: var(--primary-light);
-    transform: translateY(-2px);
-  }
-
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.75rem 1.5rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    color: var(--text-primary);
-    font-size: 0.95rem;
-    font-weight: 600;
-    border-radius: 8px;
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--primary);
-    background: var(--bg-card-hover);
-    transform: translateY(-2px);
-  }
-
-  .hero-social-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-
-  .hero-social-link {
-    color: var(--text-secondary);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.92rem;
-    font-weight: 500;
-  }
-
-  .hero-social-link:hover {
-    color: var(--primary-light);
-  }
-
-  @media (max-width: 768px) {
-    .hero-title { font-size: 2.6rem; }
-    .hero-bio { font-size: 1.05rem; }
-  }
-
   /* ==========================================================================
-     WORKS WHEEL 3D COMPONENT STYLES
+     WORKS WHEEL 3D HERO COMPONENT
+     Auto-animating 3D drum on default load without any button click
      ========================================================================== */
-  .works-wheel-section {
-    padding: 1.5rem 0 4rem;
+  .works-wheel-hero {
+    padding: 2rem 0 3.5rem;
     position: relative;
+  }
+
+  .hero-tagline-bar {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .hero-tagline-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.22);
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+    letter-spacing: 0.06em;
   }
 
   .works-wheel-stage-wrapper {
     width: 100%;
-    max-width: 1180px;
-    height: min(650px, 80vh);
-    min-height: 460px;
-    margin: 1.5rem auto 0;
+    max-width: 1200px;
+    height: min(680px, 82vh);
+    min-height: 480px;
+    margin: 0.5rem auto 0;
     position: relative;
     border-radius: 20px;
-    background: radial-gradient(circle at center, rgba(30, 41, 59, 0.5) 0%, rgba(9, 13, 22, 0.98) 100%);
+    background: radial-gradient(circle at 65% 50%, rgba(30, 41, 59, 0.45) 0%, rgba(9, 13, 22, 0.98) 100%);
     border: 1.5px solid var(--border-subtle);
     overflow: hidden;
-    box-shadow: 0 25px 80px -15px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 25px 80px -15px rgba(0, 0, 0, 0.95);
   }
 
   .works-wheel-stage {
@@ -351,11 +275,110 @@
     outline-offset: -4px;
   }
 
+  /* Dynamic Left Info Panel */
+  .works-wheel-info-panel {
+    position: absolute;
+    top: 50%;
+    left: 4.5%;
+    transform: translateY(-50%);
+    max-width: 360px;
+    z-index: 25;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: rgba(9, 13, 22, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    padding: 1.8rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  @media (max-width: 900px) {
+    .works-wheel-info-panel {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      max-width: 100%;
+      margin: 1rem 1rem 0;
+      padding: 1.25rem;
+    }
+    .works-wheel-stage-wrapper {
+      height: 520px;
+    }
+  }
+
+  .wheel-category-text {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .wheel-title-text {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .wheel-desc-text {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  .wheel-stack-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.2rem;
+  }
+
+  .wheel-stack-tag {
+    padding: 0.25rem 0.6rem;
+    background: rgba(59, 130, 246, 0.12);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--primary-light);
+    font-weight: 500;
+  }
+
+  .wheel-details-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    margin-top: 0.4rem;
+    transition: var(--transition);
+  }
+
+  .wheel-details-link:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+  }
+
+  /* 3D Drum */
   .works-wheel-drum {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 58%;
     transform-style: preserve-3d;
+  }
+
+  @media (max-width: 900px) {
+    .works-wheel-drum {
+      left: 50%;
+    }
   }
 
   .works-wheel-card {
@@ -374,7 +397,7 @@
     border-radius: 12px;
     overflow: hidden;
     background: var(--bg-card);
-    box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.85), 0 0 2px rgba(255, 255, 255, 0.15);
+    box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.85), 0 0 2px rgba(255, 255, 255, 0.15);
     border: 1.5px solid rgba(255, 255, 255, 0.1);
     transform-origin: center center;
     transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
@@ -382,7 +405,7 @@
 
   .works-wheel-card:hover .works-wheel-card-inner {
     border-color: var(--primary-light);
-    box-shadow: 0 25px 50px -10px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 25px 60px -10px rgba(59, 130, 246, 0.45);
   }
 
   .works-wheel-card img {
@@ -419,37 +442,7 @@
     transform: translateY(0);
   }
 
-  .works-wheel-label {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    pointer-events: none;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    color: var(--text-primary);
-    opacity: 1;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
-    font-family: var(--font-sans);
-    line-height: 1;
-  }
-
-  .works-wheel-title {
-    position: absolute;
-    top: 50%;
-    left: 8%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    color: var(--text-primary);
-    opacity: 0;
-    max-width: 42%;
-    line-height: 1.15;
-    text-shadow: 0 10px 35px rgba(0, 0, 0, 0.95);
-    font-family: var(--font-sans);
-  }
-
+  /* Right Index List */
   .works-wheel-index {
     position: absolute;
     top: 7.5%;
@@ -458,6 +451,12 @@
     text-align: right;
     line-height: 1.75;
     z-index: 10;
+  }
+
+  @media (max-width: 900px) {
+    .works-wheel-index {
+      display: none;
+    }
   }
 
   .works-wheel-index-btn {
@@ -514,7 +513,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
-    margin-top: 4rem;
+    margin-top: 3.5rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid var(--border-subtle);
   }
@@ -933,22 +932,22 @@
   <!-- Navigation -->
   <header class="navbar">
     <div class="container nav-inner">
-      <a href="#home" class="nav-brand">
+      <a href="#works-wheel" class="nav-brand">
         <span class="nav-brand-dot"></span>
-        <span>Shakthivel</span>
+        <span>SHAKTHIVEL</span>
+        <span class="nav-brand-badge">AI &bull; FULL-STACK</span>
       </a>
 
       <nav class="nav-links" id="navLinks">
-        <a href="#works-wheel" class="nav-link" style="color:var(--primary-light); font-weight:600;">3D Wheel</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#works-wheel" class="nav-link active">3D Showcase</a>
+        <a href="#projects" class="nav-link">Architectures</a>
         <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Stack</a>
         <a href="#credentials" class="nav-link">Certifications</a>
         <a href="#contact" class="nav-link">Contact</a>
         <a href="Shakthivel_Resume_ATS_Optimized.pdf" download class="nav-cta-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          Resume
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          CV.PDF
         </a>
       </nav>
 
@@ -959,74 +958,40 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero-section" id="home">
-      <div class="container">
-        
-        <div class="hero-content">
-          <span class="section-tag" style="margin-bottom:0.75rem;">Full-Stack &bull; AI Systems &bull; Enterprise Architecture</span>
-          <h1 class="hero-title">
-            Hi, I'm Shakthivel.<br>
-            <span class="highlight">Full-Stack &amp; AI Engineer</span>
-          </h1>
-
-          <p class="hero-bio">
-            Software Developer with <strong>5+ years of experience</strong> architecting high-throughput backend systems (PHP / Laravel, Python / FastAPI, Node.js), responsive user experiences (React, React Native), and production Agentic AI &amp; RAG architectures at <strong>In22 Labs</strong> in Chennai, India.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#works-wheel" class="btn-primary">
-              Turn 3D Project Drum &darr;
-            </a>
-
-            <a href="Shakthivel_Resume_ATS_Optimized.pdf" download class="btn-secondary">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              Download CV (PDF)
-            </a>
-          </div>
-
-          <div class="hero-social-links">
-            <a href="mailto:shakthivel801@gmail.com" class="hero-social-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              shakthivel801@gmail.com
-            </a>
-            <a href="https://github.com/Shakthivel-spec" target="_blank" rel="noopener noreferrer" class="hero-social-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GitHub
-            </a>
-            <a href="https://linkedin.com/in/shakthi-vel-078891142" target="_blank" rel="noopener noreferrer" class="hero-social-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-              LinkedIn
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
     <!-- ==========================================================================
-         WORKS WHEEL 3D SHOWCASE SECTION (PROMINENT AT TOP)
+         HERO SECTION: 3D WORKSWHEEL AUTOMATICALLY DISPLAYED BY DEFAULT
          ========================================================================== -->
-    <section class="works-wheel-section" id="works-wheel">
-      <div class="container" style="text-align: center;">
-        <span class="section-tag">Interactive 3D Experience</span>
-        <h2 class="section-title">Works '26 // Project Drum</h2>
-        <p class="section-desc" style="margin: 0 auto 1.5rem;">
-          Scroll mouse wheel, drag, or use arrow keys to rotate through selected enterprise applications.
-        </p>
+    <section class="works-wheel-hero" id="works-wheel">
+      <div class="container hero-tagline-bar">
+        <div class="hero-tagline-pill">
+          <span>ENTERPRISE FULL-STACK &bull; PRODUCTION AGENTIC AI &bull; DISTRIBUTED ARCHITECTURES</span>
+        </div>
       </div>
 
       <div class="container">
         <div class="works-wheel-stage-wrapper">
           <div id="worksWheelStage" class="works-wheel-stage" tabindex="0" role="listbox" aria-label="Works Wheel">
+            
+            <!-- Dynamic Left Architecture Info Panel -->
+            <div id="worksWheelInfo" class="works-wheel-info-panel">
+              <span class="wheel-category-text" id="wheelCategory">AGENTIC AI &bull; RAG</span>
+              <h1 class="wheel-title-text" id="wheelTitle">TN-FD Knowledge AI</h1>
+              <p class="wheel-desc-text" id="wheelDesc">
+                Multi-agent semantic document retrieval and text-to-SQL pipeline with Qdrant vector database and FastAPI microservice.
+              </p>
+              <div class="wheel-stack-row" id="wheelStack">
+                <span class="wheel-stack-tag">FastAPI</span>
+                <span class="wheel-stack-tag">Python</span>
+                <span class="wheel-stack-tag">Qdrant</span>
+                <span class="wheel-stack-tag">Docker</span>
+              </div>
+              <a href="#projects" class="wheel-details-link" id="wheelDetailsLink">
+                View Architecture Details &rarr;
+              </a>
+            </div>
+
             <!-- 3D Rotating Drum -->
             <div id="worksWheelDrum" class="works-wheel-drum"></div>
-            
-            <!-- Center Ring Resting Label -->
-            <div id="worksWheelLabel" class="works-wheel-label">PROJECTS</div>
-            
-            <!-- Active Front Card Title -->
-            <div id="worksWheelTitle" class="works-wheel-title"></div>
             
             <!-- Index list down the right-hand side -->
             <ol id="worksWheelIndex" class="works-wheel-index"></ol>
@@ -1036,21 +1001,21 @@
         <!-- User interaction hint -->
         <div class="wheel-hint-bar">
           <span class="wheel-hint-item">
-            <kbd>Scroll Wheel</kbd> or <kbd>Drag</kbd> to Turn Drum
+            <kbd>Scroll</kbd> or <kbd>Drag</kbd> to Turn Drum
           </span>
           <span class="wheel-hint-item">
             <kbd>&uarr;</kbd> <kbd>&darr;</kbd> Arrow Keys
           </span>
           <span class="wheel-hint-item">
-            Click Project Title on Right to Jump Directly
+            Click Project Title to Jump &bull; Auto-plays when idle
           </span>
         </div>
 
-        <!-- Metrics Grid -->
+        <!-- Metric Highlights Strip -->
         <div class="metrics-grid">
           <div class="metric-card">
             <div class="metric-value">5+</div>
-            <div class="metric-label">Years of Professional Experience</div>
+            <div class="metric-label">Years Professional Experience</div>
           </div>
           <div class="metric-card">
             <div class="metric-value">14+</div>
@@ -1068,59 +1033,18 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-      <div class="container">
-        <span class="section-tag">Engineering Profile</span>
-        <h2 class="section-title">About Me</h2>
-        <p class="section-desc">
-          Backend-heavy full-stack developer with a passion for building robust, scalable architectures and integrating intelligent AI automation into business workflows.
-        </p>
-
-        <div style="background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:16px; padding:2.2rem; line-height:1.8; color:var(--text-secondary); font-size:1.02rem;">
-          <p style="margin-bottom:1.2rem;">
-            Over the past 5+ years, I have worked across fast-growing agencies and enterprise clients. Currently at <strong>In22 Labs</strong>, I lead the technical design of state-level healthcare and financial platforms like <strong>NHM Finance / SNA SPARSH</strong>, orchestrating complex fund-flow allocations, Mother Sanctions, background queue processing with Supervisor, and automated Tally accounting sync.
-          </p>
-          <p style="margin-bottom:1.2rem;">
-            On the AI front, I engineered the <strong>TN-FD Knowledge Intelligence Platform</strong>—a production multi-agent system utilizing FastAPI, Qdrant vector database for sub-35ms semantic search, and an intelligent Natural Language-to-SQL pipeline that enables executive teams to query relational databases in plain English.
-          </p>
-          <p>
-            I hold a <strong>B.Tech in Information Technology</strong> from SCSVMV University (CGPA 7.4) and hold certifications from <strong>OpenAI Academy</strong> (AI Foundations) and <strong>Anthropic</strong> (Claude 101).
-          </p>
-        </div>
-      </div>
-    </section>
-
     <!-- Projects Detailed Grid Section -->
     <section id="projects">
       <div class="container">
         <span class="section-tag">Featured Architectures</span>
         <h2 class="section-title">Selected Projects Breakdown</h2>
         <p class="section-desc">
-          Detailed technical specifications of enterprise platforms and AI microservices.
+          Detailed technical specifications of enterprise platforms and AI microservices engineered at In22 Labs and client organizations.
         </p>
 
         <div class="projects-grid">
           
           <!-- Project 1 -->
-          <div class="project-card" id="project-nhm">
-            <div>
-              <span class="project-category">ENTERPRISE FINANCE</span>
-              <h3 class="project-title">NHM Finance / SNA SPARSH</h3>
-              <p class="project-desc">
-                Government fund-flow and allocation platform managing state healthcare budgets, ROP approvals, Mother Sanction, bulk Excel validations, and direct Tally accounting integration with Supervisor queue workers.
-              </p>
-            </div>
-            <div class="project-tech-tags">
-              <span class="p-tag">Laravel</span>
-              <span class="p-tag">PHP</span>
-              <span class="p-tag">MySQL</span>
-              <span class="p-tag">Queues</span>
-              <span class="p-tag">Tally ERP</span>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
           <div class="project-card" id="project-tnfd">
             <div>
               <span class="project-category">AGENTIC AI &bull; RAG</span>
@@ -1135,6 +1059,24 @@
               <span class="p-tag">Qdrant Vector</span>
               <span class="p-tag">Text-to-SQL</span>
               <span class="p-tag">Docker</span>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card" id="project-nhm">
+            <div>
+              <span class="project-category">ENTERPRISE FINANCE</span>
+              <h3 class="project-title">NHM Finance / SNA SPARSH</h3>
+              <p class="project-desc">
+                Government fund-flow and allocation platform managing state healthcare budgets, ROP approvals, Mother Sanction, bulk Excel validations, and direct Tally accounting integration with Supervisor queue workers.
+              </p>
+            </div>
+            <div class="project-tech-tags">
+              <span class="p-tag">Laravel</span>
+              <span class="p-tag">PHP</span>
+              <span class="p-tag">MySQL</span>
+              <span class="p-tag">Queues</span>
+              <span class="p-tag">Tally ERP</span>
             </div>
           </div>
 
@@ -1502,83 +1444,103 @@
 
     // ========================================================================
     // WORKS WHEEL 3D ENGINE
-    // Pure mathematical rAF transforms writing directly to DOM
+    // Default 3D display & continuous auto-animation with interactive pause
     // ========================================================================
     (function initWorksWheel() {
       const stageEl = document.getElementById('worksWheelStage');
       const drumEl = document.getElementById('worksWheelDrum');
-      const labelEl = document.getElementById('worksWheelLabel');
-      const titleEl = document.getElementById('worksWheelTitle');
       const indexEl = document.getElementById('worksWheelIndex');
+      const wheelCategory = document.getElementById('wheelCategory');
+      const wheelTitle = document.getElementById('wheelTitle');
+      const wheelDesc = document.getElementById('wheelDesc');
+      const wheelStack = document.getElementById('wheelStack');
+      const wheelDetailsLink = document.getElementById('wheelDetailsLink');
 
       if (!stageEl || !drumEl) return;
 
       const ITEMS = [
         {
-          title: "TN-FD Knowledge AI (RAG)",
+          title: "TN-FD Knowledge AI",
+          category: "AGENTIC AI &bull; RAG",
+          desc: "Multi-agent semantic document retrieval and text-to-SQL pipeline with Qdrant vector database and FastAPI microservice.",
+          stack: ["FastAPI", "Python", "Qdrant", "Docker"],
           image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
           href: "#project-tnfd"
         },
         {
           title: "NHM Finance / SNA SPARSH",
+          category: "ENTERPRISE FUND FLOW",
+          desc: "State-level budget allocation, ROP approvals, Mother Sanction, and bulk payment validation with Tally ERP integration.",
+          stack: ["Laravel", "PHP", "MySQL", "Supervisor"],
           image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
           href: "#project-nhm"
         },
         {
           title: "NHM-HMIS Healthcare System",
+          category: "HEALTHCARE PLATFORM",
+          desc: "Hospital inspection tracking portal with facility-scoped role-based access control, mobile REST APIs, and Firebase Cloud Messaging.",
+          stack: ["Sanctum", "Firebase", "MySQL", "PHPUnit"],
           image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
           href: "#project-hmis"
         },
         {
           title: "Amazon SP-API Automation",
+          category: "COMMERCE AUTOMATION",
+          desc: "Automated listing synchronization, inventory tracking, and real-time pricing engine connecting Amazon seller portals.",
+          stack: ["Amazon SP-API", "Node.js", "Express", "Crons"],
           image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
           href: "#project-amazon"
         },
         {
-          title: "Shopyfest E-Commerce",
+          title: "Shopyfest Marketplace",
+          category: "E-COMMERCE PLATFORM",
+          desc: "Multi-vendor retail marketplace featuring dynamic merchant commission structures, cart checkouts, and dual payment gateways.",
+          stack: ["Laravel", "MySQL", "Razorpay", "PayPal"],
           image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80",
           href: "#project-shopyfest"
         },
         {
           title: "Tender Intelligence Engine",
+          category: "AI WORKFLOW &bull; SCRAPING",
+          desc: "Automated public procurement scraper with keyword alert triggers and Anthropic Claude API for document summarization.",
+          stack: ["Claude API", "Python", "Laravel", "Scraping"],
           image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
           href: "#project-tender"
         },
         {
           title: "Bea Site Electronics",
+          category: "FULL-STACK COMMERCE",
+          desc: "High-performance consumer electronics e-commerce application with responsive catalog filters and checkout workflows.",
+          stack: ["React.js", "Laravel", "REST APIs"],
           image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80",
           href: "#project-nhm"
         },
         {
-          title: "Protocol Hero Mobile Task",
+          title: "Protocol Hero Task Sync",
+          category: "MOBILE ARCHITECTURE",
+          desc: "Enterprise field inspection and task allocation system with real-time GPS coordinate mapping and mobile synchronization.",
+          stack: ["React Native", "MongoDB", "Node.js"],
           image: "https://images.unsplash.com/photo-1517976487502-53b47c0b0a8d?auto=format&fit=crop&w=1200&q=80",
           href: "#project-tnfd"
-        },
-        {
-          title: "Prismatic Cloud Systems",
-          image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
-          href: "#project-hmis"
         }
       ];
 
       const count = ITEMS.length;
       const last = Math.max(count - 1, 0);
 
-      const CARD_H = 0.38;
-      const CARD_MAX_W = 0.34;
+      const CARD_H = 0.40;
+      const CARD_MAX_W = 0.36;
       const CARD_RATIO = 1.45;
-      const STEP = 40;
+      const STEP = 45;
       const DRUM = 2.22;
       const LENS = 2.7;
       const RING_R = 1.14;
       const BOW = 1.82;
-      const TITLE = 0.124;
-      const INDEX = 0.04;
-      const CULL = 1.6;
+      const CULL = 1.8;
 
-      const WHEEL_UNITS = 900;
-      const DRAG_UNITS = 420;
-      const SETTLE = 140;
+      const WHEEL_UNITS = 800;
+      const DRAG_UNITS = 380;
+      const SETTLE = 120;
       const EASE = 0.12;
 
       const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
@@ -1625,22 +1587,28 @@
         btn.textContent = item.title;
         btn.addEventListener('click', (e) => {
           e.preventDefault();
-          target = clamp(i + 1, 0, last + 1);
+          userInteracted();
+          target = clamp(i + 1, 1, last + 1);
         });
         li.appendChild(btn);
         indexEl.appendChild(li);
       });
 
-      let turn = 0;
-      let target = 0;
+      // Start in 3D DRUM MODE by default!
+      let turn = 1.0;
+      let target = 1.0;
       let active = 0;
-      let stageW = stageEl.clientWidth || 1160;
-      let stageH = stageEl.clientHeight || 560;
+      let isInteracting = false;
+      let interactionTimeout = null;
+      let autoPlayInterval = null;
+
+      let stageW = stageEl.clientWidth || 1200;
+      let stageH = stageEl.clientHeight || 580;
       let reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       function getMetrics() {
-        const sw = stageW || 1160;
-        const sh = stageH || 560;
+        const sw = stageW || 1200;
+        const sh = stageH || 580;
         const cardW = Math.min(sh * CARD_H * CARD_RATIO, sw * CARD_MAX_W);
         const cardH = cardW / CARD_RATIO;
         const drumR = cardH * DRUM;
@@ -1654,18 +1622,15 @@
           drumR,
           bow: cardH * BOW,
           depth: cardH * LENS,
-          title: cardH * TITLE,
-          index: cardH * INDEX,
+          index: cardH * 0.042,
         };
       }
 
       function measure() {
-        stageW = stageEl.clientWidth || 1160;
-        stageH = stageEl.clientHeight || 560;
+        stageW = stageEl.clientWidth || 1200;
+        stageH = stageEl.clientHeight || 580;
         const m = getMetrics();
         stageEl.style.perspective = `${m.depth}px`;
-        labelEl.style.fontSize = `${m.title}px`;
-        titleEl.style.fontSize = `${m.title}px`;
         indexEl.style.fontSize = `${m.index}px`;
       }
 
@@ -1674,10 +1639,39 @@
       const ro = new ResizeObserver(measure);
       ro.observe(stageEl);
 
-      // Auto-bloom the 3D drum shortly after page load
-      setTimeout(() => {
-        if (target === 0) target = 1;
-      }, 700);
+      function updateActiveInfo(idx) {
+        const item = ITEMS[idx];
+        if (!item) return;
+        wheelCategory.innerHTML = item.category;
+        wheelTitle.textContent = item.title;
+        wheelDesc.textContent = item.desc;
+        wheelDetailsLink.href = item.href;
+        wheelStack.innerHTML = item.stack.map(s => `<span class="wheel-stack-tag">${s}</span>`).join('');
+      }
+
+      updateActiveInfo(0);
+
+      // Auto-animation: turns through projects continuously
+      function startAutoPlay() {
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+        autoPlayInterval = setInterval(() => {
+          if (!isInteracting) {
+            let next = Math.round(target) + 1;
+            if (next > count) next = 1;
+            target = next;
+          }
+        }, 3200);
+      }
+
+      function userInteracted() {
+        isInteracting = true;
+        clearTimeout(interactionTimeout);
+        interactionTimeout = setTimeout(() => {
+          isInteracting = false;
+        }, 4000);
+      }
+
+      startAutoPlay();
 
       function draw() {
         requestAnimationFrame(draw);
@@ -1710,13 +1704,10 @@
           }
         }
 
-        labelEl.style.opacity = String(1 - m);
-        titleEl.style.opacity = String(m);
-
         const near = clamp(Math.round(pos), 0, last);
         if (active !== near) {
           active = near;
-          titleEl.textContent = ITEMS[active] ? ITEMS[active].title : '';
+          updateActiveInfo(active);
           const btns = indexEl.querySelectorAll('.works-wheel-index-btn');
           btns.forEach((b, idx) => {
             if (idx === active) b.classList.add('active');
@@ -1730,9 +1721,10 @@
       // Wheel listener
       let settlingTimer = null;
       stageEl.addEventListener('wheel', (e) => {
+        userInteracted();
         const next = target + e.deltaY / WHEEL_UNITS;
-        if (next > 0 && next < last + 1) e.preventDefault();
-        target = clamp(next, 0, last + 1);
+        if (next >= 1 && next <= last + 1) e.preventDefault();
+        target = clamp(next, 1, last + 1);
 
         clearTimeout(settlingTimer);
         settlingTimer = setTimeout(() => {
@@ -1743,17 +1735,19 @@
       // Pointer drag listener
       let dragY = null;
       stageEl.addEventListener('pointerdown', (e) => {
+        userInteracted();
         dragY = e.clientY;
         stageEl.setPointerCapture(e.pointerId);
       });
       stageEl.addEventListener('pointermove', (e) => {
         if (dragY === null) return;
-        target = clamp(target + (dragY - e.clientY) / DRAG_UNITS, 0, last + 1);
+        userInteracted();
+        target = clamp(target + (dragY - e.clientY) / DRAG_UNITS, 1, last + 1);
         dragY = e.clientY;
       });
       const endDrag = () => {
         dragY = null;
-        if (target > 1) target = Math.round(target);
+        if (target >= 1) target = Math.round(target);
       };
       stageEl.addEventListener('pointerup', endDrag);
       stageEl.addEventListener('pointercancel', endDrag);
@@ -1761,13 +1755,19 @@
       // Keyboard navigation
       stageEl.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowDown') {
-          target = clamp(Math.round(target) + 1, 0, last + 1);
+          userInteracted();
+          target = clamp(Math.round(target) + 1, 1, last + 1);
           e.preventDefault();
         } else if (e.key === 'ArrowUp') {
-          target = clamp(Math.round(target) - 1, 0, last + 1);
+          userInteracted();
+          target = clamp(Math.round(target) - 1, 1, last + 1);
           e.preventDefault();
         }
       });
+
+      // Pause auto-rotation when user hovers over drum
+      stageEl.addEventListener('mouseenter', () => { isInteracting = true; });
+      stageEl.addEventListener('mouseleave', () => { isInteracting = false; });
     })();
   </script>
 </body>
