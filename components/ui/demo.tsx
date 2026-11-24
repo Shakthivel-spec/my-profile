@@ -51,37 +51,32 @@ const UNSPASH_WORKS: WorksWheelItem[] = [
   },
 ];
 
-// Tailored preset for Shakthivel's Developer Portfolio (E-Commerce, SaaS, Mobile, CRM, LMS, HRMS)
+// Tailored preset for Shakthivel's Developer Portfolio (NHM Finance, NHM-HMIS, Team22 HRMS, DoctorApp, Zoho Mail)
 export const SHAKTHIVEL_PORTFOLIO_WORKS: WorksWheelItem[] = [
   {
-    title: "Shopyfest Multi-Vendor E-Commerce",
-    image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&q=80",
-    href: "#project-ecommerce",
-  },
-  {
-    title: "Enterprise Cloud SaaS Analytics",
+    title: "NHM Finance – Fund Flow System",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-    href: "#project-saas",
+    href: "#projects",
   },
   {
-    title: "Protocol Hero Mobile Task Sync",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80",
-    href: "#project-mobile",
+    title: "NHM-HMIS – Hospital Management System",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
+    href: "#projects",
   },
   {
-    title: "LeadFlow Enterprise CRM",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
-    href: "#project-crm",
-  },
-  {
-    title: "EduLearn Digital Academy (LMS)",
-    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1200&q=80",
-    href: "#project-lms",
-  },
-  {
-    title: "Workforce Core HRMS & Payroll",
+    title: "Team22 HRMS – Multi-Tenant SaaS",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
-    href: "#project-hrms",
+    href: "#projects",
+  },
+  {
+    title: "DoctorApp – Healthcare Platform",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+    href: "#projects",
+  },
+  {
+    title: "Zoho Mail Integration – Email Platform",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    href: "#projects",
   },
 ];
 
