@@ -277,10 +277,6 @@
   .hero-fullscreen {
     position: relative;
     width: 100%;
-    min-height: calc(100vh - 70px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     overflow: hidden;
     background: #ffffff;
     background-image: radial-gradient(circle at 75% 35%, rgba(37, 99, 235, 0.04) 0%, transparent 60%);
@@ -288,30 +284,18 @@
     padding: 0 !important;
   }
 
-  @media (min-width: 1025px) and (min-height: 600px) {
-    .hero-fullscreen {
-      height: calc(100vh - 70px);
-      max-height: 860px;
-    }
-  }
-
   .hero-fullscreen-content {
     width: 100%;
     max-width: var(--max-w);
     margin: 0 auto;
-    padding: 1.25rem 1.5rem 0.5rem;
+    padding: 1.75rem 1.5rem 1.25rem;
     display: grid;
     grid-template-columns: 480px 1fr;
     gap: 2.5rem;
     align-items: center;
-    flex: 1;
   }
 
   @media (max-width: 1024px) {
-    .hero-fullscreen {
-      height: auto;
-      min-height: auto;
-    }
     .hero-fullscreen-content {
       grid-template-columns: 1fr;
       padding: 1.5rem 1.5rem 1rem;
