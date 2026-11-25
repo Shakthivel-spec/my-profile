@@ -1811,6 +1811,49 @@
   .proj-mini-visual .iso-layer { border-radius: 9px; transform: translateZ(calc(var(--i) * 22px)); }
   .proj-visual-num, .proj-visual-tag { position: relative; z-index: 1; }
 
+
+  /* ---------- stronger 3D: scroll flip-in, swinging icon tiles, deep hover ---------- */
+  html.js-3d .reveal3d {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(26deg) rotateY(-8deg) translateY(56px) scale(0.95);
+    transform-origin: 50% 100%;
+    transition: opacity 0.7s ease, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--d, 0ms);
+  }
+  html.js-3d .reveal3d.in {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.4s ease, border-color 0.25s, box-shadow 0.25s, transform 0.18s ease-out;
+    transition-delay: 0ms;
+  }
+  .skills-matrix-grid, .projects-all-grid, .stats-grid-container, .client-grid, .credentials-grid { perspective: 1400px; }
+
+  .skill-logo-wrap {
+    transform-style: preserve-3d;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    animation: iconSwing 5s ease-in-out infinite alternate;
+  }
+  .skill-card:nth-child(3n) .skill-logo-wrap { animation-delay: -1.6s; }
+  .skill-card:nth-child(3n+1) .skill-logo-wrap { animation-delay: -3.2s; }
+  @keyframes iconSwing {
+    from { transform: perspective(260px) rotateY(-26deg) rotateX(10deg); }
+    to   { transform: perspective(260px) rotateY(26deg) rotateX(-10deg); }
+  }
+
+  .tilt:hover {
+    box-shadow: 0 34px 60px -18px rgba(0, 0, 0, 0.75), 0 0 42px rgba(56, 189, 248, 0.22);
+  }
+  .tilt .skill-title, .tilt .proj-mini-title, .tilt .stat-counter-val, .tilt .timeline-position,
+  .tilt .client-card h4, .tilt .cred-card h4, .tilt .proj-heading {
+    transition: transform 0.25s ease-out;
+  }
+  .tilt:hover .skill-title, .tilt:hover .proj-mini-title, .tilt:hover .stat-counter-val,
+  .tilt:hover .timeline-position, .tilt:hover .client-card h4, .tilt:hover .cred-card h4,
+  .tilt:hover .proj-heading { transform: translateZ(38px); }
+
+  .section-title { text-shadow: 0 2px 0 rgba(56, 189, 248, 0.08), 0 14px 30px rgba(0, 0, 0, 0.55); }
+  .stat-counter-val { transform-style: preserve-3d; text-shadow: 0 1px 0 #0b3a52, 0 2px 0 #0a3047, 0 3px 0 #082638, 0 10px 22px rgba(56, 189, 248, 0.45); }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after {
@@ -3693,7 +3736,7 @@
         el.appendChild(glare);
         el.classList.add('tilt');
         const big = el.matches('.bento-card, .project-featured-card, .timeline-inner-card');
-        const max = big ? 3 : 8;
+        const max = big ? 4 : 13;
         el.addEventListener('pointermove', function (e) {
           const r = el.getBoundingClientRect();
           const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
@@ -3704,6 +3747,28 @@
         });
         el.addEventListener('pointerleave', function () { el.style.transform = ''; });
       });
+    })();
+
+    // Scroll-triggered 3D flip-in (only when JS runs and motion is allowed)
+    (function init3DReveal() {
+      const calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (calm || !('IntersectionObserver' in window)) return;
+      const sel = '.skill-card, .proj-card-mini, .client-card, .stat-card-advanced, .timeline-node-card, .cred-card, .bento-card, .project-featured-card, .contact-link-card, .contact-form-glass';
+      const items = document.querySelectorAll(sel);
+      document.documentElement.classList.add('js-3d');
+      const counts = new Map();
+      items.forEach(function (el) {
+        const n = counts.get(el.parentElement) || 0;
+        counts.set(el.parentElement, n + 1);
+        el.style.setProperty('--d', Math.min(n, 7) * 70 + 'ms');
+        el.classList.add('reveal3d');
+      });
+      const io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      items.forEach(function (el) { io.observe(el); });
     })();
   </script>
 </body>
