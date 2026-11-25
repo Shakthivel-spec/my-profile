@@ -158,6 +158,16 @@
   section.block { position: relative; padding: 3.6rem 0; }
   .eyebrow { display: inline-flex; align-items: center; gap: .6rem; padding: .45rem 1.1rem; border-radius: 999px; font-size: .76rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--green); background: var(--bg); box-shadow: var(--clay-sm); }
   .eyebrow::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--grad-g); box-shadow: 0 0 0 4px rgba(127,174,109,.25); }
+  .eyebrow em { font-style: normal; padding: .15rem .55rem; margin-right: .1rem; border-radius: 999px; background: var(--grad-g); color: #fff; font-size: .7rem; letter-spacing: .06em; box-shadow: var(--clay-g); }
+  .eyebrow::before { display: none; }
+  h2.title .gt { position: relative; display: inline-block; }
+  h2.title .gt::after { content: ''; position: absolute; left: 0; bottom: -4px; height: 6px; width: 100%; border-radius: 6px; background: var(--grad-g); transform: scaleX(0); transform-origin: left; transition: transform .9s cubic-bezier(.16,1,.3,1) .35s; }
+  .in h2.title .gt::after, h2.title.in .gt::after, html:not(.js) h2.title .gt::after { transform: scaleX(1); }
+
+  /* soft clay cursor follower (mouse only) */
+  .cursor { position: fixed; z-index: 400; left: 0; top: 0; width: 38px; height: 38px; margin: -19px 0 0 -19px; border-radius: 50%; pointer-events: none; border: 2px solid rgba(79,138,84,.7); background: rgba(168,198,134,.18); box-shadow: 0 6px 16px rgba(47,93,58,.18); transition: width .25s, height .25s, margin .25s, background .25s, opacity .3s; opacity: 0; }
+  .cursor.on { opacity: 1; }
+  .cursor.big { width: 64px; height: 64px; margin: -32px 0 0 -32px; background: rgba(127,174,109,.28); }
   h2.title { font-size: clamp(1.8rem, 3.4vw, 2.5rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.12; margin: .8rem 0 1.8rem; }
   .title-c { text-align: center; }
 
@@ -311,6 +321,7 @@
 <body>
   <div class="loader" id="loader" role="status" aria-label="Loading"><div class="ld"><b class="gt">S</b></div><div class="ld-bar"><i></i></div></div>
   <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
   <div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
 
   <header class="nav glass">
@@ -371,7 +382,7 @@
 
     <section class="block" id="skills" data-sec>
       <div class="wrap">
-        <div class="title-c" data-anim="up"><span class="eyebrow">Skills</span><h2 class="title">Tools I <span class="gt">build with</span></h2></div>
+        <div class="title-c" data-anim="up"><span class="eyebrow"><em>01</em>Skills</span><h2 class="title">Tools I <span class="gt">build with</span></h2></div>
         <div class="drum-scene" id="scene">
           <div class="drum" id="drum" role="list" aria-label="Skills">
       <div class="sk" role="listitem"><div class="sk-ic"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><rect x=".5" y=".5" width="23" height="23" rx="7" fill="#eef5e2" stroke="#9cc08a"/><text x="12" y="12.3" text-anchor="middle" dominant-baseline="central" font-family="Poppins, sans-serif" font-weight="700" font-size="9.5" fill="#2f5d3a">php</text></svg></div><b>PHP</b><small>Backend</small></div>
@@ -402,7 +413,7 @@
 
     <section class="block" id="projects" data-sec>
       <div class="wrap">
-        <div data-anim="up"><span class="eyebrow">Projects</span><h2 class="title">Selected work at <span class="gt">In22 Labs</span></h2></div>
+        <div data-anim="up"><span class="eyebrow"><em>02</em>Projects</span><h2 class="title">Selected work at <span class="gt">In22 Labs</span></h2></div>
         <div class="deck" id="deck">
       <article class="dk" style="--i:0">
         <div class="dk-art" aria-hidden="true">
@@ -513,7 +524,7 @@
 
     <section class="block" id="experience" data-sec>
       <div class="wrap">
-        <div data-anim="up"><span class="eyebrow">Experience</span><h2 class="title">Where I've <span class="gt">worked</span></h2></div>
+        <div data-anim="up"><span class="eyebrow"><em>03</em>Experience</span><h2 class="title">Where I've <span class="gt">worked</span></h2></div>
         <div class="xp-grid">
           <div class="xp-side">
           <button class="flip" data-anim="left" aria-label="Education details"><span class="flip-in">
@@ -547,7 +558,7 @@
 
     <section class="block" id="glance" data-sec>
       <div class="wrap">
-        <div class="title-c" data-anim="up"><span class="eyebrow">At a glance</span><h2 class="title">Experience in <span class="gt">numbers</span></h2></div>
+        <div class="title-c" data-anim="up"><span class="eyebrow"><em>04</em>At a glance</span><h2 class="title">Experience in <span class="gt">numbers</span></h2></div>
         <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="greeng" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9ccb88"/><stop offset=".55" stop-color="#4f8a54"/><stop offset="1" stop-color="#2f5d3a"/></linearGradient></defs></svg>
         <div class="rings">
           <div class="rg tilt" data-anim="flip"><div class="ring"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="45"/><circle class="pg" cx="50" cy="50" r="45"/></svg><strong data-count="5" data-suffix="+">5+</strong></div><b>Years</b><small>Since Aug 2021</small></div>
@@ -561,7 +572,7 @@
     <section class="block" id="contact" data-sec>
       <div class="wrap">
         <div class="contact-card" data-anim="zoom">
-          <span class="eyebrow">Contact</span>
+          <span class="eyebrow"><em>05</em>Contact</span>
           <h2>Let's build something <span class="gt">together</span></h2>
           <p>Open to full-stack developer roles and projects.</p>
           <div class="c-actions">
@@ -810,6 +821,16 @@
         });
       }, { threshold: 0.5 });
       $$('.rg').forEach(function (el) { rio.observe(el); });
+    }
+
+    // cursor follower
+    var cur = $('#cursor');
+    if (cur && fine && !calm) {
+      var cx = 0, cy = 0, tx = 0, ty = 0;
+      addEventListener('pointermove', function (e) { tx = e.clientX; ty = e.clientY; cur.classList.add('on'); }, { passive: true });
+      document.addEventListener('mouseleave', function () { cur.classList.remove('on'); });
+      document.addEventListener('pointerover', function (e) { cur.classList.toggle('big', !!e.target.closest('a, button, .sk, .cl, .mq-card')); });
+      (function follow() { cx += (tx - cx) * 0.2; cy += (ty - cy) * 0.2; cur.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)'; requestAnimationFrame(follow); })();
     }
 
     // flip cards: tap toggles on touch
